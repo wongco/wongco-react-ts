@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PortfolioItem from '../../atoms/PortfolioItem';
+import preview_jobly from '../../../pics/jobly01.png';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
@@ -44,7 +45,12 @@ const StyledLastDetailTab = styled(StyledDetailsTab)`
 const Portfolio = () => {
   return (
     <StyledPortfolioContainer id="portfolio">
-      <PortfolioItem name="Test Item" link={'linktest'} githubLink={'githublink'} />
+      <PortfolioItem
+        title="Jobly"
+        preview={preview_jobly}
+        link={'linktest'}
+        githubLink={'githublink'}
+      />
       {/* <PortfolioItem>Meme Generator</PortfolioItem>
       <PortfolioItem>Hack or Snooze</PortfolioItem>
       <PortfolioItem>Jobly</PortfolioItem>

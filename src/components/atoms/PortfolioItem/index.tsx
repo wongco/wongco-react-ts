@@ -3,14 +3,13 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { string } from 'prop-types';
 
 const StyledPortfolioItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 300px;
-  width: 300px;
+  width: 500px;
   border-radius: 10px;
   background-color: white;
   overflow: hidden;
@@ -22,6 +21,16 @@ const StyledDetailsContainer = styled.div`
   justify-content: center;
   height: 2em;
   border-top: 2px solid lightgray;
+`;
+
+const StyledImgContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+`;
+
+const StyledImg = styled.img`
+  height: 100%;
 `;
 
 const StyledLink = styled.a`
@@ -57,17 +66,21 @@ const StyledText = styled.div`
 
 class PortfolioItem extends PureComponent<PortfolioItemProps> {
   public render() {
+    const { preview, title, link, githubLink } = this.props;
     return (
       <StyledPortfolioItem>
-        <div>{this.props.name}</div>
+        {/* <div>{title}</div> */}
+        <StyledImgContainer>
+          <StyledImg src={preview} />
+        </StyledImgContainer>
         <StyledDetailsContainer>
-          <StyledLink href={this.props.link}>
+          <StyledLink href={link}>
             <StyledDetailsTab>
               <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
               <StyledText>Link</StyledText>
             </StyledDetailsTab>
           </StyledLink>
-          <StyledLink href={this.props.githubLink}>
+          <StyledLink href={githubLink}>
             <StyledLastDetailTab>
               <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
               <StyledText>Github</StyledText>
@@ -80,21 +93,10 @@ class PortfolioItem extends PureComponent<PortfolioItemProps> {
 }
 
 interface PortfolioItemProps {
-  name: string;
+  title: string;
   link: string;
   githubLink: string;
-}
-
-{
-  /* <PortfolioItem>
-<div>Meme Generator</div>	        <div>Img Stuff</div>
-  <StyledDetailsContainer>
-    <StyledDetailsTab>Link</StyledDetailsTab>
-    <StyledDetailsTab>Github</StyledDetailsTab>
-    <StyledLastDetailTab>About</StyledLastDetailTab>
-  </StyledDetailsContainer>
-</PortfolioItem>
-<PortfolioItem>Meme Generator</PortfolioItem> */
+  preview: any;
 }
 
 export default PortfolioItem;
