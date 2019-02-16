@@ -1,7 +1,8 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import FontAwesomeLink from '../FontAwesomeLink';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const StyledPortfolioItem = styled.div`
   display: flex;
@@ -17,10 +18,14 @@ const StyledPortfolioItem = styled.div`
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 2em;
-  background-color: white;
   border-top: 2px solid lightgray;
-  /* border-bottom: 2px solid lightgray; */
+`;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  width: 100%;
 `;
 
 const StyledDetailsTab = styled.div`
@@ -37,26 +42,36 @@ const StyledDetailsTab = styled.div`
   &:hover {
     background-color: steelblue;
     color: white;
+    transition: color 0.5s, background-color 0.5s;
   }
 `;
 
 const StyledLastDetailTab = styled(StyledDetailsTab)`
   border-right: none;
 `;
-class PortfolioItem extends PureComponent<PortfolioItemProps> {
-  public static FaLink = (props: any) => <FontAwesomeLink {...props} />;
 
+const StyledText = styled.div`
+  margin: 15px;
+`;
+
+class PortfolioItem extends PureComponent<PortfolioItemProps> {
   public render() {
     return (
       <StyledPortfolioItem>
         <div>{this.props.name}</div>
         <StyledDetailsContainer>
-          <StyledDetailsTab>
-            <FontAwesomeLink icon={faEnvelope} size={'1x'} />
-            Link
-          </StyledDetailsTab>
-          <StyledDetailsTab>Github</StyledDetailsTab>
-          <StyledLastDetailTab>About</StyledLastDetailTab>
+          <StyledLink href={'test'}>
+            <StyledDetailsTab>
+              <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
+              <StyledText>Link</StyledText>
+            </StyledDetailsTab>
+          </StyledLink>
+          <StyledLink href={'test'}>
+            <StyledLastDetailTab>
+              <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
+              <StyledText>Github</StyledText>
+            </StyledLastDetailTab>
+          </StyledLink>
         </StyledDetailsContainer>
       </StyledPortfolioItem>
     );
