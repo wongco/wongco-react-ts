@@ -3,6 +3,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import { string } from 'prop-types';
 
 const StyledPortfolioItem = styled.div`
   display: flex;
@@ -60,13 +61,13 @@ class PortfolioItem extends PureComponent<PortfolioItemProps> {
       <StyledPortfolioItem>
         <div>{this.props.name}</div>
         <StyledDetailsContainer>
-          <StyledLink href={'test'}>
+          <StyledLink href={this.props.link}>
             <StyledDetailsTab>
               <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
               <StyledText>Link</StyledText>
             </StyledDetailsTab>
           </StyledLink>
-          <StyledLink href={'test'}>
+          <StyledLink href={this.props.githubLink}>
             <StyledLastDetailTab>
               <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
               <StyledText>Github</StyledText>
@@ -80,6 +81,8 @@ class PortfolioItem extends PureComponent<PortfolioItemProps> {
 
 interface PortfolioItemProps {
   name: string;
+  link: string;
+  githubLink: string;
 }
 
 {
