@@ -35,6 +35,11 @@ const StyledImg = styled.img`
   height: 100%;
   width: 100%;
   object-fit: contain;
+
+  @media (max-width: 576px) {
+    height: 200px;
+    width: auto;
+  }
 `;
 class Banner extends Component {
   public render() {

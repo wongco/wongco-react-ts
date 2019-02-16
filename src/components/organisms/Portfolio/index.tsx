@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import PortfolioItem from '../../atoms/PortfolioItem';
 import preview_jobly from '../../../pics/jobly01.png';
+import PortfolioItem from '../../atoms/PortfolioItem';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const StyledPortfolioContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: #6c757d;
-  height: 400px;
+  height: 100%;
 `;
 
 const StyledDetailsContainer = styled.div`
@@ -48,8 +48,23 @@ const Portfolio = () => {
       <PortfolioItem
         title="Jobly"
         preview={preview_jobly}
-        link={'linktest'}
-        githubLink={'githublink'}
+        link={'https://jobly-wongco.herokuapp.com/'}
+        githubLink={'https://github.com/wongco/react-jobly'}
+        alt={'jobly preview image'}
+      />
+      <PortfolioItem
+        title="Jobly"
+        preview={preview_jobly}
+        link={'https://jobly-wongco.herokuapp.com/'}
+        githubLink={'https://github.com/wongco/react-jobly'}
+        alt={'jobly preview image'}
+      />
+      <PortfolioItem
+        title="Jobly"
+        preview={preview_jobly}
+        link={'https://jobly-wongco.herokuapp.com/'}
+        githubLink={'https://github.com/wongco/react-jobly'}
+        alt={'jobly preview image'}
       />
       {/* <PortfolioItem>Meme Generator</PortfolioItem>
       <PortfolioItem>Hack or Snooze</PortfolioItem>

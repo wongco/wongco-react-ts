@@ -10,9 +10,17 @@ const StyledPortfolioItem = styled.div`
   justify-content: space-between;
   height: 300px;
   width: 500px;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 9px white;
   background-color: white;
   overflow: hidden;
+  margin: 30px 0;
+
+  @media (max-width: 576px) {
+    flex-flow: row wrap;
+    height: 180px;
+    width: 300px;
+  }
 `;
 
 const StyledDetailsContainer = styled.div`
@@ -66,12 +74,12 @@ const StyledText = styled.div`
 
 class PortfolioItem extends PureComponent<PortfolioItemProps> {
   public render() {
-    const { preview, title, link, githubLink } = this.props;
+    const { preview, title, link, githubLink, alt } = this.props;
     return (
       <StyledPortfolioItem>
         {/* <div>{title}</div> */}
         <StyledImgContainer>
-          <StyledImg src={preview} />
+          <StyledImg src={preview} alt={alt} />
         </StyledImgContainer>
         <StyledDetailsContainer>
           <StyledLink href={link}>
@@ -97,6 +105,7 @@ interface PortfolioItemProps {
   link: string;
   githubLink: string;
   preview: any;
+  alt: string;
 }
 
 export default PortfolioItem;
