@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import FontAwesomeLink from '../FontAwesomeLink';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const StyledPortfolioItem = styled.div`
   display: flex;
@@ -41,19 +43,29 @@ const StyledDetailsTab = styled.div`
 const StyledLastDetailTab = styled(StyledDetailsTab)`
   border-right: none;
 `;
+class PortfolioItem extends PureComponent<PortfolioItemProps> {
+  public static FaLink = (props: any) => <FontAwesomeLink {...props} />;
 
-const PortfolioItem = (props: any) => {
-  return (
-    <StyledPortfolioItem>
-      <div>{props.name}</div>
-      <StyledDetailsContainer>
-        <StyledDetailsTab>Link</StyledDetailsTab>
-        <StyledDetailsTab>Github</StyledDetailsTab>
-        <StyledLastDetailTab>About</StyledLastDetailTab>
-      </StyledDetailsContainer>
-    </StyledPortfolioItem>
-  );
-};
+  public render() {
+    return (
+      <StyledPortfolioItem>
+        <div>{this.props.name}</div>
+        <StyledDetailsContainer>
+          <StyledDetailsTab>
+            <FontAwesomeLink icon={faEnvelope} size={'1x'} />
+            Link
+          </StyledDetailsTab>
+          <StyledDetailsTab>Github</StyledDetailsTab>
+          <StyledLastDetailTab>About</StyledLastDetailTab>
+        </StyledDetailsContainer>
+      </StyledPortfolioItem>
+    );
+  }
+}
+
+interface PortfolioItemProps {
+  name: string;
+}
 
 {
   /* <PortfolioItem>

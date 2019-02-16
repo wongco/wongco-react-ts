@@ -13,7 +13,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 const FontAwesomeLink = (props: any) => {
   return (
     <a href={props.href}>
-      <StyledFontAwesomeIcon icon={props.icon} size={'2x'} {...props} />
+      <StyledFontAwesomeIcon icon={props.icon} size={props.size || '2x'} {...props} />
     </a>
   );
 };
