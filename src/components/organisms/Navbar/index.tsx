@@ -80,22 +80,23 @@ class Navbar extends PureComponent {
   };
 
   public render() {
+    const { handleClick } = this;
     return (
       <StyledNav>
         <StyledHome>
           <StyledHomeLink href="#home">WongCo</StyledHomeLink>
         </StyledHome>
-        <StyledBar onClick={this.handleClick}>
+        <StyledBar onClick={handleClick}>
           <FontAwesomeIcon icon={faBars} size={'2x'} />
         </StyledBar>
         <NavLinks isCollapsed={this.state.isCollapsed}>
-          <NavLinks.Item onClick={this.handleClick} href="#about">
+          <NavLinks.Item onClick={handleClick} href="#about">
             About
           </NavLinks.Item>
-          <NavLinks.Item onClick={this.handleClick} href="#portfolio">
+          <NavLinks.Item onClick={handleClick} href="#portfolio">
             Portfolio
           </NavLinks.Item>
-          <NavLinks.Item onClick={this.handleClick} href="#contact">
+          <NavLinks.Item onClick={handleClick} href="#contact">
             Contact
           </NavLinks.Item>
         </NavLinks>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import preview_jobly from '../../../pics/jobly01.png';
+import preview_hackorsnooze from '../../../pics/hackorsnooze01.png';
+import preview_jobly from '../../../pics/jobly01.jpg';
+import preview_warbler from '../../../pics/warbler01.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
 
 const StyledPortfolioContainer = styled.div`
@@ -12,60 +14,41 @@ const StyledPortfolioContainer = styled.div`
   height: 100%;
 `;
 
-const StyledDetailsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 2em;
-  background-color: white;
-  border-top: 2px solid lightgray;
-  border-bottom: 2px solid lightgray;
-`;
-
-const StyledDetailsTab = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: gray;
-  font-weight: 600;
-  width: 100%;
-  height: 100%;
-  border-right: 2px solid lightgray;
-  overflow: hidden;
-
-  &:hover {
-    background-color: steelblue;
-    color: white;
-  }
-`;
-
-const StyledLastDetailTab = styled(StyledDetailsTab)`
-  border-right: none;
-`;
-
 const Portfolio = () => {
   return (
     <StyledPortfolioContainer id="portfolio">
       <PortfolioItem
         title="Jobly"
+        text="Full stack job board application with User Authentication"
         preview={preview_jobly}
         link={'https://jobly-wongco.herokuapp.com/'}
         githubLink={'https://github.com/wongco/react-jobly'}
         alt={'jobly preview image'}
       />
       <PortfolioItem
-        title="Jobly"
-        preview={preview_jobly}
-        link={'https://jobly-wongco.herokuapp.com/'}
-        githubLink={'https://github.com/wongco/react-jobly'}
-        alt={'jobly preview image'}
+        title="Hack or Snooze"
+        text="jQuery Frontend and RESTful API Backend Story board application with User Authentication."
+        preview={preview_hackorsnooze}
+        link={'https://wongco.github.io/hack-or-snooze-fe/'}
+        githubLink={'https://github.com/wongco/hack-or-snooze-fe'}
+        alt={'hack or snooze preview image'}
       />
       <PortfolioItem
-        title="Jobly"
-        preview={preview_jobly}
-        link={'https://jobly-wongco.herokuapp.com/'}
-        githubLink={'https://github.com/wongco/react-jobly'}
-        alt={'jobly preview image'}
+        title="Warbler"
+        text="Twitter Style Clone"
+        preview={preview_warbler}
+        link={'https://warbler-wongco.herokuapp.com/'}
+        githubLink={'https://github.com/wongco/warbler'}
+        alt={'warbler preview image'}
       />
+      {/* <PortfolioItem
+        title="Microblog"
+        text="Web blog application including voting and comments"
+        preview={preview_hackorsnooze}
+        link={'https://wongco.github.io/hack-or-snooze-fe/'}
+        githubLink={'https://github.com/wongco/hack-or-snooze-fe'}
+        alt={'hack or snooze preview image'}
+      /> */}
       {/* <PortfolioItem>Meme Generator</PortfolioItem>
       <PortfolioItem>Hack or Snooze</PortfolioItem>
       <PortfolioItem>Jobly</PortfolioItem>
