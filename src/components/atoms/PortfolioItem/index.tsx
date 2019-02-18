@@ -3,13 +3,12 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Tracing } from 'trace_events';
 
 const StyledPortfolioItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Update to hard value to keep consistent size*/
+  height: 100%;
   width: 350px;
   border-radius: 5px;
   box-shadow: 0px 0px 9px white;
