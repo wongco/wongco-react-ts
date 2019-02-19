@@ -14,19 +14,29 @@ const StyledContainer = styled.section`
 const StyledBox = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 3em;
-  font-weight: 300;
   width: 50%;
   background-color: gray;
-  line-height: 1.5em;
   padding: 1em 1em;
   margin: 20px 0;
+
+  @media (max-width: 576px) {
+    width: 75%;
+  }
 `;
 
 const StyledBoxText = styled.p`
   padding: 0;
   margin: 0;
   text-align: center;
+  color: white;
+  font-size: 3em;
+  font-weight: 300;
+  line-height: 1.5em;
+
+  @media (max-width: 576px) {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
 `;
 
 const StyledBody = styled.div`
@@ -35,6 +45,11 @@ const StyledBody = styled.div`
   line-height: 2em;
   width: 50%;
   font-weight: 300;
+
+  @media (max-width: 576px) {
+    font-size: 1.25em;
+    width: 75%;
+  }
 `;
 
 const About = () => {

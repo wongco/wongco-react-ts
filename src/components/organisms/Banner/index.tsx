@@ -2,9 +2,52 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import bannerImage from '../../../pics/baybridge_banner.png';
 
+/** parent container for banner section */
+const BannerContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  padding: 2em 2em;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 0em 2em;
+  }
+`;
+
+/** primary container for left side text */
+const BannerTextContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+`;
+
+const BannerTextSubContainer = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 3.5vw;
+  line-height: 1.25em;
+  font-weight: 300;
+  text-align: center;
+  padding: 1em;
+
+  @media (max-width: 576px) {
+    font-size: 2em;
+  }
+`;
+
+/** primary container for right side image */
 const LogoContainer = styled.div`
   position: relative;
-  background-color: #343a40;
+  /* background-color: #343a40; */
   flex: 1 1 100%;
 
   @media (max-width: 576px) {
@@ -52,47 +95,6 @@ const StyledTitle = styled.div`
 
   @media (max-width: 576px) {
     font-size: 1em;
-  }
-`;
-
-const BannerContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  padding: 2em 2em;
-
-  @media (max-width: 576px) {
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    padding: 0em 2em;
-  }
-`;
-
-const BannerTextContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 100%;
-  box-sizing: border-box;
-  /* border: 1px solid black; */
-`;
-
-const BannerTextSubContainer = styled.div`
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 3.5vw;
-  line-height: 1.25em;
-  font-weight: 300;
-  text-align: center;
-  padding: 1em;
-  /* border: 1px solid red; */
-
-  @media (max-width: 576px) {
-    font-size: 2em;
   }
 `;
 
