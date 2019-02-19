@@ -7,7 +7,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomePropTypes>`
   color: Dimgray;
 
   &:hover {
-    color: ${props => props.hoverColor || 'white'};
+    color: ${props => props.hovercolor || 'white'};
     transition: color 0.5s;
   }
 `;
@@ -18,14 +18,14 @@ const FontAwesomeLink = (props: any) => {
       <StyledFontAwesomeIcon
         icon={props.icon}
         size={props.size || '2x'}
-        hoverColor={props.hoverColor}
+        hovercolor={props.hovercolor}
       />
     </a>
   );
 };
 
 interface FontAwesomePropTypes {
-  hoverColor?: string;
+  hovercolor?: string;
 }
 
 export default FontAwesomeLink;

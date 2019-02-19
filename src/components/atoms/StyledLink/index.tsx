@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: black;
+  color: white;
   padding: 0.75em;
   border-radius: 10%;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 576px) {

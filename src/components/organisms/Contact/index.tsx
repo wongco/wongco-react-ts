@@ -50,18 +50,17 @@ const Contact = () => {
   return (
     <footer>
       <StyledGradient>
-        <StyledText>Contact me!</StyledText>
+        {/* <StyledText>Reach out to me!</StyledText> */}
         <ContactBar id="contact">
           <ContactBar.FaLink icon={faEnvelope} href="mailto:ginson.wong+hello@gmail.com" />
           <ContactBar.FaLink icon={faAngellist} href="https://angel.co/ginson-wong" />
           {/* <ContactBar.FaLink icon={faPenSquare} href="https://wongco.github.io/wongcoblog/" /> */}
-          <ContactBar.FaLink icon={faGithub} href="https://github.com/wongco" hoverColor="black" />
+          <ContactBar.FaLink icon={faGithub} href="https://github.com/wongco" hovercolor="black" />
           <ContactBar.FaLink
             icon={faLinkedin}
             href="https://www.linkedin.com/in/ginson"
-            hoverColor="#0077B5"
+            hovercolor="#0077B5"
           />
-          {/* <FooterButtonLink href="resume.pdf">Resume</FooterButtonLink> */}
         </ContactBar>
       </StyledGradient>
       <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>

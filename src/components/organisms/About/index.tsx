@@ -12,6 +12,9 @@ const StyledContainer = styled.section`
 `;
 
 const TransformContainer = styled.div`
+  display: flex;
+  flex-basis: row wrap;
+  justify-content: space-around;
   font-size: 2.5em;
   font-weight: bold;
   text-align: center;
@@ -35,7 +38,8 @@ const StyledBoxText = styled.p`
 `;
 
 const StyledBody = styled.div`
-  font-size: 2em;
+  font-size: 1.25em;
+  line-height: 2em;
   width: 50%;
   font-weight: 600;
 `;
@@ -44,19 +48,20 @@ const About = () => {
   return (
     <StyledContainer id="about">
       <TransformContainer>
-        <span>Inspired ideas.&nbsp;</span>
-        <span>Attention to detail.&nbsp;</span>
-        <span>Responsive design.&nbsp;</span>
+        <div>Inspired&nbsp;ideas. </div>
+        <div>Attention&nbsp;to&nbsp;detail. </div>
+        <div>Responsive&nbsp;design. </div>
       </TransformContainer>
       <StyledBox>
         <StyledBoxText>
-          Behind every problem is an elegant solution waiting to be created.
+          Behind every problem is an elegant solution waiting to be&nbsp;created.
         </StyledBoxText>
       </StyledBox>
       <StyledBody>
-        Having crafted solutions as a Systems Admin/Engineer, I firmly believe in the ability of
-        technology to bring people together and address both societal and business challenges. I now
-        take that same passion for solving problems to full stack web development.
+        I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
+        Administrator/Engineer designing and implementing technology solutions to tackle critical
+        business needs and challenges. You can now find me tackling new challenges and interesting
+        problems as a full stack web developer coding primarily in JavaScript and Python.
       </StyledBody>
     </StyledContainer>
   );

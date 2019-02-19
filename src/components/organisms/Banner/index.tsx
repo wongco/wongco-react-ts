@@ -45,7 +45,8 @@ const StyledName = styled.div`
 `;
 
 const StyledTitle = styled.div`
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 600;
 
   @media (max-width: 576px) {
     font-size: 1em;

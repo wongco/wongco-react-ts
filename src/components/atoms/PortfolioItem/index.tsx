@@ -1,10 +1,11 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faApple, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
 const StyledPortfolioItem = styled.div`
+  font-family: 'GothamLight', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,7 +41,7 @@ const StyledPortfolioText = styled.div`
   justify-content: center;
   align-items: center; */
   /* width: 100%; */
-  height: 110px;
+  height: 140px;
   padding: 0 15px;
   box-sizing: border-box;
   border-top: 1px solid lightgray;
@@ -75,15 +76,16 @@ const StyledLastDetailTab = styled(StyledDetailsTab)`
 `;
 
 const StyledProjectTitle = styled.div`
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-size: 150%;
   margin: 7px 0;
   font-weight: bold;
 `;
 
 const StyledBodyText = styled.div`
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   margin: 5px 0;
+  line-height: 25px;
 `;
 
 const StyledLinkText = styled.div`
@@ -92,7 +94,7 @@ const StyledLinkText = styled.div`
 
 class PortfolioItem extends PureComponent<PortfolioItemProps> {
   public render() {
-    const { preview, title, link, githubLink, alt, text } = this.props;
+    const { preview, title, link, githubLink, alt, text, apple } = this.props;
     return (
       <StyledPortfolioItem>
         <StyledImgContainer>
@@ -103,18 +105,30 @@ class PortfolioItem extends PureComponent<PortfolioItemProps> {
           <StyledBodyText>{text}</StyledBodyText>
         </StyledPortfolioText>
         <StyledDetailsContainer>
-          <StyledLink href={link}>
-            <StyledDetailsTab>
-              <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
-              <StyledLinkText>Website</StyledLinkText>
-            </StyledDetailsTab>
-          </StyledLink>
-          <StyledLink href={githubLink}>
-            <StyledLastDetailTab>
-              <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
-              <StyledLinkText>Github</StyledLinkText>
-            </StyledLastDetailTab>
-          </StyledLink>
+          {apple && (
+            <StyledLink href={apple}>
+              <StyledDetailsTab>
+                <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0 10px' }} />
+                <StyledLinkText>App Store</StyledLinkText>
+              </StyledDetailsTab>
+            </StyledLink>
+          )}
+          {link && (
+            <StyledLink href={link}>
+              <StyledDetailsTab>
+                <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
+                <StyledLinkText>Website</StyledLinkText>
+              </StyledDetailsTab>
+            </StyledLink>
+          )}
+          {githubLink && (
+            <StyledLink href={githubLink}>
+              <StyledLastDetailTab>
+                <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
+                <StyledLinkText>Github</StyledLinkText>
+              </StyledLastDetailTab>
+            </StyledLink>
+          )}
         </StyledDetailsContainer>
       </StyledPortfolioItem>
     );
@@ -123,8 +137,9 @@ class PortfolioItem extends PureComponent<PortfolioItemProps> {
 
 interface PortfolioItemProps {
   title: string;
-  link: string;
-  githubLink: string;
+  link?: string;
+  apple?: string;
+  githubLink?: string;
   preview: any;
   alt: string;
   text: string;

@@ -4,7 +4,6 @@ import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 
 const StyledContactContainer = styled.footer`
   display: flex;
-  /* flex-direction: row; */
   flex-basis: row wrap;
   justify-content: center;
   align-items: center;

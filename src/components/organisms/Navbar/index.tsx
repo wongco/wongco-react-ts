@@ -10,21 +10,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 2em 2em 18em white;
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6e6b4+0,ed9017+100;Yellow+3D+%231 */
-  background: #f6e6b4; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f6e6b4 0%, #ed9017 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-color: black;
 
   @media (max-width: 576px) {
     flex-flow: row wrap;
@@ -55,7 +41,7 @@ const StyledBar = styled.div`
 
 const StyledHomeLink = styled.a`
   text-decoration: none;
-  color: black;
+  color: white;
   padding: 0.75em;
   border-radius: 10%;
 
