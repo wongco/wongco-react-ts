@@ -5,13 +5,12 @@ import NavLinkItem from '../NavLinkItem';
 const StyledNavLinks = styled.ol`
   display: flex;
   flex-flow: row none;
-  /* margin-right: 1em; */
   align-items: center;
 
   /* Media Query for Mobile */
   @media (max-width: 576px) {
-    flex-flow: column wrap;
     flex: 1 1 100%;
+    flex-flow: column wrap;
     display: ${(props: any) => (props.isCollapsed ? 'none' : 'block')};
     margin: 0;
   }

@@ -10,7 +10,6 @@ const StyledLi = styled.li`
     display: flex;
     justify-content: flex-end;
     margin: 0.5em 0;
-    margin-right: 1em;
   }
 `;
 

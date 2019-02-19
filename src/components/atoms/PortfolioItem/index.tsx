@@ -37,15 +37,10 @@ const StyledImg = styled.img`
 `;
 
 const StyledPortfolioText = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* width: 100%; */
   height: 160px;
   padding: 0 15px;
   box-sizing: border-box;
   border-top: 1px solid lightgray;
-  /* background-color: red; */
 `;
 
 const StyledLink = styled.a`
@@ -59,7 +54,7 @@ const StyledDetailsTab = styled.div`
   justify-content: center;
   align-items: center;
   color: gray;
-  font-weight: 600;
+  font-weight: 300;
   width: 100%;
   height: 100%;
   border-right: 1px solid lightgray;

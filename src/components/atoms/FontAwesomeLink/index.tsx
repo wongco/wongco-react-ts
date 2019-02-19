@@ -7,7 +7,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomePropTypes>`
   color: Dimgray;
 
   &:hover {
-    color: ${props => props.hovercolor || 'white'};
+    color: ${props => props.hovercolor || 'black'};
     transition: color 0.5s;
   }
 `;

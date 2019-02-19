@@ -1,49 +1,14 @@
-import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faPenSquare } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
-import ContactBar from '../../molecules/ContactBar';
-import FooterButtonLink from '../../molecules/FooterButtonLink';
 
-const StyledGradient = styled.div`
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6e6b4+0,ed9017+100;Yellow+3D+%231 */
-  background: #f6e6b4; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f6e6b4 0%, #ed9017 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-`;
-
-const StyledText = styled.p`
-  font-size: 2em;
-  font-weight: 600;
-  padding: 10px 20px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  margin: 0;
-
-  @media (max-width: 576px) {
-    font-size: 1.5em;
-  }
-`;
-
-const StyledCopyrightContainer = styled.p`
+const StyledCopyrightContainer = styled.div`
   display: flex;
-  background-color: #343a40;
+  background-color: #bfbfbf;
   color: white;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.25em;
   margin: 0;
   padding: 30px 0;
 `;
@@ -57,18 +22,6 @@ const StyledCopyrightNote = styled.div`
 const Contact = () => {
   return (
     <footer>
-      {/* <StyledGradient>
-        <ContactBar id="contact">
-          <ContactBar.FaLink icon={faEnvelope} href="mailto:ginson.wong+hello@gmail.com" />
-          <ContactBar.FaLink icon={faAngellist} href="https://angel.co/ginson-wong" />
-          <ContactBar.FaLink icon={faGithub} href="https://github.com/wongco" hovercolor="black" />
-          <ContactBar.FaLink
-            icon={faLinkedin}
-            href="https://www.linkedin.com/in/ginson"
-            hovercolor="#0077B5"
-          />
-        </ContactBar>
-      </StyledGradient> */}
       <StyledCopyrightContainer>
         <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
       </StyledCopyrightContainer>

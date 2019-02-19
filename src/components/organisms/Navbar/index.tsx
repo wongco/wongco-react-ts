@@ -13,7 +13,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 2em 2em 18em white;
-  background-color: red;
+  background-color: white;
   font-family: Helvetica Neue;
 
   @media (max-width: 576px) {
@@ -35,21 +35,21 @@ const StyledHome = styled.p`
 /** Component for Mobile Only Dropdown Button */
 const StyledBar = styled.div`
   display: none;
+  margin-right: 2em;
 
   @media (max-width: 576px) {
     display: flex;
     cursor: pointer;
-    margin-right: 1em;
   }
 `;
 
 const StyledHomeLink = styled.a`
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 0.75em;
   border-radius: 10%;
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 400;
 
   @media (max-width: 576px) {
     flex: 1 1 100%;
@@ -57,15 +57,21 @@ const StyledHomeLink = styled.a`
   }
 `;
 
-interface StateProps {
-  isCollapsed: boolean;
-}
-
 const StyledRightNav = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-right: 2em;
+
+  @media (max-width: 576px) {
+    flex: 1 1 100%;
+  }
+`;
+
+const StyledContactLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 class Navbar extends PureComponent {
@@ -96,23 +102,37 @@ class Navbar extends PureComponent {
             <NavLinks.Item onClick={handleClick} href="#portfolio">
               Portfolio
             </NavLinks.Item>
-            <ContactBar.FaLink icon={faEnvelope} href="mailto:ginson.wong+hello@gmail.com" />
-            <ContactBar.FaLink
-              icon={faAngellist}
-              href="https://angel.co/ginson-wong"
-              hovercolor="pink"
-            />
-            <ContactBar.FaLink icon={faGithub} href="https://github.com/wongco" />
-            <ContactBar.FaLink
-              icon={faLinkedin}
-              href="https://www.linkedin.com/in/ginson"
-              hovercolor="#0077B5"
-            />
+            <StyledContactLinks>
+              <ContactBar.FaLink
+                icon={faEnvelope}
+                href="mailto:ginson.wong+hello@gmail.com"
+                hovercolor="orange"
+              />
+              <ContactBar.FaLink
+                icon={faAngellist}
+                href="https://angel.co/ginson-wong"
+                hovercolor="pink"
+              />
+              <ContactBar.FaLink
+                icon={faGithub}
+                href="https://github.com/wongco"
+                hovercolor="purple"
+              />
+              <ContactBar.FaLink
+                icon={faLinkedin}
+                href="https://www.linkedin.com/in/ginson"
+                hovercolor="#0077B5"
+              />
+            </StyledContactLinks>
           </NavLinks>
         </StyledRightNav>
       </StyledNav>
     );
   }
+}
+
+interface StateProps {
+  isCollapsed: boolean;
 }
 
 export default Navbar;

@@ -10,7 +10,7 @@ const StyledPortfolioContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: #edf1f9;
+  background-color: #ffb900;
   height: 100%;
   padding: 20px;
 `;
