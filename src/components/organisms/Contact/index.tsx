@@ -37,24 +37,30 @@ const StyledText = styled.p`
   }
 `;
 
-const StyledCopyrightNote = styled.p`
+const StyledCopyrightContainer = styled.p`
+  display: flex;
   background-color: #343a40;
   color: white;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   margin: 0;
-  padding: 10px 0;
+  padding: 30px 0;
+`;
+
+const StyledCopyrightNote = styled.div`
+  width: 100%;
+  text-align: right;
+  padding-right: 2em;
 `;
 
 const Contact = () => {
   return (
     <footer>
-      <StyledGradient>
-        {/* <StyledText>Reach out to me!</StyledText> */}
+      {/* <StyledGradient>
         <ContactBar id="contact">
           <ContactBar.FaLink icon={faEnvelope} href="mailto:ginson.wong+hello@gmail.com" />
           <ContactBar.FaLink icon={faAngellist} href="https://angel.co/ginson-wong" />
-          {/* <ContactBar.FaLink icon={faPenSquare} href="https://wongco.github.io/wongcoblog/" /> */}
           <ContactBar.FaLink icon={faGithub} href="https://github.com/wongco" hovercolor="black" />
           <ContactBar.FaLink
             icon={faLinkedin}
@@ -62,8 +68,10 @@ const Contact = () => {
             hovercolor="#0077B5"
           />
         </ContactBar>
-      </StyledGradient>
-      <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
+      </StyledGradient> */}
+      <StyledCopyrightContainer>
+        <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
+      </StyledCopyrightContainer>
     </footer>
   );
 };

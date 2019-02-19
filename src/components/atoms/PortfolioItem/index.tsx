@@ -12,17 +12,17 @@ const StyledPortfolioItem = styled.div`
   height: 100%;
   width: 350px;
   border-radius: 5px;
-  box-shadow: 0px 0px 9px white;
+  box-shadow: 0px 0px 9px gray;
   background-color: white;
   overflow: hidden;
-  margin: 30px 0;
+  margin: 30px;
 `;
 
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 2em;
+  height: 4em;
   border-top: 1px solid lightgray;
 `;
 
@@ -41,7 +41,7 @@ const StyledPortfolioText = styled.div`
   justify-content: center;
   align-items: center; */
   /* width: 100%; */
-  height: 140px;
+  height: 160px;
   padding: 0 15px;
   box-sizing: border-box;
   border-top: 1px solid lightgray;
@@ -51,6 +51,7 @@ const StyledPortfolioText = styled.div`
 const StyledLink = styled.a`
   text-decoration: none;
   width: 100%;
+  height: 100%;
 `;
 
 const StyledDetailsTab = styled.div`
@@ -79,6 +80,7 @@ const StyledProjectTitle = styled.div`
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-size: 150%;
   margin: 7px 0;
+  padding: 10px 0;
   font-weight: bold;
 `;
 
@@ -86,6 +88,7 @@ const StyledBodyText = styled.div`
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   margin: 5px 0;
   line-height: 25px;
+  color: #45474c;
 `;
 
 const StyledLinkText = styled.div`

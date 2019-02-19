@@ -7,16 +7,30 @@ const StyledContainer = styled.section`
   justify-content: space-around;
   align-items: center;
   padding: 30px 0;
-  background-color: #343a40;
+  /* background-color: #343a40; */
   color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6a50e+0,c97207+100 */
+  background: #f6a50e; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f6a50e 0%, #c97207 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #f6a50e 0%,
+    #c97207 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f6a50e 0%,
+    #c97207 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6a50e', endColorstr='#c97207',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 `;
 
 const TransformContainer = styled.div`
   display: flex;
   flex-basis: row wrap;
   justify-content: space-around;
-  font-size: 2.5em;
-  font-weight: bold;
+  font-size: 3em;
+  font-weight: 300;
   text-align: center;
   margin: 30px 0;
 `;
@@ -38,10 +52,10 @@ const StyledBoxText = styled.p`
 `;
 
 const StyledBody = styled.div`
-  font-size: 1.25em;
+  font-size: 1.75em;
   line-height: 2em;
   width: 50%;
-  font-weight: 600;
+  font-weight: 300;
 `;
 
 const About = () => {

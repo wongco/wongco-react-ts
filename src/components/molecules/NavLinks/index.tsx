@@ -5,7 +5,8 @@ import NavLinkItem from '../NavLinkItem';
 const StyledNavLinks = styled.ol`
   display: flex;
   flex-flow: row none;
-  margin-right: 1em;
+  /* margin-right: 1em; */
+  align-items: center;
 
   /* Media Query for Mobile */
   @media (max-width: 576px) {

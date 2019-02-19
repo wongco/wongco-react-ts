@@ -10,8 +10,9 @@ const StyledPortfolioContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: #6c757d;
+  background-color: #edf1f9;
   height: 100%;
+  padding: 20px;
 `;
 
 const Portfolio = () => {
