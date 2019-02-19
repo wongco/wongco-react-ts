@@ -13,7 +13,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 2em 2em 18em white;
-  background-color: white;
+  /* background-color: white; */
   font-family: Helvetica Neue;
 
   @media (max-width: 576px) {

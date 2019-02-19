@@ -8,7 +8,7 @@ const StyledContainer = styled.section`
   align-items: center;
   padding: 30px 0;
 
-  background: linear-gradient(to bottom, white, #ffb900);
+  /* background: linear-gradient(to bottom, white, #ffb900); */
 `;
 
 const StyledBox = styled.div`
@@ -42,13 +42,13 @@ const StyledBoxText = styled.p`
 const StyledBody = styled.div`
   color: black;
   font-size: 1.75em;
-  line-height: 2em;
+  line-height: 1.75em;
   width: 50%;
   font-weight: 300;
 
   @media (max-width: 576px) {
     font-size: 1.25em;
-    line-height: 1.75em;
+    line-height: 1.5em;
     width: 75%;
   }
 `;

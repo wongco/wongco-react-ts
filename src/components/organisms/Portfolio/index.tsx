@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import preview_hackorsnooze from '../../../pics/hackorsnooze01.png';
-import preview_jobly from '../../../pics/jobly01.jpg';
-import preview_warbler from '../../../pics/warbler01.png';
+import preview_groupmuse from '../../../pics/groupmuse.png';
+import preview_hackorsnooze from '../../../pics/hackorsnooze02.png';
+import preview_jobly from '../../../pics/jobly02.png';
+import preview_microblog from '../../../pics/microblog01.png';
+import preview_warbler from '../../../pics/warbler02.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
 
 const StyledPortfolioContainer = styled.div`
@@ -10,7 +12,7 @@ const StyledPortfolioContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: #ffb900;
+  /* background-color: #ffb900; */
   height: 100%;
   padding: 20px;
 `;
@@ -21,7 +23,7 @@ const Portfolio = () => {
       <PortfolioItem
         title="Groupmuse"
         text="React Native Mobile App for in home classical concerts."
-        preview={preview_hackorsnooze}
+        preview={preview_groupmuse}
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
       />
@@ -49,14 +51,14 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/warbler'}
         alt={'warbler preview image'}
       />
-      {/* <PortfolioItem
+      <PortfolioItem
         title="Microblog"
         text="Web blog application including voting and comments"
-        preview={preview_hackorsnooze}
-        link={'futurelink'}
+        preview={preview_microblog}
+        link={'https://wongco-microblog.herokuapp.com/'}
         githubLink={'https://github.com/wongco/redux-microblog'}
-        alt={'hack or snooze preview image'}
-      /> */}
+        alt={'microblog preview image'}
+      />
       {/* <PortfolioItem>Meme Generator</PortfolioItem> 
       <PortfolioItem>Hack or Snooze</PortfolioItem> */}
     </StyledPortfolioContainer>
