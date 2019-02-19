@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledCopyrightContainer = styled.div`
   display: flex;
   background-color: #bfbfbf;
-  color: white;
+  color: black;
   justify-content: center;
   align-items: center;
   font-weight: 400;

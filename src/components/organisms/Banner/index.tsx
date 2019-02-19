@@ -80,17 +80,17 @@ const StyledTextContainer = styled.div`
 `;
 
 const StyledName = styled.div`
-  font-size: 4em;
-  @media (min-width: 576px) and (max-width: 991.98px) {
+  font-size: 4vw;
+  /* @media (min-width: 576px) and (max-width: 991.98px) {
     font-size: 2.75em;
-  }
+  } */
   @media (max-width: 576px) {
     font-size: 2em;
   }
 `;
 
 const StyledTitle = styled.div`
-  font-size: 2em;
+  font-size: 2vw;
   font-weight: 600;
 
   @media (max-width: 576px) {

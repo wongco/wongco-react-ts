@@ -29,7 +29,7 @@ const StyledBoxText = styled.p`
   margin: 0;
   text-align: center;
   color: white;
-  font-size: 3em;
+  font-size: 3vw;
   font-weight: 300;
   line-height: 1.5em;
 
@@ -48,6 +48,7 @@ const StyledBody = styled.div`
 
   @media (max-width: 576px) {
     font-size: 1.25em;
+    line-height: 1.75em;
     width: 75%;
   }
 `;
@@ -62,10 +63,9 @@ const About = () => {
       </StyledBox>
       <StyledBody>
         I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
-        Administrator/Engineer designing and implementing technology solutions to solve critical
-        business needs and challenges. You can now find me tackling new challenges and interesting
-        problems as a full stack software engineering coding primarily in JavaScript
-        and&nbsp;Python.
+        Administrator designing and implementing technology solutions to solve critical business
+        needs and challenges. You can now find me tackling new challenges and interesting problems
+        as a full stack software engineering coding primarily in JavaScript and&nbsp;Python.
       </StyledBody>
     </StyledContainer>
   );
