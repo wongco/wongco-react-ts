@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-demo",
+  "name": "wongcofood-react-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,28 +8,30 @@
     "@fortawesome/free-regular-svg-icons": "^5.7.1",
     "@fortawesome/free-solid-svg-icons": "^5.7.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@types/jest": "24.0.0",
-    "@types/node": "10.12.24",
-    "@types/react": "16.8.2",
-    "@types/react-dom": "16.8.0",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^10.12.24",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
     "@types/styled-components": "^4.1.8",
-    "prettier": "1.16.4",
-    "react": "16.8.1",
-    "react-dom": "16.8.1",
-    "react-scripts": "2.1.3",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-scripts": "^2.1.5",
     "styled-components": "^4.1.3",
-    "tslint": "5.12.1",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "tslint-react": "3.6.0",
-    "typescript": "3.3.3"
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "lint-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
