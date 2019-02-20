@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import preview_groupmuse from '../../../pics/groupmuse.png';
+import preview_groupmuse from '../../../pics/groupmuse03.png';
 import preview_hackorsnooze from '../../../pics/hackorsnooze02.png';
 import preview_jobly from '../../../pics/jobly02.png';
 import preview_microblog from '../../../pics/microblog01.png';
 import preview_warbler from '../../../pics/warbler02.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
+import PortfolioItemOne from '../../molecules/PortfolioItemOne';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  /* background-color: #ffb900; */
   height: 100%;
   padding: 20px;
 `;
@@ -20,9 +20,9 @@ const StyledPortfolioContainer = styled.div`
 const Portfolio = () => {
   return (
     <StyledPortfolioContainer id="portfolio">
-      <PortfolioItem
+      <PortfolioItemOne
         title="Groupmuse"
-        text="React Native Mobile App for in home classical concerts."
+        text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the mobile app for maintainability. This was achieved using compound components, render props, and atomic design."
         preview={preview_groupmuse}
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
@@ -45,7 +45,7 @@ const Portfolio = () => {
       />
       <PortfolioItem
         title="Warbler"
-        text="Twitter Style Clone"
+        text="Full stack social media application"
         preview={preview_warbler}
         link={'https://warbler-wongco.herokuapp.com/'}
         githubLink={'https://github.com/wongco/warbler'}

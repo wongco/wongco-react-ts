@@ -16,6 +16,7 @@ const StyledPortfolioItem = styled.div`
   background-color: white;
   overflow: hidden;
   margin: 30px;
+  margin-top: 60px;
 `;
 
 const StyledDetailsContainer = styled.div`

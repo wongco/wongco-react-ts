@@ -40,7 +40,7 @@ const BannerTextSubContainer = styled.div`
   padding: 1em;
 
   @media (max-width: 576px) {
-    font-size: 2em;
+    font-size: 2.25em;
   }
 `;
 

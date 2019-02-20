@@ -17,6 +17,12 @@ const StyledCopyrightNote = styled.div`
   width: 100%;
   text-align: right;
   padding-right: 2em;
+
+  @media (max-width: 576px) {
+    font-size: 0.8em;
+    text-align: center;
+    padding-right: 0;
+  }
 `;
 
 const Contact = () => {
