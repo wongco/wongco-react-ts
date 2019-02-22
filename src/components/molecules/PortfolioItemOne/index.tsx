@@ -19,8 +19,8 @@ const StyledImgContainer = styled.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
-  width: 20vw;
-  margin-top: 100px;
+  width: 25vw;
+  margin-top: 50px;
 
   @media (max-width: 767.98px) {
     width: 40vw;
@@ -57,14 +57,15 @@ const StyledProjectTitle = styled.div`
 `;
 
 const StyledBodyText = styled.div`
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
   color: #45474c;
   /* font-size: 1.7em; */
   font-size: 1.5vw;
   line-height: 1.4em;
   font-weight: 300;
   width: 100%;
-  padding: 1em 0;
+  padding-bottom: 1em 0;
 
   @media (max-width: 767.98px) {
     display: none;
@@ -78,15 +79,16 @@ const StyledDetailsContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   height: 4em;
+  margin-top: 1em;
 
   @media (max-width: 576px) {
-    height: 2em;
+    height: 2.5em;
   }
 `;
 
 const StyledLink = styled.a`
   text-decoration: none;
-  width: 15em;
+  width: 20em;
   height: 100%;
   border: 1px solid lightgray;
 `;

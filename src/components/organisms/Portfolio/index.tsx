@@ -22,7 +22,7 @@ const Portfolio = () => {
     <StyledPortfolioContainer id="portfolio">
       <PortfolioItemOne
         title="Groupmuse"
-        text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the mobile app for maintainability. This was achieved using compound components, render props, and atomic design."
+        text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the mobile app increasing maintainability. This was achieved using compound components, render props, and atomic design."
         preview={preview_groupmuse}
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
