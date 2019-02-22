@@ -6,7 +6,8 @@ import preview_jobly from '../../../pics/jobly02.png';
 import preview_microblog from '../../../pics/microblog01.png';
 import preview_warbler from '../../../pics/warbler02.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
-import PortfolioItemOne from '../../molecules/PortfolioItemOne';
+import PortfolioGroupmuse from '../../molecules/PortfolioGroupmuse';
+import PortfolioJobly from '../../molecules/PortfolioJobly';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
@@ -20,21 +21,29 @@ const StyledPortfolioContainer = styled.div`
 const Portfolio = () => {
   return (
     <StyledPortfolioContainer id="portfolio">
-      <PortfolioItemOne
+      <PortfolioGroupmuse
         title="Groupmuse"
         text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the mobile app increasing maintainability. This was achieved using compound components, render props, and atomic design."
         preview={preview_groupmuse}
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
       />
-      <PortfolioItem
+      <PortfolioJobly
+        title="Jobly"
+        text="Built using a React frontend and a RESTful API Node.js/Express.js backend, Jobly is a job search and application tool built with user authentication.  The styling was created from scratch using styled components."
+        preview={preview_jobly}
+        link={'https://jobly-wongco.herokuapp.com/'}
+        githubLink={'https://github.com/wongco/react-jobly'}
+        alt={'jobly preview image'}
+      />
+      {/* <PortfolioItem
         title="Jobly"
         text="React Front End job board application with User Authentication, RESTful API Backend"
         preview={preview_jobly}
         link={'https://jobly-wongco.herokuapp.com/'}
         githubLink={'https://github.com/wongco/react-jobly'}
         alt={'jobly preview image'}
-      />
+      /> */}
       <PortfolioItem
         title="Hack or Snooze"
         text="jQuery Frontend and RESTful API Backend Story board application with User Authentication."

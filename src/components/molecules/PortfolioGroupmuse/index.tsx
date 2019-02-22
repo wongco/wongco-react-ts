@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-const StyledContainerOne = styled.div`
+const StyledGroupmuseContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -60,7 +60,6 @@ const StyledBodyText = styled.div`
   margin-top: 5px;
   margin-bottom: 10px;
   color: #45474c;
-  /* font-size: 1.7em; */
   font-size: 1.5vw;
   line-height: 1.4em;
   font-weight: 300;
@@ -118,11 +117,11 @@ const StyledLastDetailTab = styled(StyledDetailsTab)`
   border-right: none;
 `;
 
-class PortfolioItemOne extends PureComponent<PortfolioItemOneProps> {
+class PortfolioGroupmuse extends PureComponent<PortfolioGroupmuseProps> {
   public render() {
     const { preview, title, link, githubLink, alt, text, apple } = this.props;
     return (
-      <StyledContainerOne>
+      <StyledGroupmuseContainer>
         <StyledImgContainer>
           <StyledImg src={preview} alt={alt} />
         </StyledImgContainer>
@@ -156,12 +155,12 @@ class PortfolioItemOne extends PureComponent<PortfolioItemOneProps> {
             )}
           </StyledDetailsContainer>
         </StyledPortfolioText>
-      </StyledContainerOne>
+      </StyledGroupmuseContainer>
     );
   }
 }
 
-interface PortfolioItemOneProps {
+interface PortfolioGroupmuseProps {
   title: string;
   link?: string;
   apple?: string;
@@ -171,4 +170,4 @@ interface PortfolioItemOneProps {
   text: string;
 }
 
-export default PortfolioItemOne;
+export default PortfolioGroupmuse;
