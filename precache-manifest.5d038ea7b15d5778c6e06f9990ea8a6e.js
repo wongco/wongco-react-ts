@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/groupmuse03.86a520d5.png"
   },
   {
-    "revision": "38c2dd1688056096884f",
+    "revision": "642758cb0664551b539a",
     "url": "/static/css/main.ed558469.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/static/media/baybridge_banner.97a0a708.png"
   },
   {
-    "revision": "38c2dd1688056096884f",
-    "url": "/static/js/main.38c2dd16.chunk.js"
+    "revision": "642758cb0664551b539a",
+    "url": "/static/js/main.642758cb.chunk.js"
   },
   {
     "revision": "a091fe5f2eb90e80f64dea0110ef9256",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/static/media/warbler02.f768a3e6.png"
   },
   {
-    "revision": "f5a7c416b0e7b92d24aa294e8acac711",
+    "revision": "994138819bdc369ba4bf5c18e1eef178",
     "url": "/index.html"
   }
 ];
