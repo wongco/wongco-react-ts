@@ -29,9 +29,9 @@ const StyledImgContainer = styled.div`
   @media (max-width: 767.98px) {
     margin-top: 1em;
     margin-bottom: 2em;
-    height: 15vh;
+    height: 20vh;
     width: 100%;
-    /* border: 1px solid red; */
+    justify-content: center;
   }
 `;
 
@@ -59,7 +59,7 @@ const StyledPortfolioText = styled.div`
   @media (max-width: 576px) {
     margin: 0;
     align-items: center;
-    width: 40vw;
+    width: 70vw;
   }
 `;
 
@@ -86,7 +86,7 @@ const StyledBodyText = styled.div`
   padding-bottom: 1em 0;
 
   @media (max-width: 767.98px) {
-    display: none;
+    font-size: 4vw;
   }
 `;
 
@@ -98,19 +98,14 @@ const StyledDetailsContainer = styled.div`
   justify-content: center;
   height: 4em;
   margin-top: 1em;
-  width: 30em;
+  width: 30vw;
 
   @media (max-width: 576px) {
-    /* height: 2.5em; */
     width: 60vw;
-    /* border: 1px solid red; */
   }
 `;
 
 const StyledLink = styled.a`
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; */
   text-decoration: none;
   width: 100%;
   height: 100%;
