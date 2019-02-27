@@ -110,7 +110,7 @@ class Navbar extends PureComponent {
               />
               <ContactBar.FaLink
                 icon={faAngellist}
-                href="https://angel.co/ginson-wong"
+                href="https://angel.co/wongco"
                 hovercolor="pink"
               />
               <ContactBar.FaLink
