@@ -8,6 +8,7 @@ import preview_warbler from '../../../pics/warbler02.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
 import PortfolioGroupmuse from '../../molecules/PortfolioGroupmuse';
 import PortfolioJobly from '../../molecules/PortfolioJobly';
+import PortfolioHackSnooze from '../../molecules/PortfolioHackorSnooze';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
@@ -36,15 +37,7 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/react-jobly'}
         alt={'jobly preview image'}
       />
-      {/* <PortfolioItem
-        title="Jobly"
-        text="React Front End job board application with User Authentication, RESTful API Backend"
-        preview={preview_jobly}
-        link={'https://jobly-wongco.herokuapp.com/'}
-        githubLink={'https://github.com/wongco/react-jobly'}
-        alt={'jobly preview image'}
-      /> */}
-      <PortfolioItem
+      <PortfolioHackSnooze
         title="Hack or Snooze"
         text="jQuery Frontend and RESTful API Backend Story board application with User Authentication."
         preview={preview_hackorsnooze}
@@ -52,7 +45,7 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/hack-or-snooze-fe'}
         alt={'hack or snooze preview image'}
       />
-      <PortfolioItem
+      {/* <PortfolioItem
         title="Warbler"
         text="Full stack social media application"
         preview={preview_warbler}
@@ -67,7 +60,7 @@ const Portfolio = () => {
         link={'https://wongco-microblog.herokuapp.com/'}
         githubLink={'https://github.com/wongco/redux-microblog'}
         alt={'microblog preview image'}
-      />
+      /> */}
       {/* <PortfolioItem>Meme Generator</PortfolioItem> 
       <PortfolioItem>Hack or Snooze</PortfolioItem> */}
     </StyledPortfolioContainer>
