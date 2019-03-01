@@ -40,7 +40,7 @@ const StyledBoxText = styled.p`
 
 const StyledBody = styled.div`
   color: black;
-  font-size: 2.2em;
+  font-size: 2vw;
   line-height: 1.75em;
   width: 50%;
   font-weight: 300;

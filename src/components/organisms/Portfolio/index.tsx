@@ -24,7 +24,7 @@ const Portfolio = () => {
     <StyledPortfolioContainer id="portfolio">
       <PortfolioGroupmuse
         title="Groupmuse"
-        text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the mobile app increasing maintainability. This was achieved using compound components, render props, and atomic design."
+        text="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app increasing maintainability. This was achieved using compound components, render props, and atomic design."
         preview={preview_groupmuse}
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
@@ -39,7 +39,7 @@ const Portfolio = () => {
       />
       <PortfolioHackSnooze
         title="Hack or Snooze"
-        text="jQuery Frontend and RESTful API Backend Story board application with User Authentication."
+        text="Full CRUD story board application built with jQuery frontend and Node.js/Express.js RESTful API backend. Featuring user authentication, user favorites and ability to add/delete/modify stories."
         preview={preview_hackorsnooze}
         link={'https://wongco.github.io/hack-or-snooze-fe/'}
         githubLink={'https://github.com/wongco/hack-or-snooze-fe'}

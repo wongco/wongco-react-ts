@@ -56,8 +56,10 @@ const StyledPortfolioText = styled.div`
   margin-left: 1.5em;
   margin-bottom: 1.5em;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
+    /* @media (max-width: 576px) { */
     margin: 0;
+    margin-bottom: 1.5em;
     align-items: center;
     width: 70vw;
   }
@@ -99,9 +101,10 @@ const StyledDetailsContainer = styled.div`
   height: 4em;
   margin-top: 1em;
   width: 30vw;
+  max-width: 500px;
 
   @media (max-width: 576px) {
-    width: 60vw;
+    width: 70vw;
   }
 `;
 
