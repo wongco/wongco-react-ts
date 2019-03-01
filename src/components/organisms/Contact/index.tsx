@@ -17,8 +17,9 @@ const StyledCopyrightNote = styled.div`
   width: 100%;
   text-align: right;
   padding-right: 2em;
+  font-size: 1vw;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 0.8em;
     text-align: center;
     padding-right: 0;

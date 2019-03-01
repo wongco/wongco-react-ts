@@ -6,9 +6,9 @@ import bannerImage from '../../../pics/baybridge_banner.png';
 const BannerContainer = styled.section`
   display: flex;
   flex-direction: row;
-  padding: 2em 2em;
+  padding: 2em 5em;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     flex-direction: column;
     justify-content: center;
     align-self: center;
@@ -39,7 +39,7 @@ const BannerTextSubContainer = styled.div`
   text-align: center;
   padding: 1em;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 2.25em;
   }
 `;
@@ -50,7 +50,7 @@ const LogoContainer = styled.div`
   /* background-color: #343a40; */
   flex: 1 1 100%;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     overflow: hidden;
   }
 `;
@@ -61,7 +61,7 @@ const StyledImg = styled.img`
   object-fit: contain;
   opacity: 1;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     height: 200px;
     width: auto;
   }
@@ -77,14 +77,12 @@ const StyledTextContainer = styled.div`
   font-weight: 400;
   color: Cornsilk;
   text-shadow: 0px 0px 18px black;
+  width: 100%;
 `;
 
 const StyledName = styled.div`
   font-size: 4vw;
-  /* @media (min-width: 576px) and (max-width: 991.98px) {
-    font-size: 2.75em;
-  } */
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 2em;
   }
 `;
@@ -93,7 +91,7 @@ const StyledTitle = styled.div`
   font-size: 2vw;
   font-weight: 600;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 1em;
   }
 `;

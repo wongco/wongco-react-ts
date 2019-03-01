@@ -7,8 +7,8 @@ import preview_microblog from '../../../pics/microblog01.png';
 import preview_warbler from '../../../pics/warbler02.png';
 import PortfolioItem from '../../atoms/PortfolioItem';
 import PortfolioGroupmuse from '../../molecules/PortfolioGroupmuse';
-import PortfolioJobly from '../../molecules/PortfolioJobly';
 import PortfolioHackSnooze from '../../molecules/PortfolioHackorSnooze';
+import PortfolioJobly from '../../molecules/PortfolioJobly';
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
@@ -17,6 +17,15 @@ const StyledPortfolioContainer = styled.div`
   align-items: center;
   height: 100%;
   padding: 20px;
+`;
+
+const StyledDivider = styled.hr`
+  /* background-color: red; */
+  border-radius: 50px;
+  color: gray;
+  width: 80vw;
+  height: 0.25px;
+  margin: 0;
 `;
 
 const Portfolio = () => {
@@ -29,6 +38,7 @@ const Portfolio = () => {
         apple={'https://itunes.apple.com/us/app/groupmuse/id942675649'}
         alt={'groupmuse preview image'}
       />
+      <StyledDivider />
       <PortfolioJobly
         title="Jobly"
         text="Built using a React frontend and a RESTful API Node.js/Express.js backend, Jobly is a job search and application tool built with user authentication.  The styling was created from scratch using styled components."
@@ -37,6 +47,7 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/react-jobly'}
         alt={'jobly preview image'}
       />
+      <StyledDivider />
       <PortfolioHackSnooze
         title="Hack or Snooze"
         text="Full CRUD story board application built with jQuery frontend and Node.js/Express.js RESTful API backend. Featuring user authentication, user favorites and ability to add/delete/modify stories."
@@ -45,6 +56,7 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/hack-or-snooze-fe'}
         alt={'hack or snooze preview image'}
       />
+      <StyledDivider />
       {/* <PortfolioItem
         title="Warbler"
         text="Full stack social media application"

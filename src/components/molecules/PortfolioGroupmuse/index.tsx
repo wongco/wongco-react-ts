@@ -12,7 +12,8 @@ const StyledGroupmuseContainer = styled.div`
   width: 100%;
   height: 100%;
   border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  padding-top: 3em;
+  /* border-bottom: 1px solid gray; */
 `;
 
 const StyledImgContainer = styled.div`

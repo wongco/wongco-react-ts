@@ -11,11 +11,15 @@ const StyledJoblyContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid gray;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  /* border-bottom: 1px solid gray; */
 
   @media (max-width: 767.98px) {
     justify-content: center;
     flex-direction: column;
+    padding-top: 0em;
+    padding-bottom: 0em;
   }
 `;
 
@@ -57,7 +61,6 @@ const StyledPortfolioText = styled.div`
   margin-bottom: 1.5em;
 
   @media (max-width: 767.98px) {
-    /* @media (max-width: 576px) { */
     margin: 0;
     margin-bottom: 1.5em;
     align-items: center;

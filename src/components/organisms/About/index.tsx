@@ -18,7 +18,7 @@ const StyledBox = styled.div`
   padding: 1em 1em;
   margin: 20px 0;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     width: 75%;
   }
 `;
@@ -32,21 +32,21 @@ const StyledBoxText = styled.p`
   font-weight: 300;
   line-height: 1.5em;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 2.1em;
     line-height: 1.25em;
   }
 `;
 
 const StyledBody = styled.div`
-  color: black;
-  font-size: 2vw;
+  color: #45474c;
+  font-size: 1.75vw;
   line-height: 1.75em;
   width: 50%;
   font-weight: 300;
   padding: 2em 0;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.98px) {
     font-size: 1.25em;
     line-height: 1.5em;
     width: 75%;

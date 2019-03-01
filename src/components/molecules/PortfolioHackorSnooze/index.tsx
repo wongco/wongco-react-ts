@@ -11,11 +11,15 @@ const StyledHackSnoozeContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid gray;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  /* border-bottom: 1px solid gray; */
 
   @media (max-width: 767.98px) {
     justify-content: center;
     flex-direction: column-reverse;
+    padding-top: 0em;
+    padding-bottom: 0em;
   }
 `;
 
@@ -56,7 +60,6 @@ const StyledPortfolioText = styled.div`
   margin-left: 1.5em;
   margin-bottom: 1.5em;
 
-  /* @media (max-width: 576px) { */
   @media (max-width: 767.98px) {
     margin: 0;
     margin-bottom: 1.5em;
@@ -93,7 +96,6 @@ const StyledBodyText = styled.div`
 `;
 
 /** Links Section */
-
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
