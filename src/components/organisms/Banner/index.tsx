@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import bannerImage from '../../../pics/baybridge_banner.png';
+import bannerImage from '../../../pics/baybridge_banner2.jpg';
 
 /** parent container for banner section */
 const BannerContainer = styled.section`
