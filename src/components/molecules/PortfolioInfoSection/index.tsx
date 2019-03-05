@@ -29,6 +29,7 @@ const StyledProjectTitle = styled.div`
   font-weight: 400;
 
   @media (max-width: 767.98px) {
+    padding-top: 0;
     margin-top: 18px;
     font-size: 7vw;
   }
