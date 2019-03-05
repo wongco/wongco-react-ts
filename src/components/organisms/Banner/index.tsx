@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
 import bannerImage from '../../../pics/baybridge_banner2.jpg';
 
 /** parent container for banner section */
@@ -42,6 +43,32 @@ const BannerTextSubContainer = styled.div`
   @media (max-width: 767.98px) {
     font-size: 2.25em;
   }
+`;
+
+const fadeInOpacity = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
+
+const RunnerLine = styled.div`
+  opacity: 0;
+  animation-name: ${fadeInOpacity};
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+`;
+
+const RunnerLineOne = styled(RunnerLine)`
+  animation-delay: 0.5s;
+`;
+
+const RunnerLineTwo = styled(RunnerLine)`
+  animation-delay: 1.5s;
+`;
+
+const RunnerLineThree = styled(RunnerLine)`
+  animation-delay: 2.5s;
 `;
 
 /** primary container for right side image */
@@ -102,9 +129,9 @@ class Banner extends Component {
       <BannerSection>
         <BannerTextContainer>
           <BannerTextSubContainer>
-            <div>Inspired&nbsp;ideas. </div>
-            <div>Attention&nbsp;to&nbsp;detail. </div>
-            <div>Responsive&nbsp;design. </div>
+            <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
+            <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
+            <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
           </BannerTextSubContainer>
         </BannerTextContainer>
         <LogoContainer id="home">
