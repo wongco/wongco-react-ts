@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import bannerImage from '../../../pics/baybridge_banner2.jpg';
 
 /** parent container for banner section */
-const BannerContainer = styled.section`
+const BannerSection = styled.section`
   display: flex;
   flex-direction: row;
   padding: 2em 5em;
@@ -99,7 +99,7 @@ const StyledTitle = styled.div`
 class Banner extends Component {
   public render() {
     return (
-      <BannerContainer>
+      <BannerSection>
         <BannerTextContainer>
           <BannerTextSubContainer>
             <div>Inspired&nbsp;ideas. </div>
@@ -114,7 +114,7 @@ class Banner extends Component {
             <StyledTitle>Software Engineer</StyledTitle>
           </StyledTextContainer>
         </LogoContainer>
-      </BannerContainer>
+      </BannerSection>
     );
   }
 }

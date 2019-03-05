@@ -5,10 +5,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 /** Links Section */
-const StyledDetailsContainer = styled.div`
+const StyledDetailsContainer = styled.div<PortfolioButtonProps>`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: ${props => (props.apple ? 'flex-start' : 'center')};
   height: 3em;
   margin-top: 1em;
   width: 15vw;
@@ -16,14 +16,24 @@ const StyledDetailsContainer = styled.div`
 
   @media (max-width: 767.98px) {
     width: 50vw;
+    justify-content: center;
   }
 `;
 
 const StyledLink = styled.a`
   text-decoration: none;
-  width: 100%;
+  width: 7em;
   height: 100%;
   border: 1px solid lightgray;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: lightgoldenrodyellow;
+  transition: color 0.5s, background-color 0.5s;
+
+  &:hover {
+    background-color: steelblue;
+    color: white;
+  }
 `;
 
 const StyledLinkText = styled.div`
@@ -38,19 +48,12 @@ const StyledDetailsTab = styled.div`
   width: 100%;
   height: 100%;
   color: black;
-  background-color: lightgoldenrodyellow;
-  transition: color 0.5s, background-color 0.5s;
-
-  &:hover {
-    background-color: steelblue;
-    color: white;
-  }
 `;
 
 const PortfolioButtons: React.SFC<PortfolioButtonProps> = props => {
   const { apple, link, githubLink } = props;
   return (
-    <StyledDetailsContainer>
+    <StyledDetailsContainer apple={apple}>
       {apple && (
         <StyledLink href={apple}>
           <StyledDetailsTab>
