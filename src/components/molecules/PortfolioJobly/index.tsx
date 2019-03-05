@@ -1,8 +1,6 @@
-import { faApple, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import PortfolioButtons from '../PortfolioButtons';
 
 const StyledJoblyContainer = styled.div`
   display: flex;
@@ -95,50 +93,6 @@ const StyledBodyText = styled.div`
   }
 `;
 
-/** Links Section */
-
-const StyledDetailsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 4em;
-  margin-top: 1em;
-  width: 30vw;
-  max-width: 500px;
-
-  @media (max-width: 576px) {
-    width: 70vw;
-  }
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  border: 1px solid lightgray;
-`;
-
-const StyledLinkText = styled.div`
-  /* margin: 15px; */
-`;
-
-const StyledDetailsTab = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-weight: 300;
-  width: 100%;
-  height: 100%;
-  color: black;
-  background-color: lightgoldenrodyellow;
-  transition: color 0.5s, background-color 0.5s;
-
-  &:hover {
-    background-color: steelblue;
-    color: white;
-  }
-`;
-
 class PortfolioJobly extends PureComponent<PortfolioJoblyProps> {
   public render() {
     const { preview, title, link, githubLink, alt, text, apple } = this.props;
@@ -147,32 +101,7 @@ class PortfolioJobly extends PureComponent<PortfolioJoblyProps> {
         <StyledPortfolioText>
           <StyledProjectTitle>{title}</StyledProjectTitle>
           <StyledBodyText>{text}</StyledBodyText>
-          <StyledDetailsContainer>
-            {apple && (
-              <StyledLink href={apple}>
-                <StyledDetailsTab>
-                  <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0' }} />
-                  <StyledLinkText>App Store</StyledLinkText>
-                </StyledDetailsTab>
-              </StyledLink>
-            )}
-            {link && (
-              <StyledLink href={link}>
-                <StyledDetailsTab>
-                  <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0' }} />
-                  <StyledLinkText>Website</StyledLinkText>
-                </StyledDetailsTab>
-              </StyledLink>
-            )}
-            {githubLink && (
-              <StyledLink href={githubLink}>
-                <StyledDetailsTab>
-                  <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0' }} />
-                  <StyledLinkText>Github</StyledLinkText>
-                </StyledDetailsTab>
-              </StyledLink>
-            )}
-          </StyledDetailsContainer>
+          <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
         </StyledPortfolioText>
         <StyledImgContainer>
           <StyledImg src={preview} alt={alt} />

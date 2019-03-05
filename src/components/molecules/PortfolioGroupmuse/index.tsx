@@ -3,6 +3,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import PortfolioButtons from '../PortfolioButtons';
 
 const StyledGroupmuseContainer = styled.div`
   display: flex;
@@ -141,32 +142,7 @@ class PortfolioGroupmuse extends PureComponent<PortfolioGroupmuseProps> {
         <StyledPortfolioText>
           <StyledProjectTitle>{title}</StyledProjectTitle>
           <StyledBodyText>{text}</StyledBodyText>
-          <StyledDetailsContainer>
-            {apple && (
-              <StyledLink href={apple}>
-                <StyledDetailsTab>
-                  <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0 10px' }} />
-                  <StyledLinkText>App Store</StyledLinkText>
-                </StyledDetailsTab>
-              </StyledLink>
-            )}
-            {link && (
-              <StyledLink href={link}>
-                <StyledDetailsTab>
-                  <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
-                  <StyledLinkText>Website</StyledLinkText>
-                </StyledDetailsTab>
-              </StyledLink>
-            )}
-            {githubLink && (
-              <StyledLink href={githubLink}>
-                <StyledLastDetailTab>
-                  <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
-                  <StyledLinkText>Github</StyledLinkText>
-                </StyledLastDetailTab>
-              </StyledLink>
-            )}
-          </StyledDetailsContainer>
+          <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
         </StyledPortfolioText>
       </StyledGroupmuseContainer>
     );
