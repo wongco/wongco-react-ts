@@ -13,6 +13,10 @@ const StyledGroupmuseContainer = styled.div`
   height: 100%;
   border-top: 1px solid gray;
   padding-top: 3em;
+
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+  }
   /* border-bottom: 1px solid gray; */
 `;
 
@@ -24,7 +28,8 @@ const StyledImgContainer = styled.div`
   margin-top: 50px;
 
   @media (max-width: 767.98px) {
-    width: 40vw;
+    margin-top: 0;
+    width: 70vw;
   }
 `;
 
@@ -41,8 +46,12 @@ const StyledPortfolioText = styled.div`
   padding: 0 15px;
   width: 40vw;
 
-  @media (max-width: 576px) {
-    width: 42vw;
+  @media (max-width: 767.98px) {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.5em;
+    align-items: center;
+    width: 70vw;
   }
 `;
 
@@ -68,7 +77,7 @@ const StyledBodyText = styled.div`
   padding-bottom: 1em 0;
 
   @media (max-width: 767.98px) {
-    display: none;
+    font-size: 4vw;
   }
 `;
 
@@ -77,12 +86,15 @@ const StyledBodyText = styled.div`
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   height: 4em;
   margin-top: 1em;
+  width: 30vw;
+  max-width: 500px;
 
   @media (max-width: 576px) {
-    height: 2.5em;
+    width: 70vw;
+    justify-content: center;
   }
 `;
 

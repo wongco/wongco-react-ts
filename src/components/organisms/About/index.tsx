@@ -64,8 +64,8 @@ const About = () => {
       <StyledBody>
         I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
         Administrator designing and implementing technology solutions to solve critical business
-        needs and challenges. You can now find me tackling new challenges as a full stack software
-        engineer coding primarily in JavaScript and&nbsp;Python.
+        challenges. You can now find me tackling new challenges as a full stack software engineer
+        coding primarily in JavaScript and&nbsp;Python.
       </StyledBody>
     </StyledContainer>
   );

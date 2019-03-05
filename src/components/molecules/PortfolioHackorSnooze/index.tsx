@@ -33,7 +33,7 @@ const StyledImgContainer = styled.div`
   @media (max-width: 767.98px) {
     margin-top: 1em;
     margin-bottom: 2em;
-    height: 20vh;
+    height: 25vh;
     width: 100%;
     justify-content: center;
   }
