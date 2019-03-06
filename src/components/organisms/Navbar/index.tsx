@@ -9,11 +9,11 @@ import NavLinks from '../../molecules/NavLinks';
 
 const StyledNav = styled.nav`
   display: flex;
+  width: 100%;
   flex-flow: row none;
   justify-content: space-between;
   align-items: center;
   box-shadow: 2em 2em 18em white;
-  /* background-color: white; */
   font-family: Helvetica Neue;
 
   @media (max-width: 576px) {

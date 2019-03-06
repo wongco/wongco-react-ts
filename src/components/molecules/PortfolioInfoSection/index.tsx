@@ -1,3 +1,4 @@
+import AOS from 'aos';
 import React from 'react';
 import styled from 'styled-components';
 import PortfolioButtons from '../PortfolioButtons';
@@ -50,16 +51,27 @@ const StyledBodyText = styled.div`
   }
 `;
 
-const PortfolioInfoSection: React.SFC<PortfolioInfoSectionProps> = props => {
-  const { title, link, githubLink, text, apple } = props;
-  return (
-    <PortfolioInfoSectionContainer>
-      <StyledProjectTitle>{title}</StyledProjectTitle>
-      <StyledBodyText>{text}</StyledBodyText>
-      <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
-    </PortfolioInfoSectionContainer>
-  );
-};
+class PortfolioInfoSection extends React.Component<PortfolioInfoSectionProps> {
+  public componentDidMount() {
+    AOS.init({
+      duration: 400,
+    });
+  }
+  public render() {
+    const { title, link, githubLink, text, apple } = this.props;
+    return (
+      <PortfolioInfoSectionContainer
+        data-aos="zoom-out"
+        data-aos-delay="200"
+        data-aos-easing="ease-in-sine"
+      >
+        <StyledProjectTitle>{title}</StyledProjectTitle>
+        <StyledBodyText>{text}</StyledBodyText>
+        <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
+      </PortfolioInfoSectionContainer>
+    );
+  }
+}
 
 export default PortfolioInfoSection;
 

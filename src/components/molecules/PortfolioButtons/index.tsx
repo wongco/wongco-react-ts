@@ -5,10 +5,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 /** Links Section */
-const StyledDetailsContainer = styled.div<PortfolioButtonProps>`
+const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: ${props => (props.apple ? 'flex-start' : 'center')};
+  justify-content: 'flex-start';
   height: 3em;
   margin-top: 1em;
   width: 15vw;
@@ -53,7 +53,7 @@ const StyledDetailsTab = styled.div`
 const PortfolioButtons: React.SFC<PortfolioButtonProps> = props => {
   const { apple, link, githubLink } = props;
   return (
-    <StyledDetailsContainer apple={apple}>
+    <StyledDetailsContainer>
       {apple && (
         <StyledLink href={apple}>
           <StyledDetailsTab>

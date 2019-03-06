@@ -1,5 +1,8 @@
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
+
 import React from 'react';
 import styled from 'styled-components';
+import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 
 const StyledCopyrightContainer = styled.div`
   display: flex;
@@ -10,11 +13,10 @@ const StyledCopyrightContainer = styled.div`
   font-weight: 400;
   font-size: 1.25em;
   margin: 0;
-  padding: 30px 0;
+  padding: 2em 1em;
 `;
 
 const StyledCopyrightNote = styled.div`
-  width: 100%;
   text-align: right;
   padding-right: 2em;
   font-size: 1vw;
@@ -23,6 +25,7 @@ const StyledCopyrightNote = styled.div`
     font-size: 0.8em;
     text-align: center;
     padding-right: 0;
+    width: 70%;
   }
 `;
 
@@ -30,6 +33,7 @@ const Contact = () => {
   return (
     <footer>
       <StyledCopyrightContainer>
+        <FontAwesomeLink href={'#top'} icon={faArrowAltCircleUp} hovercolor={'blue'} />
         <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
       </StyledCopyrightContainer>
     </footer>

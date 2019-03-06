@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import preview_groupmuse from '../../../pics/groupmuse04.png';
 import preview_hackorsnooze from '../../../pics/hackorsnooze03.jpg';
 import preview_jobly from '../../../pics/jobly03.jpg';
-import preview_microblog from '../../../pics/microblog01.png';
-import preview_warbler from '../../../pics/warbler02.png';
-import PortfolioItem from '../../atoms/PortfolioItem';
 import PortfolioGroupmuse from '../../molecules/PortfolioGroupmuse';
 import PortfolioHackSnooze from '../../molecules/PortfolioHackorSnooze';
 import PortfolioJobly from '../../molecules/PortfolioJobly';
@@ -20,7 +17,6 @@ const StyledPortfolioContainer = styled.div`
 `;
 
 const StyledDivider = styled.hr`
-  /* background-color: red; */
   border-radius: 50px;
   color: gray;
   width: 80vw;
@@ -57,14 +53,7 @@ const Portfolio = () => {
         alt={'hack or snooze preview image'}
       />
       <StyledDivider />
-      {/* <PortfolioItem
-        title="Warbler"
-        text="Full stack social media application"
-        preview={preview_warbler}
-        link={'https://warbler-wongco.herokuapp.com/'}
-        githubLink={'https://github.com/wongco/warbler'}
-        alt={'warbler preview image'}
-      />
+      {/* 
       <PortfolioItem
         title="Microblog"
         text="Web blog application including voting and comments"
@@ -73,8 +62,6 @@ const Portfolio = () => {
         githubLink={'https://github.com/wongco/redux-microblog'}
         alt={'microblog preview image'}
       /> */}
-      {/* <PortfolioItem>Meme Generator</PortfolioItem> 
-      <PortfolioItem>Hack or Snooze</PortfolioItem> */}
     </StyledPortfolioContainer>
   );
 };

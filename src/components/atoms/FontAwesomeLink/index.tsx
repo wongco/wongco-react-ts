@@ -26,6 +26,8 @@ const FontAwesomeLink = (props: any) => {
 
 interface FontAwesomePropTypes {
   hovercolor?: string;
+  icon: any;
+  size?: string;
 }
 
 export default FontAwesomeLink;

@@ -33,7 +33,6 @@ const StyledImgContainer = styled.div`
     height: 20vh;
     width: 100%;
     justify-content: center;
-    /* order: 0; */
   }
 `;
 

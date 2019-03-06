@@ -10,6 +10,7 @@ const StyledLink = styled.a`
 
   &:hover {
     background: rgba(0, 0, 0, 0.5);
+    color: white;
   }
 
   @media (max-width: 576px) {
