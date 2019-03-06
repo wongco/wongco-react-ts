@@ -1,19 +1,20 @@
 {
   "main.css": "/static/css/main.ed558469.chunk.css",
-  "main.js": "/static/js/main.9541fd9f.chunk.js",
-  "main.js.map": "/static/js/main.9541fd9f.chunk.js.map",
+  "main.js": "/static/js/main.94660bb8.chunk.js",
+  "main.js.map": "/static/js/main.94660bb8.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
   "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
   "static/css/2.844d0063.chunk.css": "/static/css/2.844d0063.chunk.css",
-  "static/js/2.a70b3ab4.chunk.js": "/static/js/2.a70b3ab4.chunk.js",
-  "static/js/2.a70b3ab4.chunk.js.map": "/static/js/2.a70b3ab4.chunk.js.map",
+  "static/js/2.95a90d8d.chunk.js": "/static/js/2.95a90d8d.chunk.js",
+  "static/js/2.95a90d8d.chunk.js.map": "/static/js/2.95a90d8d.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.310bea2d1cdd35cf4fc39a6cd650882b.js": "/precache-manifest.310bea2d1cdd35cf4fc39a6cd650882b.js",
+  "precache-manifest.bc0168ea12e130f3627db20eac0cf999.js": "/precache-manifest.bc0168ea12e130f3627db20eac0cf999.js",
   "service-worker.js": "/service-worker.js",
   "static/css/2.844d0063.chunk.css.map": "/static/css/2.844d0063.chunk.css.map",
   "static/css/main.ed558469.chunk.css.map": "/static/css/main.ed558469.chunk.css.map",
   "static/media/baybridge_banner2.jpg": "/static/media/baybridge_banner2.cabafbb9.jpg",
   "static/media/groupmuse04.png": "/static/media/groupmuse04.08b203ba.png",
   "static/media/hackorsnooze03.jpg": "/static/media/hackorsnooze03.c809a313.jpg",
-  "static/media/jobly03.jpg": "/static/media/jobly03.8d2833f3.jpg"
+  "static/media/jobly03.jpg": "/static/media/jobly03.8d2833f3.jpg",
+  "static/media/profile_pic1c.jpg": "/static/media/profile_pic1c.da9ade57.jpg"
 }
