@@ -59,8 +59,8 @@ const StyledImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 18em;
-  width: 18em;
+  height: 18.5em;
+  width: 18.5em;
   padding: 5em;
   overflow: hidden;
 
@@ -105,7 +105,7 @@ class About extends React.Component {
       duration: 400,
     });
   }
-  // const About = () => {
+
   public render() {
     return (
       <StyledContainer id="about">
