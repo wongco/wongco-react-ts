@@ -4,6 +4,11 @@ import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 
+const StyledFooter = styled.footer`
+  padding: 0;
+  margin: 0;
+`;
+
 const StyledCopyrightContainer = styled.div`
   display: flex;
   background-color: #bfbfbf;
@@ -13,7 +18,7 @@ const StyledCopyrightContainer = styled.div`
   font-weight: 400;
   font-size: 1.25em;
   margin: 0;
-  padding: 2em 1em;
+  padding: 1em 1em;
 `;
 
 const StyledCopyrightNote = styled.div`
@@ -31,12 +36,12 @@ const StyledCopyrightNote = styled.div`
 
 const Contact = () => {
   return (
-    <footer>
+    <StyledFooter>
       <StyledCopyrightContainer>
         <FontAwesomeLink href={'#top'} icon={faArrowAltCircleUp} hovercolor={'blue'} />
         <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
       </StyledCopyrightContainer>
-    </footer>
+    </StyledFooter>
   );
 };
 
