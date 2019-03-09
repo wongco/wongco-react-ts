@@ -36,7 +36,7 @@ const StyledImg = styled.img`
 
 class PortfolioGroupmuse extends PureComponent<PortfolioGroupmuseProps> {
   public render() {
-    const { preview, title, link, githubLink, alt, text, apple } = this.props;
+    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
     return (
       <StyledGroupmuseContainer>
         <StyledImgContainer>
@@ -44,6 +44,7 @@ class PortfolioGroupmuse extends PureComponent<PortfolioGroupmuseProps> {
         </StyledImgContainer>
         <PortfolioInfoSection
           githubLink={githubLink}
+          tags={tags}
           apple={apple}
           link={link}
           title={title}
@@ -62,6 +63,7 @@ interface PortfolioGroupmuseProps {
   preview: any;
   alt: string;
   text: string;
+  tags: string[];
 }
 
 export default PortfolioGroupmuse;

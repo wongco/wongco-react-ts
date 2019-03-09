@@ -48,7 +48,7 @@ const StyledImg = styled.img`
 
 class PortfolioHackSnooze extends PureComponent<PortfolioHackSnoozeProps> {
   public render() {
-    const { preview, title, link, githubLink, alt, text, apple } = this.props;
+    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
     return (
       <StyledHackSnoozeContainer>
         <StyledImgContainer>
@@ -56,6 +56,7 @@ class PortfolioHackSnooze extends PureComponent<PortfolioHackSnoozeProps> {
         </StyledImgContainer>
         <PortfolioInfoSection
           githubLink={githubLink}
+          tags={tags}
           apple={apple}
           link={link}
           title={title}
@@ -74,6 +75,7 @@ interface PortfolioHackSnoozeProps {
   preview: any;
   alt: string;
   text: string;
+  tags: string[];
 }
 
 export default PortfolioHackSnooze;

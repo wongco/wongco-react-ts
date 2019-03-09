@@ -26,13 +26,31 @@ const PortfolioInfoSectionContainer = styled.div`
 const StyledProjectTitle = styled.div`
   font-size: 2.2vw;
   margin: 7px 0;
-  padding: 10px 0;
+  padding: 5px 0;
   font-weight: 400;
 
   @media (max-width: 767.98px) {
     padding-top: 0;
     margin-top: 18px;
     font-size: 7vw;
+    font-weight: 500;
+  }
+`;
+
+const StyledTags = styled.div`
+  font-weight: 300;
+  font-size: 1.2vw;
+  margin: 0.3em 0;
+  font-style: italic;
+  border-left: 2px solid blue;
+  padding-left: 10px;
+  margin-left: 1px;
+  width: 100%;
+
+  @media (max-width: 767.98px) {
+    font-size: 4vw;
+    margin: 0.4em 0;
+    margin-left: 1em;
   }
 `;
 
@@ -58,7 +76,7 @@ class PortfolioInfoSection extends React.Component<PortfolioInfoSectionProps> {
     });
   }
   public render() {
-    const { title, link, githubLink, text, apple } = this.props;
+    const { title, link, githubLink, text, apple, tags } = this.props;
     return (
       <PortfolioInfoSectionContainer
         data-aos="zoom-out"
@@ -66,6 +84,7 @@ class PortfolioInfoSection extends React.Component<PortfolioInfoSectionProps> {
         data-aos-easing="ease-in-sine"
       >
         <StyledProjectTitle>{title}</StyledProjectTitle>
+        {tags && <StyledTags>{tags.join(', ')}</StyledTags>}
         <StyledBodyText>{text}</StyledBodyText>
         <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
       </PortfolioInfoSectionContainer>
@@ -81,4 +100,5 @@ interface PortfolioInfoSectionProps {
   githubLink?: string;
   text: string;
   apple?: string;
+  tags?: string[];
 }

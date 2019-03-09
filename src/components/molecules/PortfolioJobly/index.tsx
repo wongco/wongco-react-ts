@@ -48,7 +48,7 @@ const StyledImg = styled.img`
 
 class PortfolioJobly extends PureComponent<PortfolioJoblyProps> {
   public render() {
-    const { preview, title, link, githubLink, alt, text, apple } = this.props;
+    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
     return (
       <StyledJoblyContainer>
         <StyledImgContainer>
@@ -60,6 +60,7 @@ class PortfolioJobly extends PureComponent<PortfolioJoblyProps> {
           link={link}
           title={title}
           text={text}
+          tags={tags}
         />
       </StyledJoblyContainer>
     );
@@ -74,6 +75,7 @@ interface PortfolioJoblyProps {
   preview: any;
   alt: string;
   text: string;
+  tags?: string[];
 }
 
 export default PortfolioJobly;
