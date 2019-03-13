@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
 
 const StyledCopyrightContainer = styled.div`
   display: flex;
-  background-color: #bfbfbf;
+  /* background-color: #bfbfbf; */
   color: black;
   justify-content: center;
   align-items: center;
