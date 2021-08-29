@@ -15,7 +15,7 @@
     "@types/react-dom": "^16.8.0",
     "@types/styled-components": "^4.1.8",
     "aos": "^2.3.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4",
     "react": "^16.8.1",
