@@ -56,15 +56,6 @@ const Portfolio = () => {
         alt={'hack or snooze preview image'}
       />
       <StyledDivider />
-      {/* 
-      <PortfolioItem
-        title="Microblog"
-        text="Web blog application including voting and comments"
-        preview={preview_microblog}
-        link={'https://wongco-microblog.herokuapp.com/'}
-        githubLink={'https://github.com/wongco/redux-microblog'}
-        alt={'microblog preview image'}
-      /> */}
     </StyledPortfolioContainer>
   );
 };

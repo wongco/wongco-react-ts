@@ -51,7 +51,7 @@ const StyledDetailsTab = styled.div`
 `;
 
 const PortfolioButtons: React.SFC<PortfolioButtonProps> = props => {
-  const { apple, link, githubLink } = props;
+  const { apple, githubLink } = props;
   return (
     <StyledDetailsContainer>
       {apple && (
@@ -59,14 +59,6 @@ const PortfolioButtons: React.SFC<PortfolioButtonProps> = props => {
           <StyledDetailsTab>
             <FontAwesomeIcon icon={faApple} size={'1x'} />
             <StyledLinkText>App Store</StyledLinkText>
-          </StyledDetailsTab>
-        </StyledLink>
-      )}
-      {link && (
-        <StyledLink href={link}>
-          <StyledDetailsTab>
-            <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0' }} />
-            <StyledLinkText>Website</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>
       )}
