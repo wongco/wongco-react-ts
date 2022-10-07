@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f911e3ca.chunk.css",
-    "main.js": "/static/js/main.ae9ff5ca.chunk.js",
-    "main.js.map": "/static/js/main.ae9ff5ca.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.451bf2e4.chunk.css": "/static/css/2.451bf2e4.chunk.css",
-    "static/js/2.0ca69104.chunk.js": "/static/js/2.0ca69104.chunk.js",
-    "static/js/2.0ca69104.chunk.js.map": "/static/js/2.0ca69104.chunk.js.map",
+    "main.css": "/static/css/main.009d7b83.css",
+    "main.js": "/static/js/main.a480334c.js",
+    "static/media/groupmuse04.png": "/static/media/groupmuse04.1aeebbb798627d7ee7d5.png",
+    "static/media/jobly03.jpg": "/static/media/jobly03.33807c6b8eb5927bf4b0.jpg",
+    "static/media/hackorsnooze03.jpg": "/static/media/hackorsnooze03.33f835e31c080f2c9480.jpg",
+    "static/media/profile_pic1c.jpg": "/static/media/profile_pic1c.1afca161da11076f0af4.jpg",
+    "static/media/baybridge_banner2.jpg": "/static/media/baybridge_banner2.42586f2ac09b675fabcc.jpg",
     "index.html": "/index.html",
-    "precache-manifest.c33d1103d83a91d8b8c3167a0af590f6.js": "/precache-manifest.c33d1103d83a91d8b8c3167a0af590f6.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.451bf2e4.chunk.css.map": "/static/css/2.451bf2e4.chunk.css.map",
-    "static/css/main.f911e3ca.chunk.css.map": "/static/css/main.f911e3ca.chunk.css.map",
-    "static/media/baybridge_banner2.jpg": "/static/media/baybridge_banner2.cabafbb9.jpg",
-    "static/media/groupmuse04.png": "/static/media/groupmuse04.08b203ba.png",
-    "static/media/hackorsnooze03.jpg": "/static/media/hackorsnooze03.c809a313.jpg",
-    "static/media/jobly03.jpg": "/static/media/jobly03.8d2833f3.jpg",
-    "static/media/profile_pic1c.jpg": "/static/media/profile_pic1c.da9ade57.jpg"
-  }
+    "main.009d7b83.css.map": "/static/css/main.009d7b83.css.map",
+    "main.a480334c.js.map": "/static/js/main.a480334c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.009d7b83.css",
+    "static/js/main.a480334c.js"
+  ]
 }
