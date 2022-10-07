@@ -9,9 +9,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "aos": "^2.3.4",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-scripts": "3.0.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-scripts": "4.0.3",
     "styled-components": "^5.0.0",
     "typescript": "^3.4.2"
   },
