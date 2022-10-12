@@ -49,7 +49,7 @@ const StyledDetailsTab = styled.div`
   color: black;
 `;
 
-const PortfolioButtons: React.SFC<PortfolioButtonProps> = props => {
+const PortfolioButtons = (props: PortfolioButtonProps) => {
   const { apple, githubLink } = props;
   return (
     <StyledDetailsContainer>

@@ -18,6 +18,7 @@ const StyledNavLinks = styled.ol`
 
 interface MyComponentProps {
   isCollapsed: boolean;
+  children: any;
 }
 
 class NavLinks extends PureComponent<MyComponentProps> {
