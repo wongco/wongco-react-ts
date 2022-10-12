@@ -2,7 +2,7 @@ import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContactBar from '../../molecules/ContactBar';
 import NavLinks from '../../molecules/NavLinks';
@@ -74,65 +74,53 @@ const StyledContactLinks = styled.div`
   justify-content: flex-end;
 `;
 
-class Navbar extends PureComponent {
-  public state = {
-    isCollapsed: true,
+export default function Navbar() {
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const handleClick = () => {
+    setIsCollapsed(prevState => !prevState);
   };
 
-  /** handle collapsing of navbar in mobile view */
-  public handleClick = () => {
-    this.setState((st: StateProps) => ({ isCollapsed: !st.isCollapsed }));
-  };
-
-  public render() {
-    const { handleClick } = this;
-    return (
-      <StyledNav>
-        <StyledHome>
-          <StyledHomeLink href="#home">WongCo</StyledHomeLink>
-        </StyledHome>
-        <StyledBar onClick={handleClick}>
-          <FontAwesomeIcon icon={faBars} size={'2x'} />
-        </StyledBar>
-        <StyledRightNav>
-          <NavLinks isCollapsed={this.state.isCollapsed}>
-            <NavLinks.Item onClick={handleClick} href="#about">
-              About
-            </NavLinks.Item>
-            <NavLinks.Item onClick={handleClick} href="#portfolio">
-              Portfolio
-            </NavLinks.Item>
-            <StyledContactLinks>
-              <ContactBar.FaLink
-                icon={faEnvelope}
-                href="mailto:ginson.wong+hello@gmail.com"
-                hovercolor="orange"
-              />
-              <ContactBar.FaLink
-                icon={faAngellist}
-                href="https://angel.co/wongco"
-                hovercolor="pink"
-              />
-              <ContactBar.FaLink
-                icon={faGithub}
-                href="https://github.com/wongco"
-                hovercolor="purple"
-              />
-              <ContactBar.FaLink
-                icon={faLinkedin}
-                href="https://www.linkedin.com/in/ginson"
-                hovercolor="#0077B5"
-              />
-            </StyledContactLinks>
-          </NavLinks>
-        </StyledRightNav>
-      </StyledNav>
-    );
-  }
+  return (
+    <StyledNav>
+      <StyledHome>
+        <StyledHomeLink href="#home">WongCo</StyledHomeLink>
+      </StyledHome>
+      <StyledBar onClick={handleClick}>
+        <FontAwesomeIcon icon={faBars} size={'2x'} />
+      </StyledBar>
+      <StyledRightNav>
+        <NavLinks isCollapsed={isCollapsed}>
+          <NavLinks.Item onClick={handleClick} href="#about">
+            About
+          </NavLinks.Item>
+          <NavLinks.Item onClick={handleClick} href="#portfolio">
+            Portfolio
+          </NavLinks.Item>
+          <StyledContactLinks>
+            <ContactBar.FaLink
+              icon={faEnvelope}
+              href="mailto:ginson.wong+hello@gmail.com"
+              hovercolor="orange"
+            />
+            <ContactBar.FaLink
+              icon={faAngellist}
+              href="https://angel.co/wongco"
+              hovercolor="pink"
+            />
+            <ContactBar.FaLink
+              icon={faGithub}
+              href="https://github.com/wongco"
+              hovercolor="purple"
+            />
+            <ContactBar.FaLink
+              icon={faLinkedin}
+              href="https://www.linkedin.com/in/ginson"
+              hovercolor="#0077B5"
+            />
+          </StyledContactLinks>
+        </NavLinks>
+      </StyledRightNav>
+    </StyledNav>
+  );
 }
-
-interface StateProps {
-  isCollapsed: boolean;
-}
-
-export default Navbar;

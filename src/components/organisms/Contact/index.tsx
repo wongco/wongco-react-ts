@@ -1,8 +1,7 @@
-import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
-
 import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeLink from '../../atoms/FontAwesomeLink';
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 const StyledFooter = styled.footer`
   padding: 0;
@@ -34,7 +33,7 @@ const StyledCopyrightNote = styled.div`
   }
 `;
 
-const Contact = () => {
+export default function Contact() {
   return (
     <StyledFooter>
       <StyledCopyrightContainer>
@@ -43,6 +42,4 @@ const Contact = () => {
       </StyledCopyrightContainer>
     </StyledFooter>
   );
-};
-
-export default Contact;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import bannerImage from '../../../pics/baybridge_banner2.jpg';
@@ -123,27 +123,23 @@ const StyledTitle = styled.div`
   }
 `;
 
-class Banner extends Component {
-  public render() {
-    return (
-      <BannerSection>
-        <BannerTextContainer>
-          <BannerTextSubContainer>
-            <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
-            <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
-            <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
-          </BannerTextSubContainer>
-        </BannerTextContainer>
-        <LogoContainer id="home">
-          <StyledImg src={bannerImage} alt="banner-picture" />
-          <StyledTextContainer>
-            <StyledName>Ginson Wong</StyledName>
-            <StyledTitle>Software Engineer</StyledTitle>
-          </StyledTextContainer>
-        </LogoContainer>
-      </BannerSection>
-    );
-  }
+export default function Banner() {
+  return (
+    <BannerSection>
+      <BannerTextContainer>
+        <BannerTextSubContainer>
+          <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
+          <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
+          <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
+        </BannerTextSubContainer>
+      </BannerTextContainer>
+      <LogoContainer id="home">
+        <StyledImg src={bannerImage} alt="banner-picture" />
+        <StyledTextContainer>
+          <StyledName>Ginson Wong</StyledName>
+          <StyledTitle>Software Engineer</StyledTitle>
+        </StyledTextContainer>
+      </LogoContainer>
+    </BannerSection>
+  );
 }
-
-export default Banner;

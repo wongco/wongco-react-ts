@@ -24,7 +24,7 @@ const StyledDivider = styled.hr`
   margin: 0;
 `;
 
-const Portfolio = () => {
+export default function Portfolio() {
   return (
     <StyledPortfolioContainer id="portfolio">
       <PortfolioGroupmuse
@@ -58,6 +58,4 @@ const Portfolio = () => {
       <StyledDivider />
     </StyledPortfolioContainer>
   );
-};
-
-export default Portfolio;
+}
