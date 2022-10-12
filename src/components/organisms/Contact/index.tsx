@@ -39,7 +39,7 @@ const Contact = () => {
     <StyledFooter>
       <StyledCopyrightContainer>
         <FontAwesomeLink href={'#top'} icon={faArrowAltCircleUp} hovercolor={'blue'} />
-        <StyledCopyrightNote>Designed and built by Ginson Wong © 2019</StyledCopyrightNote>
+        <StyledCopyrightNote>Designed and built by Ginson Wong © 2022</StyledCopyrightNote>
       </StyledCopyrightContainer>
     </StyledFooter>
   );
