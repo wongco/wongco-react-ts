@@ -49,34 +49,30 @@ const StyledDetailsTab = styled.div`
   color: black;
 `;
 
-const PortfolioButtons = (props: PortfolioButtonProps) => {
-  const { apple, githubLink } = props;
+export default function PortfolioButtons({ apple, githubLink }: Props) {
   return (
     <StyledDetailsContainer>
-      {apple && (
+      {apple ? (
         <StyledLink href={apple}>
           <StyledDetailsTab>
             <FontAwesomeIcon icon={faApple} size={'1x'} />
             <StyledLinkText>App Store</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>
-      )}
-      {githubLink && (
+      ) : null}
+      {githubLink ? (
         <StyledLink href={githubLink}>
           <StyledDetailsTab>
             <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0' }} />
             <StyledLinkText>Github</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>
-      )}
+      ) : null}
     </StyledDetailsContainer>
   );
-};
-
-interface PortfolioButtonProps {
-  apple?: string;
-  link?: string;
-  githubLink?: string;
 }
 
-export default PortfolioButtons;
+interface Props {
+  apple?: string;
+  githubLink?: string;
+}

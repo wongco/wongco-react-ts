@@ -4,7 +4,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import ContactBar from '../../molecules/ContactBar';
+import { FaLink } from '../../molecules/ContactBar';
+import NavLinkItem from '../../molecules/NavLinkItem';
 import NavLinks from '../../molecules/NavLinks';
 
 const StyledNav = styled.nav`
@@ -91,29 +92,21 @@ export default function Navbar() {
       </StyledBar>
       <StyledRightNav>
         <NavLinks isCollapsed={isCollapsed}>
-          <NavLinks.Item onClick={handleClick} href="#about">
+          <NavLinkItem onClick={handleClick} href="#about">
             About
-          </NavLinks.Item>
-          <NavLinks.Item onClick={handleClick} href="#portfolio">
+          </NavLinkItem>
+          <NavLinkItem onClick={handleClick} href="#portfolio">
             Portfolio
-          </NavLinks.Item>
+          </NavLinkItem>
           <StyledContactLinks>
-            <ContactBar.FaLink
+            <FaLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"
               hovercolor="orange"
             />
-            <ContactBar.FaLink
-              icon={faAngellist}
-              href="https://angel.co/wongco"
-              hovercolor="pink"
-            />
-            <ContactBar.FaLink
-              icon={faGithub}
-              href="https://github.com/wongco"
-              hovercolor="purple"
-            />
-            <ContactBar.FaLink
+            <FaLink icon={faAngellist} href="https://angel.co/wongco" hovercolor="pink" />
+            <FaLink icon={faGithub} href="https://github.com/wongco" hovercolor="purple" />
+            <FaLink
               icon={faLinkedin}
               href="https://www.linkedin.com/in/ginson"
               hovercolor="#0077B5"

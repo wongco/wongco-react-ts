@@ -13,12 +13,10 @@ const StyledLi = styled.li`
   }
 `;
 
-const NavLinkItem = (props: any) => {
+export default function NavLinkItem(props: any) {
   return (
     <StyledLi>
       <StyledLink {...props}>{props.children}</StyledLink>
     </StyledLi>
   );
-};
-
-export default NavLinkItem;
+}

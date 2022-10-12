@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 
@@ -11,17 +11,15 @@ const StyledContactContainer = styled.footer`
   box-sizing: border-box;
 `;
 
-interface MyComponentProps {
+interface Props {
   children: any[];
   id: any;
 }
 
-class ContactBar extends PureComponent<MyComponentProps> {
-  public static FaLink = (props: any) => <FontAwesomeLink {...props} />;
-
-  public render() {
-    return <StyledContactContainer {...this.props}>{this.props.children}</StyledContactContainer>;
-  }
+export function FaLink(props: any) {
+  return <FontAwesomeLink {...props} />;
 }
 
-export default ContactBar;
+export default function ContactBar(props: Props) {
+  return <StyledContactContainer {...props}>{props.children}</StyledContactContainer>;
+}

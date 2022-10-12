@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PortfolioInfoSection from '../PortfolioInfoSection';
 
@@ -46,28 +46,32 @@ const StyledImg = styled.img`
   }
 `;
 
-class PortfolioHackSnooze extends PureComponent<PortfolioHackSnoozeProps> {
-  public render() {
-    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
-    return (
-      <StyledHackSnoozeContainer>
-        <StyledImgContainer>
-          <StyledImg src={preview} alt={alt} />
-        </StyledImgContainer>
-        <PortfolioInfoSection
-          githubLink={githubLink}
-          tags={tags}
-          apple={apple}
-          link={link}
-          title={title}
-          text={text}
-        />
-      </StyledHackSnoozeContainer>
-    );
-  }
+export default function PortfolioHackSnooze({
+  preview,
+  title,
+  githubLink,
+  alt,
+  text,
+  apple,
+  tags,
+}: Props) {
+  return (
+    <StyledHackSnoozeContainer>
+      <StyledImgContainer>
+        <StyledImg src={preview} alt={alt} />
+      </StyledImgContainer>
+      <PortfolioInfoSection
+        githubLink={githubLink}
+        tags={tags}
+        apple={apple}
+        title={title}
+        text={text}
+      />
+    </StyledHackSnoozeContainer>
+  );
 }
 
-interface PortfolioHackSnoozeProps {
+interface Props {
   title: string;
   link?: string;
   apple?: string;
@@ -77,5 +81,3 @@ interface PortfolioHackSnoozeProps {
   text: string;
   tags: string[];
 }
-
-export default PortfolioHackSnooze;

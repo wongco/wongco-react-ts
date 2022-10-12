@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import NavLinkItem from '../NavLinkItem';
 
 const StyledNavLinks = styled.ol`
   display: flex;
@@ -16,18 +15,11 @@ const StyledNavLinks = styled.ol`
   }
 `;
 
-interface MyComponentProps {
+interface Props {
   isCollapsed: boolean;
   children: any;
 }
 
-class NavLinks extends PureComponent<MyComponentProps> {
-  // static prop for individual navbar item links
-  public static Item = (props: any) => <NavLinkItem {...props}>{props.children}</NavLinkItem>;
-
-  public render() {
-    return <StyledNavLinks {...this.props}>{this.props.children}</StyledNavLinks>;
-  }
+export default function NavLinks(props: Props) {
+  return <StyledNavLinks {...props}>{props.children}</StyledNavLinks>;
 }
-
-export default NavLinks;

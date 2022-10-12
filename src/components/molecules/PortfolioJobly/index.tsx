@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PortfolioInfoSection from '../PortfolioInfoSection';
 
@@ -46,30 +46,33 @@ const StyledImg = styled.img`
   }
 `;
 
-class PortfolioJobly extends PureComponent<PortfolioJoblyProps> {
-  public render() {
-    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
-    return (
-      <StyledJoblyContainer>
-        <StyledImgContainer>
-          <StyledImg src={preview} alt={alt} />
-        </StyledImgContainer>
-        <PortfolioInfoSection
-          githubLink={githubLink}
-          apple={apple}
-          link={link}
-          title={title}
-          text={text}
-          tags={tags}
-        />
-      </StyledJoblyContainer>
-    );
-  }
+export default function PortfolioJobly({
+  preview,
+  title,
+  githubLink,
+  alt,
+  text,
+  apple,
+  tags,
+}: Props) {
+  return (
+    <StyledJoblyContainer>
+      <StyledImgContainer>
+        <StyledImg src={preview} alt={alt} />
+      </StyledImgContainer>
+      <PortfolioInfoSection
+        githubLink={githubLink}
+        apple={apple}
+        title={title}
+        text={text}
+        tags={tags}
+      />
+    </StyledJoblyContainer>
+  );
 }
 
-interface PortfolioJoblyProps {
+interface Props {
   title: string;
-  link?: string;
   apple?: string;
   githubLink?: string;
   preview: any;
@@ -77,5 +80,3 @@ interface PortfolioJoblyProps {
   text: string;
   tags?: string[];
 }
-
-export default PortfolioJobly;

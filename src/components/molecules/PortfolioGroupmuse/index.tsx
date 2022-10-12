@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PortfolioInfoSection from '../PortfolioInfoSection';
 
@@ -34,28 +34,32 @@ const StyledImg = styled.img`
   width: 100%;
 `;
 
-class PortfolioGroupmuse extends PureComponent<PortfolioGroupmuseProps> {
-  public render() {
-    const { preview, title, link, githubLink, alt, text, apple, tags } = this.props;
-    return (
-      <StyledGroupmuseContainer>
-        <StyledImgContainer>
-          <StyledImg src={preview} alt={alt} />
-        </StyledImgContainer>
-        <PortfolioInfoSection
-          githubLink={githubLink}
-          tags={tags}
-          apple={apple}
-          link={link}
-          title={title}
-          text={text}
-        />
-      </StyledGroupmuseContainer>
-    );
-  }
+export default function PortfolioGroupmuse({
+  preview,
+  title,
+  githubLink,
+  alt,
+  text,
+  apple,
+  tags,
+}: Props) {
+  return (
+    <StyledGroupmuseContainer>
+      <StyledImgContainer>
+        <StyledImg src={preview} alt={alt} />
+      </StyledImgContainer>
+      <PortfolioInfoSection
+        githubLink={githubLink}
+        tags={tags}
+        apple={apple}
+        title={title}
+        text={text}
+      />
+    </StyledGroupmuseContainer>
+  );
 }
 
-interface PortfolioGroupmuseProps {
+interface Props {
   title: string;
   link?: string;
   apple?: string;
@@ -65,5 +69,3 @@ interface PortfolioGroupmuseProps {
   text: string;
   tags: string[];
 }
-
-export default PortfolioGroupmuse;

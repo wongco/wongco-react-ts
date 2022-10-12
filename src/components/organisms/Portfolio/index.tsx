@@ -41,7 +41,6 @@ export default function Portfolio() {
         tags={['React', 'Express', 'Styled Components', 'RESTful API', 'PostgreSQL', 'JWT']}
         text="Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching."
         preview={preview_jobly}
-        link={'https://jobly-wongco.herokuapp.com/'}
         githubLink={'https://github.com/wongco/react-jobly'}
         alt={'jobly preview image'}
       />
@@ -51,7 +50,6 @@ export default function Portfolio() {
         tags={['jQuery', 'Express', 'RESTful API', 'PostgreSQL', 'JWT']}
         text="Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories."
         preview={preview_hackorsnooze}
-        link={'https://wongco.github.io/hack-or-snooze-fe/'}
         githubLink={'https://github.com/wongco/hack-or-snooze-fe'}
         alt={'hack or snooze preview image'}
       />

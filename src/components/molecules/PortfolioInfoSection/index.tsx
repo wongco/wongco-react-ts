@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import PortfolioButtons from '../PortfolioButtons';
 
@@ -69,33 +69,28 @@ const StyledBodyText = styled.div`
   }
 `;
 
-class PortfolioInfoSection extends React.Component<PortfolioInfoSectionProps> {
-  public componentDidMount() {
+export default function PortfolioInfoSection({ title, githubLink, text, apple, tags }: Props) {
+  useEffect(() => {
     AOS.init({
       duration: 400,
     });
-  }
-  public render() {
-    const { title, link, githubLink, text, apple, tags } = this.props;
-    return (
-      <PortfolioInfoSectionContainer
-        data-aos="zoom-out"
-        data-aos-delay="200"
-        data-aos-easing="ease-in-sine"
-      >
-        <StyledProjectTitle>{title}</StyledProjectTitle>
-        {tags && <StyledTags>{tags.join(', ')}</StyledTags>}
-        <StyledBodyText>{text}</StyledBodyText>
-        <PortfolioButtons githubLink={githubLink} apple={apple} link={link} />
-      </PortfolioInfoSectionContainer>
-    );
-  }
+  }, []);
+
+  return (
+    <PortfolioInfoSectionContainer
+      data-aos="zoom-out"
+      data-aos-delay="200"
+      data-aos-easing="ease-in-sine"
+    >
+      <StyledProjectTitle>{title}</StyledProjectTitle>
+      {tags ? <StyledTags>{tags.join(', ')}</StyledTags> : null}
+      <StyledBodyText>{text}</StyledBodyText>
+      <PortfolioButtons githubLink={githubLink} apple={apple} />
+    </PortfolioInfoSectionContainer>
+  );
 }
 
-export default PortfolioInfoSection;
-
-interface PortfolioInfoSectionProps {
-  link?: string;
+interface Props {
   title: string;
   githubLink?: string;
   text: string;
