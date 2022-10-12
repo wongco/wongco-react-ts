@@ -1,3 +1,4 @@
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
@@ -12,22 +13,19 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomePropTypes>`
   }
 `;
 
-const FontAwesomeLink = (props: any) => {
-  return (
-    <a href={props.href}>
-      <StyledFontAwesomeIcon
-        icon={props.icon}
-        size={props.size || '2x'}
-        hovercolor={props.hovercolor}
-      />
-    </a>
-  );
-};
-
 interface FontAwesomePropTypes {
   hovercolor?: string;
-  icon: any;
-  size?: string;
+  icon: IconDefinition;
 }
 
-export default FontAwesomeLink;
+type Props = FontAwesomePropTypes & {
+  href: string;
+};
+
+export default function FontAwesomeLink(props: Props) {
+  return (
+    <a href={props.href}>
+      <StyledFontAwesomeIcon icon={props.icon} size={'2x'} hovercolor={props.hovercolor} />
+    </a>
+  );
+}

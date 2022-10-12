@@ -1,7 +1,6 @@
 import { faApple, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledPortfolioItem = styled.div`
@@ -91,57 +90,43 @@ const StyledLinkText = styled.div`
   margin: 15px;
 `;
 
-class PortfolioItem extends PureComponent<PortfolioItemProps> {
-  public render() {
-    const { preview, title, link, githubLink, alt, text, apple } = this.props;
-    return (
-      <StyledPortfolioItem>
-        <StyledImgContainer>
-          <StyledImg src={preview} alt={alt} />
-        </StyledImgContainer>
-        <StyledPortfolioText>
-          <StyledProjectTitle>{title}</StyledProjectTitle>
-          <StyledBodyText>{text}</StyledBodyText>
-        </StyledPortfolioText>
-        <StyledDetailsContainer>
-          {apple && (
-            <StyledLink href={apple}>
-              <StyledDetailsTab>
-                <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0 10px' }} />
-                <StyledLinkText>App Store</StyledLinkText>
-              </StyledDetailsTab>
-            </StyledLink>
-          )}
-          {link && (
-            <StyledLink href={link}>
-              <StyledDetailsTab>
-                <FontAwesomeIcon icon={faLink} size={'1x'} style={{ padding: '0 10px' }} />
-                <StyledLinkText>Website</StyledLinkText>
-              </StyledDetailsTab>
-            </StyledLink>
-          )}
-          {githubLink && (
-            <StyledLink href={githubLink}>
-              <StyledLastDetailTab>
-                <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
-                <StyledLinkText>Github</StyledLinkText>
-              </StyledLastDetailTab>
-            </StyledLink>
-          )}
-        </StyledDetailsContainer>
-      </StyledPortfolioItem>
-    );
-  }
+export default function PortfolioItem({ preview, title, githubLink, alt, text, apple }: Props) {
+  return (
+    <StyledPortfolioItem>
+      <StyledImgContainer>
+        <StyledImg src={preview} alt={alt} />
+      </StyledImgContainer>
+      <StyledPortfolioText>
+        <StyledProjectTitle>{title}</StyledProjectTitle>
+        <StyledBodyText>{text}</StyledBodyText>
+      </StyledPortfolioText>
+      <StyledDetailsContainer>
+        {apple ? (
+          <StyledLink href={apple}>
+            <StyledDetailsTab>
+              <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0 10px' }} />
+              <StyledLinkText>App Store</StyledLinkText>
+            </StyledDetailsTab>
+          </StyledLink>
+        ) : null}
+        {githubLink ? (
+          <StyledLink href={githubLink}>
+            <StyledLastDetailTab>
+              <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
+              <StyledLinkText>Github</StyledLinkText>
+            </StyledLastDetailTab>
+          </StyledLink>
+        ) : null}
+      </StyledDetailsContainer>
+    </StyledPortfolioItem>
+  );
 }
 
-interface PortfolioItemProps {
+interface Props {
   title: string;
-  link?: string;
   apple?: string;
   githubLink?: string;
   preview: any;
   alt: string;
   text: string;
 }
-
-export default PortfolioItem;

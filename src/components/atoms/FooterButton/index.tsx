@@ -16,12 +16,10 @@ const StyledButton = styled.button`
   }
 `;
 
-const FooterButton = (props: any) => {
+export default function FooterButton(props: any) {
   return (
     <StyledButton type="button" {...props}>
       {props.children}
     </StyledButton>
   );
-};
-
-export default FooterButton;
+}
