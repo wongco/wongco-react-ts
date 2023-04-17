@@ -110,7 +110,7 @@ export default function About() {
     <StyledContainer id="about">
       <StyledBox>
         <AboutHeader>
-          Behind every problem is an elegant solution waiting to be&nbsp;created.
+          Behind every problem is an elegant solution waiting to be created.
         </AboutHeader>
       </StyledBox>
       <StyledAboutContainer>
@@ -125,13 +125,14 @@ export default function About() {
           `I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
           Administrator building technology solutions to solve critical business challenges. You can
           now find me tackling new challenges as a full stack software engineer coding primarily in
-          JavaScript and&nbsp;Python.
+          JavaScript and Python.`}
           <br />
           <br />
-          You can also find me shooting photos and eating my way through the San Francisco Bay Area.
+          {
+            `You can also find me shooting photos and eating my way through the San Francisco Bay Area.
           Interested in connecting with me professionally? Reach out to me on any of my contact
           links.`
-        }
+          }
         </StyledBody>
       </StyledAboutContainer>
     </StyledContainer>
