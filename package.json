@@ -38,7 +38,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "react-scripts build && echo 'wongcofood.com' > ./build/CNAME && gh-pages -d build"
+    "deploy": "react-scripts build && echo 'wongcofood.com' > ./build/CNAME && gh-pages -d build",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [

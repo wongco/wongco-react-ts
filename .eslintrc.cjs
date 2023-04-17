@@ -20,5 +20,8 @@ module.exports = {
         quotes: ['warn', 'single', { avoidEscape: true }],
         'prettier/prettier': 'off',
     },
+    ignorePatterns: [
+        'build',
+    ],
     root: true,
 }
