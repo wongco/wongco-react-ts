@@ -1,5 +1,4 @@
 import 'aos/dist/aos.css';
-import React from 'react';
 import styled from 'styled-components';
 import About from '../organisms/About';
 import Banner from '../organisms/Banner';

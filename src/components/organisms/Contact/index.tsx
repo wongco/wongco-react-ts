@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';

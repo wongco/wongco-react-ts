@@ -1,9 +1,8 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import styled from 'styled-components';
 
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomePropTypes>`
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <FontAwesomePropTypes>`
   margin: 15px;
   color: Dimgray;
 

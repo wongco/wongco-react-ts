@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import preview_groupmuse from '../../../pics/groupmuse04.png';
 import preview_hackorsnooze from '../../../pics/hackorsnooze03.jpg';

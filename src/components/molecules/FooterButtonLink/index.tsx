@@ -1,4 +1,3 @@
-import React from 'react';
 import FooterButton from '../../atoms/FooterButton';
 
 export default function FooterButtonLink(props: any) {

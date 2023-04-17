@@ -2,7 +2,7 @@ import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { FaLink } from '../../molecules/ContactBar';
 import NavLinkItem from '../../molecules/NavLinkItem';
