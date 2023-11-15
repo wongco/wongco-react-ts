@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: ['opened', 'reopened', 'synchronize']
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  dump_workflow_values_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump Workflow GitHub Head Ref
+        env:
+          WORKFLOW_HEAD_REF: ${{ github.head_ref }}
+        run: echo "$WORKFLOW_HEAD_REF"
+      - name: Dump Workflow GitHub Run Id
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+        run: echo "$WORKFLOW_RUN_ID"
+      - name: Dump Workflow Concurrency Group Value
+        env:
+          WORKFLOW_CONCURRENCY_VALUE: ${{ github.head_ref || github.run_id }}
+        run: echo "$WORKFLOW_CONCURRENCY_VALUE"
