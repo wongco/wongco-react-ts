@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import StyledLink from '../../atoms/StyledLink';
-import { GenericReactProps } from '../../../types/GenericReactProps';
+import styled from "styled-components";
+import StyledLink from "../../atoms/StyledLink";
+import { GenericReactProps } from "../../../types/GenericReactProps";
 
 const StyledLi = styled.li`
   list-style: none;

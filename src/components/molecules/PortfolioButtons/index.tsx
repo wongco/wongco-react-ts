@@ -1,12 +1,12 @@
-import { faApple, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
+import { faApple, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
 
 /** Links Section */
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: 'flex-start';
+  justify-content: "flex-start";
   height: 3em;
   margin-top: 1em;
   width: 15vw;
@@ -26,7 +26,9 @@ const StyledLink = styled.a`
   padding-left: 0.5em;
   padding-right: 0.5em;
   background-color: lightgoldenrodyellow;
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
 
   &:hover {
     background-color: steelblue;
@@ -54,7 +56,7 @@ export default function PortfolioButtons({ apple, githubLink }: Props) {
       {apple ? (
         <StyledLink href={apple}>
           <StyledDetailsTab>
-            <FontAwesomeIcon icon={faApple} size={'1x'} />
+            <FontAwesomeIcon icon={faApple} size={"1x"} />
             <StyledLinkText>App Store</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>
@@ -62,7 +64,11 @@ export default function PortfolioButtons({ apple, githubLink }: Props) {
       {githubLink ? (
         <StyledLink href={githubLink}>
           <StyledDetailsTab>
-            <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0' }} />
+            <FontAwesomeIcon
+              icon={faGithub}
+              size={"1x"}
+              style={{ padding: "0" }}
+            />
             <StyledLinkText>Github</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>

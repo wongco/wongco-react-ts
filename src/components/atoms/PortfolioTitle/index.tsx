@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ProjectTitle = styled.div`
   font-size: 2.2vw;

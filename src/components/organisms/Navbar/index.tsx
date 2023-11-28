@@ -1,12 +1,16 @@
-import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
-import styled from 'styled-components';
-import NavLinkItem from '../../molecules/NavLinkItem';
-import NavLinks from '../../molecules/NavLinks';
-import FontAwesomeLink from '../../atoms/FontAwesomeLink';
+import {
+  faAngellist,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import styled from "styled-components";
+import NavLinkItem from "../../molecules/NavLinkItem";
+import NavLinks from "../../molecules/NavLinks";
+import FontAwesomeLink from "../../atoms/FontAwesomeLink";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -79,7 +83,7 @@ export default function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const handleClick = () => {
-    setIsCollapsed(prevState => !prevState);
+    setIsCollapsed((prevState) => !prevState);
   };
 
   return (
@@ -88,7 +92,7 @@ export default function Navbar() {
         <StyledHomeLink href="#home">WongCo</StyledHomeLink>
       </StyledHome>
       <StyledBar onClick={handleClick}>
-        <FontAwesomeIcon icon={faBars} size={'2x'} />
+        <FontAwesomeIcon icon={faBars} size={"2x"} />
       </StyledBar>
       <StyledRightNav>
         <NavLinks isCollapsed={isCollapsed}>
@@ -104,8 +108,16 @@ export default function Navbar() {
               href="mailto:ginson.wong+hello@gmail.com"
               hovercolor="orange"
             />
-            <FontAwesomeLink icon={faAngellist} href="https://angel.co/wongco" hovercolor="pink" />
-            <FontAwesomeLink icon={faGithub} href="https://github.com/wongco" hovercolor="purple" />
+            <FontAwesomeLink
+              icon={faAngellist}
+              href="https://angel.co/wongco"
+              hovercolor="pink"
+            />
+            <FontAwesomeLink
+              icon={faGithub}
+              href="https://github.com/wongco"
+              hovercolor="purple"
+            />
             <FontAwesomeLink
               icon={faLinkedin}
               href="https://www.linkedin.com/in/ginson"

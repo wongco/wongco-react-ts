@@ -1,7 +1,7 @@
-import AOS from 'aos';
-import { useEffect } from 'react';
-import styled from 'styled-components';
-import PortfolioButtons from '../PortfolioButtons';
+import AOS from "aos";
+import { useEffect } from "react";
+import styled from "styled-components";
+import PortfolioButtons from "../PortfolioButtons";
 
 /** Project Verbiage Section */
 const PortfolioInfoSectionContainer = styled.div`
@@ -69,7 +69,13 @@ const StyledBodyText = styled.div`
   }
 `;
 
-export default function PortfolioInfoSection({ title, githubLink, text, apple, tags }: Props) {
+export default function PortfolioInfoSection({
+  title,
+  githubLink,
+  text,
+  apple,
+  tags,
+}: Props) {
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -83,7 +89,7 @@ export default function PortfolioInfoSection({ title, githubLink, text, apple, t
       data-aos-easing="ease-in-sine"
     >
       <StyledProjectTitle>{title}</StyledProjectTitle>
-      {tags ? <StyledTags>{tags.join(', ')}</StyledTags> : null}
+      {tags ? <StyledTags>{tags.join(", ")}</StyledTags> : null}
       <StyledBodyText>{text}</StyledBodyText>
       <PortfolioButtons githubLink={githubLink} apple={apple} />
     </PortfolioInfoSectionContainer>

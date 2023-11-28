@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import PortfolioInfoSection from '../PortfolioInfoSection';
+import styled from "styled-components";
+import PortfolioInfoSection from "../PortfolioInfoSection";
 
 const StyledHackSnoozeContainer = styled.div`
   display: flex;
@@ -75,7 +75,7 @@ interface Props {
   link?: string;
   apple?: string;
   githubLink?: string;
-  preview: string | undefined;
+  preview: string;
   alt: string;
   text: string;
   tags: string[];

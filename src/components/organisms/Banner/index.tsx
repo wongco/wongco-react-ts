@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
-import bannerImage from '../../../pics/baybridge_banner2.jpg';
+import bannerImage from "../../../pics/baybridge_banner2.jpg";
 
 /** parent container for banner section */
 const BannerSection = styled.section`

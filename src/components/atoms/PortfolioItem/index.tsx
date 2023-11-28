@@ -1,9 +1,9 @@
-import { faApple, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
+import { faApple, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
 
 const StyledPortfolioItem = styled.div`
-  font-family: 'GothamLight', sans-serif;
+  font-family: "GothamLight", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,7 +62,9 @@ const StyledDetailsTab = styled.div`
   &:hover {
     background-color: steelblue;
     color: white;
-    transition: color 0.5s, background-color 0.5s;
+    transition:
+      color 0.5s,
+      background-color 0.5s;
   }
 `;
 
@@ -89,7 +91,14 @@ const StyledLinkText = styled.div`
   margin: 15px;
 `;
 
-export default function PortfolioItem({ preview, title, githubLink, alt, text, apple }: Props) {
+export default function PortfolioItem({
+  preview,
+  title,
+  githubLink,
+  alt,
+  text,
+  apple,
+}: Props) {
   return (
     <StyledPortfolioItem>
       <StyledImgContainer>
@@ -103,7 +112,11 @@ export default function PortfolioItem({ preview, title, githubLink, alt, text, a
         {apple ? (
           <StyledLink href={apple}>
             <StyledDetailsTab>
-              <FontAwesomeIcon icon={faApple} size={'1x'} style={{ padding: '0 10px' }} />
+              <FontAwesomeIcon
+                icon={faApple}
+                size={"1x"}
+                style={{ padding: "0 10px" }}
+              />
               <StyledLinkText>App Store</StyledLinkText>
             </StyledDetailsTab>
           </StyledLink>
@@ -111,7 +124,11 @@ export default function PortfolioItem({ preview, title, githubLink, alt, text, a
         {githubLink ? (
           <StyledLink href={githubLink}>
             <StyledLastDetailTab>
-              <FontAwesomeIcon icon={faGithub} size={'1x'} style={{ padding: '0 10px' }} />
+              <FontAwesomeIcon
+                icon={faGithub}
+                size={"1x"}
+                style={{ padding: "0 10px" }}
+              />
               <StyledLinkText>Github</StyledLinkText>
             </StyledLastDetailTab>
           </StyledLink>
