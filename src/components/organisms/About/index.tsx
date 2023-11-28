@@ -1,7 +1,7 @@
-import AOS from 'aos';
-import { useEffect } from 'react';
-import styled from 'styled-components';
-import preview from '../../../pics/profile_pic1c.jpg';
+import AOS from "aos";
+import { useEffect } from "react";
+import styled from "styled-components";
+import preview from "../../../pics/profile_pic1c.jpg";
 
 const StyledContainer = styled.section`
   display: flex;
@@ -119,20 +119,18 @@ export default function About() {
           data-aos-delay="200"
           data-aos-easing="ease-in-sine"
         >
-          <StyledImg src={preview} alt={'headshot'} />
+          <StyledImg src={preview} alt={"headshot"} />
         </StyledImgContainer>
-        <StyledBody>{
-          `I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
+        <StyledBody>
+          {`I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems
           Administrator building technology solutions to solve critical business challenges. You can
           now find me tackling new challenges as a full stack software engineer coding primarily in
           JavaScript and Python.`}
           <br />
           <br />
-          {
-            `You can also find me shooting photos and eating my way through the San Francisco Bay Area.
+          {`You can also find me shooting photos and eating my way through the San Francisco Bay Area.
           Interested in connecting with me professionally? Reach out to me on any of my contact
-          links.`
-          }
+          links.`}
         </StyledBody>
       </StyledAboutContainer>
     </StyledContainer>

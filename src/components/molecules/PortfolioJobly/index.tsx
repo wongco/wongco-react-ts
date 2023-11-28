@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import PortfolioInfoSection from '../PortfolioInfoSection';
+import styled from "styled-components";
+import PortfolioInfoSection from "../PortfolioInfoSection";
 
 const StyledJoblyContainer = styled.div`
   display: flex;
@@ -74,7 +74,7 @@ interface Props {
   title: string;
   apple?: string;
   githubLink?: string;
-  preview: string | undefined;
+  preview: string;
   alt: string;
   text: string;
   tags?: string[];

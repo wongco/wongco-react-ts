@@ -32,9 +32,6 @@ dist-ssr
 # testing
 /coverage
 
-# production
-/build
-
 # misc env files
 .env.local
 .env.development.local

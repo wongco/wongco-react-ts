@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import FontAwesomeLink from '../../atoms/FontAwesomeLink';
-import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
+import styled from "styled-components";
+import FontAwesomeLink from "../../atoms/FontAwesomeLink";
+import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 const StyledFooter = styled.footer`
   padding: 0;
@@ -36,8 +36,14 @@ export default function Contact() {
   return (
     <StyledFooter>
       <StyledCopyrightContainer>
-        <FontAwesomeLink href={'#top'} icon={faArrowAltCircleUp} hovercolor={'blue'} />
-        <StyledCopyrightNote>Designed and built by Ginson Wong © 2023</StyledCopyrightNote>
+        <FontAwesomeLink
+          href={"#top"}
+          icon={faArrowAltCircleUp}
+          hovercolor={"blue"}
+        />
+        <StyledCopyrightNote>
+          Designed and built by Ginson Wong © 2023
+        </StyledCopyrightNote>
       </StyledCopyrightContainer>
     </StyledFooter>
   );
