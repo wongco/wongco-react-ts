@@ -1124,7 +1124,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `;function kw(){const[e,t]=At.useState(!0),n=()=>{t(r=>!r)};return A.jsxs(mw,{children:[A.jsx(vw,{children:A.jsx(gw,{href:"#home",children:"WongCo"})}),A.jsx(hw,{onClick:n,children:A.jsx(vn,{icon:qy,size:"2x"})}),A.jsx(yw,{children:A.jsxs(pw,{isCollapsed:e,children:[A.jsx(Hf,{onClick:n,href:"#about",children:"About"}),A.jsx(Hf,{onClick:n,href:"#portfolio",children:"Portfolio"}),A.jsxs(ww,{children:[A.jsx(Mr,{icon:uw,href:"mailto:ginson.wong+hello@gmail.com",hovercolor:"orange"}),A.jsx(Mr,{icon:aw,href:"https://angel.co/wongco",hovercolor:"pink"}),A.jsx(Mr,{icon:i1,href:"https://github.com/wongco",hovercolor:"purple"}),A.jsx(Mr,{icon:sw,href:"https://www.linkedin.com/in/ginson",hovercolor:"#0077B5"})]})]})})]})}const xw="/assets/groupmuse04-hBUM308N.png",Sw="/assets/hackorsnooze03-tAbg4h09.jpg",bw="/assets/jobly03-NKZaeGw_.jpg",Cw=B.div`
   display: flex;
   flex-direction: row;
-  justify-content: 'flex-start';
+  justify-content: "flex-start";
   height: 3em;
   margin-top: 1em;
   width: 15vw;
@@ -1142,7 +1142,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   padding-left: 0.5em;
   padding-right: 0.5em;
   background-color: lightgoldenrodyellow;
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
 
   &:hover {
     background-color: steelblue;
