@@ -37,7 +37,7 @@ export default function Contact() {
     <StyledFooter>
       <StyledCopyrightContainer>
         <FontAwesomeLink href={'#top'} icon={faArrowAltCircleUp} hovercolor={'blue'} />
-        <StyledCopyrightNote>Designed and built by Ginson Wong © 2022</StyledCopyrightNote>
+        <StyledCopyrightNote>Designed and built by Ginson Wong © 2023</StyledCopyrightNote>
       </StyledCopyrightContainer>
     </StyledFooter>
   );
