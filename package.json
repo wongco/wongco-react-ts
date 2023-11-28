@@ -27,7 +27,6 @@
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
-    "gh-pages": "^4.0.0",
     "prettier": "^1.16.4",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5"
@@ -38,7 +37,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "react-scripts build && echo 'wongcofood.com' > ./build/CNAME && gh-pages -d build",
     "lint": "eslint ."
   },
   "eslintConfig": {
