@@ -125,7 +125,7 @@ interface Props {
   title: string;
   apple?: string;
   githubLink?: string;
-  preview: any;
+  preview: string;
   alt: string;
   text: string;
 }

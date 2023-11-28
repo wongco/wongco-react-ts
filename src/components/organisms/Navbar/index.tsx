@@ -4,9 +4,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { FaLink } from '../../molecules/ContactBar';
 import NavLinkItem from '../../molecules/NavLinkItem';
 import NavLinks from '../../molecules/NavLinks';
+import FontAwesomeLink from '../../atoms/FontAwesomeLink';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -99,14 +99,14 @@ export default function Navbar() {
             Portfolio
           </NavLinkItem>
           <StyledContactLinks>
-            <FaLink
+            <FontAwesomeLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"
               hovercolor="orange"
             />
-            <FaLink icon={faAngellist} href="https://angel.co/wongco" hovercolor="pink" />
-            <FaLink icon={faGithub} href="https://github.com/wongco" hovercolor="purple" />
-            <FaLink
+            <FontAwesomeLink icon={faAngellist} href="https://angel.co/wongco" hovercolor="pink" />
+            <FontAwesomeLink icon={faGithub} href="https://github.com/wongco" hovercolor="purple" />
+            <FontAwesomeLink
               icon={faLinkedin}
               href="https://www.linkedin.com/in/ginson"
               hovercolor="#0077B5"
