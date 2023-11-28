@@ -7,7 +7,7 @@ You can visit the live version of this site [here.](https://wongcofood.com)
 # Built with
 
 - Typescript
-- Bootstrapped with Create React App (TypeScript)
+- Bootstrapped with Vite (TypeScript)
 - React.js
 - FontAwesome
 - Styled Components
