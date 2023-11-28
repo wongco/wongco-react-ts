@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FontAwesomeLink from '../../atoms/FontAwesomeLink';
+import { GenericReactProps } from '../../../types/GenericReactProps';
 
 const StyledContactContainer = styled.footer`
   display: flex;
@@ -10,15 +10,6 @@ const StyledContactContainer = styled.footer`
   box-sizing: border-box;
 `;
 
-interface Props {
-  children: any[];
-  id: any;
-}
-
-export function FaLink(props: any) {
-  return <FontAwesomeLink {...props} />;
-}
-
-export default function ContactBar(props: Props) {
+export default function ContactBar(props: GenericReactProps) {
   return <StyledContactContainer {...props}>{props.children}</StyledContactContainer>;
 }

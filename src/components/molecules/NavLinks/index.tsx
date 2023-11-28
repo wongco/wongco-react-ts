@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { GenericReactProps } from '../../../types/GenericReactProps';
 
 const StyledNavLinks = styled.ol`
   display: flex;
@@ -9,14 +10,13 @@ const StyledNavLinks = styled.ol`
   @media (max-width: 576px) {
     flex: 1 1 100%;
     flex-flow: column wrap;
-    display: ${(props: any) => (props.isCollapsed ? 'none' : 'block')};
+    display: ${(props: Props) => (props.isCollapsed ? 'none' : 'block')};
     margin: 0;
   }
 `;
 
-interface Props {
+interface Props extends GenericReactProps {
   isCollapsed: boolean;
-  children: any;
 }
 
 export default function NavLinks(props: Props) {

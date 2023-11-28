@@ -17,11 +17,11 @@ interface FontAwesomePropTypes {
   icon: IconDefinition;
 }
 
-type Props = FontAwesomePropTypes & {
+type FontAwesomeLinkProps = FontAwesomePropTypes & {
   href: string;
 };
 
-export default function FontAwesomeLink(props: Props) {
+export default function FontAwesomeLink(props: FontAwesomeLinkProps) {
   return (
     <a href={props.href}>
       <StyledFontAwesomeIcon icon={props.icon} size={'2x'} hovercolor={props.hovercolor} />

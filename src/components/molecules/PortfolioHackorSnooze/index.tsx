@@ -75,7 +75,7 @@ interface Props {
   link?: string;
   apple?: string;
   githubLink?: string;
-  preview: any;
+  preview: string | undefined;
   alt: string;
   text: string;
   tags: string[];
