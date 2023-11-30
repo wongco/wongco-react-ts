@@ -9,7 +9,18 @@
     "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,css,md}": [
+      "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "prettier --write --ignore-unknown"
+    ],
+    "**/*.json": [
+      "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -34,6 +45,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "prettier": "3.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
