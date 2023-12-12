@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import StyledLink from "../../atoms/StyledLink";
-import { GenericReactProps } from "../../../types/GenericReactProps";
+import StyledLink, { StyledLinkProps } from "../../atoms/StyledLink";
 
 const StyledLi = styled.li`
   list-style: none;
@@ -13,15 +12,10 @@ const StyledLi = styled.li`
   }
 `;
 
-interface Props extends GenericReactProps {
-  onClick: () => void;
-  href: string;
-}
-
-export default function NavLinkItem(props: Props) {
+export default function NavLinkItem({ href, onClick, title }: StyledLinkProps) {
   return (
     <StyledLi>
-      <StyledLink {...props}>{props.children}</StyledLink>
+      <StyledLink href={href} onClick={onClick} title={title} />
     </StyledLi>
   );
 }

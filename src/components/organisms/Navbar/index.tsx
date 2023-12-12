@@ -96,12 +96,12 @@ export default function Navbar() {
       </StyledBar>
       <StyledRightNav>
         <NavLinks isCollapsed={isCollapsed}>
-          <NavLinkItem onClick={handleClick} href="#about">
-            About
-          </NavLinkItem>
-          <NavLinkItem onClick={handleClick} href="#portfolio">
-            Portfolio
-          </NavLinkItem>
+          <NavLinkItem onClick={handleClick} href="#about" title="About" />
+          <NavLinkItem
+            onClick={handleClick}
+            href="#portfolio"
+            title="Portfolio"
+          />
           <StyledContactLinks>
             <FontAwesomeLink
               icon={faEnvelope}
