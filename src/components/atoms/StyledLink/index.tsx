@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 
-const StyledLink = styled.a`
+const StyledLinkComp = styled.a`
   text-decoration: none;
   color: black;
   padding: 0.75em;
@@ -17,5 +18,26 @@ const StyledLink = styled.a`
     padding: 0.1em;
   }
 `;
+
+export interface StyledLinkProps
+  extends Pick<
+    React.ComponentPropsWithoutRef<"a">,
+    "href" | "onClick" | "children"
+  > {
+  title?: string;
+}
+
+const StyledLink: React.FC<StyledLinkProps> = ({
+  title,
+  href,
+  onClick,
+  children,
+}) => {
+  return (
+    <StyledLinkComp href={href} onClick={onClick}>
+      {title ?? children}
+    </StyledLinkComp>
+  );
+};
 
 export default StyledLink;

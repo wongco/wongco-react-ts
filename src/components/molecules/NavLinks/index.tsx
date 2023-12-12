@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { GenericReactProps } from "../../../types/GenericReactProps";
 
 const StyledNavLinks = styled.ol`
   display: flex;
@@ -10,15 +9,17 @@ const StyledNavLinks = styled.ol`
   @media (max-width: 576px) {
     flex: 1 1 100%;
     flex-flow: column wrap;
-    display: ${(props: Props) => (props.isCollapsed ? "none" : "block")};
+    display: ${(props: StyledNavLinksProps) =>
+      props.isCollapsed ? "none" : "block"};
     margin: 0;
   }
 `;
 
-interface Props extends GenericReactProps {
+interface StyledNavLinksProps
+  extends Pick<React.ComponentPropsWithoutRef<"ol">, "children"> {
   isCollapsed: boolean;
 }
 
-export default function NavLinks(props: Props) {
+export default function NavLinks(props: StyledNavLinksProps) {
   return <StyledNavLinks {...props}>{props.children}</StyledNavLinks>;
 }
