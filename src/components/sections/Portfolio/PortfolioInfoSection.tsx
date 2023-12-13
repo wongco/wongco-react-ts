@@ -1,7 +1,7 @@
 import AOS from "aos";
 import { useEffect } from "react";
 import styled from "styled-components";
-import PortfolioButtons from "../PortfolioButtons";
+import PortfolioButtons from "./PortfolioButtons";
 
 /** Project Verbiage Section */
 const PortfolioInfoSectionContainer = styled.div`

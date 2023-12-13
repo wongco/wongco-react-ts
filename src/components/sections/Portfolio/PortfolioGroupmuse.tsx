@@ -1,21 +1,18 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "../PortfolioInfoSection";
+import PortfolioInfoSection from "./PortfolioInfoSection";
 
-const StyledHackSnoozeContainer = styled.div`
+const StyledGroupmuseContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  border-top: 1px solid gray;
+  padding-top: 3em;
 
   @media (max-width: 767.98px) {
-    justify-content: center;
     flex-direction: column;
-    padding-top: 0em;
-    padding-bottom: 0em;
   }
 `;
 
@@ -24,28 +21,19 @@ const StyledImgContainer = styled.div`
   align-items: flex-end;
   height: 100%;
   width: 25vw;
-  margin: 4em;
+  margin-top: 50px;
 
   @media (max-width: 767.98px) {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    height: 20vh;
-    width: 100%;
-    justify-content: center;
+    margin-top: 0;
+    width: 70vw;
   }
 `;
 
 const StyledImg = styled.img`
   width: 100%;
-  box-shadow: 5px 5px 18px black;
-
-  @media (max-width: 767.98px) {
-    width: auto;
-    height: 100%;
-  }
 `;
 
-export default function PortfolioHackSnooze({
+export default function PortfolioGroupmuse({
   preview,
   title,
   githubLink,
@@ -55,7 +43,7 @@ export default function PortfolioHackSnooze({
   tags,
 }: Props) {
   return (
-    <StyledHackSnoozeContainer>
+    <StyledGroupmuseContainer>
       <StyledImgContainer>
         <StyledImg src={preview} alt={alt} />
       </StyledImgContainer>
@@ -66,7 +54,7 @@ export default function PortfolioHackSnooze({
         title={title}
         text={text}
       />
-    </StyledHackSnoozeContainer>
+    </StyledGroupmuseContainer>
   );
 }
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "../PortfolioInfoSection";
+import PortfolioInfoSection from "./PortfolioInfoSection";
 
 const StyledJoblyContainer = styled.div`
   display: flex;

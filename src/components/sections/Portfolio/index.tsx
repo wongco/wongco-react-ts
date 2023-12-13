@@ -2,9 +2,9 @@ import styled from "styled-components";
 import preview_groupmuse from "../../../pics/groupmuse04.png";
 import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
 import preview_jobly from "../../../pics/jobly03.jpg";
-import PortfolioGroupmuse from "../../molecules/PortfolioGroupmuse";
-import PortfolioHackSnooze from "../../molecules/PortfolioHackorSnooze";
-import PortfolioJobly from "../../molecules/PortfolioJobly";
+import PortfolioGroupmuse from "./PortfolioGroupmuse";
+import PortfolioHackSnooze from "./PortfolioHackOrSnooze";
+import PortfolioJobly from "./PortfolioJobly";
 
 const StyledPortfolioContainer = styled.div`
   display: flex;
