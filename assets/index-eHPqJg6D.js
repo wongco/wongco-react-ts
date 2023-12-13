@@ -1006,7 +1006,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     color: ${e=>e.hovercolor||"black"};
     transition: color 0.5s;
   }
-`;function Mr(e){return A.jsx("a",{href:e.href,children:A.jsx(Jy,{icon:e.icon,size:"2x",hovercolor:e.hovercolor})})}var qy={prefix:"fas",iconName:"bars",icon:[448,512,["navicon"],"f0c9","M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"]},ew={prefix:"fas",iconName:"circle-up",icon:[512,512,[61467,"arrow-alt-circle-up"],"f35b","M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4l107.1-99.9c3.8-3.5 8.7-5.5 13.8-5.5s10.1 2 13.8 5.5l107.1 99.9c4.5 4.2 7.1 10.1 7.1 16.3c0 12.3-10 22.3-22.3 22.3H304v96c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V256H150.3C138 256 128 246 128 233.7c0-6.2 2.6-12.1 7.1-16.3z"]},tw=ew;const nw=B.footer`
+`;function Mr({hovercolor:e,icon:t,href:n}){return A.jsx("a",{href:n,children:A.jsx(Jy,{icon:t,size:"2x",hovercolor:e})})}var qy={prefix:"fas",iconName:"bars",icon:[448,512,["navicon"],"f0c9","M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"]},ew={prefix:"fas",iconName:"circle-up",icon:[512,512,[61467,"arrow-alt-circle-up"],"f35b","M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4l107.1-99.9c3.8-3.5 8.7-5.5 13.8-5.5s10.1 2 13.8 5.5l107.1 99.9c4.5 4.2 7.1 10.1 7.1 16.3c0 12.3-10 22.3-22.3 22.3H304v96c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V256H150.3C138 256 128 246 128 233.7c0-6.2 2.6-12.1 7.1-16.3z"]},tw=ew;const nw=B.footer`
   padding: 0;
   margin: 0;
 `,rw=B.div`
@@ -1046,7 +1046,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 576px) {
     padding: 0.1em;
   }
-`,fw=({title:e,href:t,onClick:n,children:r})=>A.jsx(cw,{href:t,onClick:n,children:e??r}),dw=B.li`
+`;function fw({title:e,href:t,onClick:n,children:r}){return A.jsx(cw,{href:t,onClick:n,children:e??r})}const dw=B.li`
   list-style: none;
   font-weight: bold;
 
@@ -1055,19 +1055,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     justify-content: flex-end;
     margin: 0.5em 0;
   }
-`;function Hf({href:e,onClick:t,title:n}){return A.jsx(dw,{children:A.jsx(fw,{href:e,onClick:t,title:n})})}const pw=B.ol`
-  display: flex;
-  flex-flow: row none;
-  align-items: center;
-
-  /* Media Query for Mobile */
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-    flex-flow: column wrap;
-    display: ${e=>e.isCollapsed?"none":"block"};
-    margin: 0;
-  }
-`;function mw(e){return A.jsx(pw,{...e,children:e.children})}const vw=B.nav`
+`;function Hf({href:e,onClick:t,title:n}){return A.jsx(dw,{children:A.jsx(fw,{href:e,onClick:t,title:n})})}const pw=B.nav`
   display: flex;
   width: 100%;
   flex-flow: row none;
@@ -1079,7 +1067,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 576px) {
     flex-flow: row wrap;
   }
-`,hw=B.p`
+`,mw=B.ol`
+  display: flex;
+  flex-flow: row none;
+  align-items: center;
+
+  /* Media Query for Mobile */
+  @media (max-width: 576px) {
+    flex: 1 1 100%;
+    flex-flow: column wrap;
+    display: ${e=>e.isCollapsed?"none":"block"};
+    margin: 0;
+  }
+`,vw=B.p`
   font-size: 120%;
   font-weight: bold;
   margin-left: 1em;
@@ -1088,7 +1088,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     flex: 1;
     margin: 0.75em;
   }
-`,gw=B.div`
+`,hw=B.div`
   display: none;
   margin-right: 2em;
 
@@ -1096,7 +1096,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     display: flex;
     cursor: pointer;
   }
-`,yw=B.a`
+`,gw=B.a`
   text-decoration: none;
   color: black;
   padding: 0.75em;
@@ -1108,7 +1108,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     flex: 1 1 100%;
     padding: 0.1em;
   }
-`,ww=B.div`
+`,yw=B.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1117,11 +1117,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 576px) {
     flex: 1 1 100%;
   }
-`,kw=B.div`
+`,ww=B.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-`;function xw(){const[e,t]=At.useState(!0),n=()=>{t(r=>!r)};return A.jsxs(vw,{children:[A.jsx(hw,{children:A.jsx(yw,{href:"#home",children:"WongCo"})}),A.jsx(gw,{onClick:n,children:A.jsx(vn,{icon:qy,size:"2x"})}),A.jsx(ww,{children:A.jsxs(mw,{isCollapsed:e,children:[A.jsx(Hf,{onClick:n,href:"#about",title:"About"}),A.jsx(Hf,{onClick:n,href:"#portfolio",title:"Portfolio"}),A.jsxs(kw,{children:[A.jsx(Mr,{icon:uw,href:"mailto:ginson.wong+hello@gmail.com",hovercolor:"orange"}),A.jsx(Mr,{icon:aw,href:"https://angel.co/wongco",hovercolor:"pink"}),A.jsx(Mr,{icon:i1,href:"https://github.com/wongco",hovercolor:"purple"}),A.jsx(Mr,{icon:sw,href:"https://www.linkedin.com/in/ginson",hovercolor:"#0077B5"})]})]})})]})}const Sw="/assets/groupmuse04-hBUM308N.png",bw="/assets/hackorsnooze03-tAbg4h09.jpg",Cw="/assets/jobly03-NKZaeGw_.jpg",Ew=B.div`
+`;function kw(){const[e,t]=At.useState(!0),n=()=>{t(r=>!r)};return A.jsxs(pw,{children:[A.jsx(vw,{children:A.jsx(gw,{href:"#home",children:"WongCo"})}),A.jsx(hw,{onClick:n,children:A.jsx(vn,{icon:qy,size:"2x"})}),A.jsx(yw,{children:A.jsxs(mw,{isCollapsed:e,children:[A.jsx(Hf,{onClick:n,href:"#about",title:"About"}),A.jsx(Hf,{onClick:n,href:"#portfolio",title:"Portfolio"}),A.jsxs(ww,{children:[A.jsx(Mr,{icon:uw,href:"mailto:ginson.wong+hello@gmail.com",hovercolor:"orange"}),A.jsx(Mr,{icon:aw,href:"https://angel.co/wongco",hovercolor:"pink"}),A.jsx(Mr,{icon:i1,href:"https://github.com/wongco",hovercolor:"purple"}),A.jsx(Mr,{icon:sw,href:"https://www.linkedin.com/in/ginson",hovercolor:"#0077B5"})]})]})})]})}const xw="/assets/groupmuse04-hBUM308N.png",Sw="/assets/hackorsnooze03-tAbg4h09.jpg",bw="/assets/jobly03-NKZaeGw_.jpg",Cw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: "flex-start";
@@ -1160,7 +1160,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   width: 100%;
   height: 100%;
   color: black;
-`;function _w({apple:e,githubLink:t}){return A.jsxs(Ew,{children:[e?A.jsx(Wf,{href:e,children:A.jsxs(Vf,{children:[A.jsx(vn,{icon:lw,size:"1x"}),A.jsx(Bf,{children:"App Store"})]})}):null,t?A.jsx(Wf,{href:t,children:A.jsxs(Vf,{children:[A.jsx(vn,{icon:i1,size:"1x",style:{padding:"0"}}),A.jsx(Bf,{children:"Github"})]})}):null]})}const Pw=B.div`
+`;function Ew({appleAppStoreLink:e,githubLink:t}){return A.jsxs(Cw,{children:[e?A.jsx(Wf,{href:e,children:A.jsxs(Vf,{children:[A.jsx(vn,{icon:lw,size:"1x"}),A.jsx(Bf,{children:"App Store"})]})}):null,t?A.jsx(Wf,{href:t,children:A.jsxs(Vf,{children:[A.jsx(vn,{icon:i1,size:"1x",style:{padding:"0"}}),A.jsx(Bf,{children:"Github"})]})}):null]})}const _w=B.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1177,7 +1177,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 70vw;
     order: 1;
   }
-`,Aw=B.div`
+`,Pw=B.div`
   font-size: 2.2vw;
   margin: 7px 0;
   padding: 5px 0;
@@ -1189,7 +1189,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     font-size: 7vw;
     font-weight: 500;
   }
-`,Ow=B.div`
+`,Aw=B.div`
   font-weight: 300;
   font-size: 1.2vw;
   margin: 0.3em 0;
@@ -1204,7 +1204,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin: 0.4em 0;
     margin-left: 1em;
   }
-`,Nw=B.div`
+`,Ow=B.div`
   margin-top: 5px;
   margin-bottom: 10px;
   color: #45474c;
@@ -1217,7 +1217,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 767.98px) {
     font-size: 5vw;
   }
-`;function Qu({title:e,githubLink:t,text:n,apple:r,tags:i}){return At.useEffect(()=>{Cm.init({duration:400})},[]),A.jsxs(Pw,{"data-aos":"zoom-out","data-aos-delay":"200","data-aos-easing":"ease-in-sine",children:[A.jsx(Aw,{children:e}),i?A.jsx(Ow,{children:i.join(", ")}):null,A.jsx(Nw,{children:n}),A.jsx(_w,{githubLink:t,apple:r})]})}const Tw=B.div`
+`;function Qu({title:e,githubLink:t,text:n,apple:r,tags:i}){return At.useEffect(()=>{Cm.init({duration:400})},[]),A.jsxs(_w,{"data-aos":"zoom-out","data-aos-delay":"200","data-aos-easing":"ease-in-sine",children:[A.jsx(Pw,{children:e}),i?A.jsx(Aw,{children:i.join(", ")}):null,A.jsx(Ow,{children:n}),A.jsx(Ew,{githubLink:t,appleAppStoreLink:r})]})}const Nw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1230,7 +1230,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 767.98px) {
     flex-direction: column;
   }
-`,zw=B.div`
+`,Tw=B.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -1241,9 +1241,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin-top: 0;
     width: 70vw;
   }
-`,jw=B.img`
+`,zw=B.img`
   width: 100%;
-`;function Iw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Tw,{children:[A.jsx(zw,{children:A.jsx(jw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,apple:o,title:t,text:i})]})}const Lw=B.div`
+`;function jw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Nw,{children:[A.jsx(Tw,{children:A.jsx(zw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,apple:o,title:t,text:i})]})}const Iw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1259,7 +1259,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding-top: 0em;
     padding-bottom: 0em;
   }
-`,Rw=B.div`
+`,Lw=B.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -1273,7 +1273,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 100%;
     justify-content: center;
   }
-`,Mw=B.img`
+`,Rw=B.img`
   width: 100%;
   box-shadow: 5px 5px 18px black;
 
@@ -1281,7 +1281,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: auto;
     height: 100%;
   }
-`;function $w({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Lw,{children:[A.jsx(Rw,{children:A.jsx(Mw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,apple:o,title:t,text:i})]})}const Dw=B.div`
+`;function Mw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Iw,{children:[A.jsx(Lw,{children:A.jsx(Rw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,apple:o,title:t,text:i})]})}const $w=B.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
@@ -1297,7 +1297,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding-top: 0em;
     padding-bottom: 0em;
   }
-`,Fw=B.div`
+`,Dw=B.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -1311,7 +1311,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 100%;
     justify-content: center;
   }
-`,Uw=B.img`
+`,Fw=B.img`
   width: 100%;
   box-shadow: 5px 5px 18px black;
 
@@ -1319,7 +1319,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: auto;
     height: 100%;
   }
-`;function Hw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Dw,{children:[A.jsx(Fw,{children:A.jsx(Uw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,apple:o,title:t,text:i,tags:a})]})}const Ww=B.div`
+`;function Uw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs($w,{children:[A.jsx(Dw,{children:A.jsx(Fw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,apple:o,title:t,text:i,tags:a})]})}const Hw=B.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -1332,6 +1332,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   width: 80vw;
   height: 0.25px;
   margin: 0;
-`;function Bw(){return A.jsxs(Ww,{id:"portfolio",children:[A.jsx(Iw,{title:"Groupmuse",tags:["React Native","Render Props","Compound Components","Atomic Design"],text:"Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app. This was achieved using compound components, render props, and atomic design.",preview:Sw,apple:"https://itunes.apple.com/us/app/groupmuse/id942675649",alt:"groupmuse preview image"}),A.jsx(gl,{}),A.jsx(Hw,{title:"Jobly",tags:["React","Express","Styled Components","RESTful API","PostgreSQL","JWT"],text:"Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching.",preview:Cw,githubLink:"https://github.com/wongco/react-jobly",alt:"jobly preview image"}),A.jsx(gl,{}),A.jsx($w,{title:"Hack or Snooze",tags:["jQuery","Express","RESTful API","PostgreSQL","JWT"],text:"Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories.",preview:bw,githubLink:"https://github.com/wongco/hack-or-snooze-fe",alt:"hack or snooze preview image"}),A.jsx(gl,{})]})}const Vw=B.div`
+`;function Ww(){return A.jsxs(Hw,{id:"portfolio",children:[A.jsx(jw,{title:"Groupmuse",tags:["React Native","Render Props","Compound Components","Atomic Design"],text:"Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app. This was achieved using compound components, render props, and atomic design.",preview:xw,apple:"https://itunes.apple.com/us/app/groupmuse/id942675649",alt:"groupmuse preview image"}),A.jsx(gl,{}),A.jsx(Uw,{title:"Jobly",tags:["React","Express","Styled Components","RESTful API","PostgreSQL","JWT"],text:"Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching.",preview:bw,githubLink:"https://github.com/wongco/react-jobly",alt:"jobly preview image"}),A.jsx(gl,{}),A.jsx(Mw,{title:"Hack or Snooze",tags:["jQuery","Express","RESTful API","PostgreSQL","JWT"],text:"Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories.",preview:Sw,githubLink:"https://github.com/wongco/hack-or-snooze-fe",alt:"hack or snooze preview image"}),A.jsx(gl,{})]})}const Bw=B.div`
   background: linear-gradient(to bottom, white, #ffb900);
-`;function Yw(){return A.jsxs(Vw,{id:"top",children:[A.jsx(xw,{}),A.jsx(eg,{}),A.jsx(Bw,{}),A.jsx(Fh,{}),A.jsx(ow,{})]})}yl.createRoot(document.getElementById("root")).render(A.jsx(Ln.StrictMode,{children:A.jsx(Yw,{})}));
+`;function Vw(){return A.jsxs(Bw,{id:"top",children:[A.jsx(kw,{}),A.jsx(eg,{}),A.jsx(Ww,{}),A.jsx(Fh,{}),A.jsx(ow,{})]})}yl.createRoot(document.getElementById("root")).render(A.jsx(Ln.StrictMode,{children:A.jsx(Vw,{})}));
