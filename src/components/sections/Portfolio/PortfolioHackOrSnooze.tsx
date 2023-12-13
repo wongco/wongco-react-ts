@@ -62,7 +62,7 @@ export default function PortfolioHackSnooze({
       <PortfolioInfoSection
         githubLink={githubLink}
         tags={tags}
-        apple={apple}
+        appleAppStoreLink={apple}
         title={title}
         text={text}
       />

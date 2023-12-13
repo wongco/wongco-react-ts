@@ -61,7 +61,7 @@ export default function PortfolioJobly({
       </StyledImgContainer>
       <PortfolioInfoSection
         githubLink={githubLink}
-        apple={apple}
+        appleAppStoreLink={apple}
         title={title}
         text={text}
         tags={tags}

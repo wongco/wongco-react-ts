@@ -69,13 +69,21 @@ const StyledBodyText = styled.div`
   }
 `;
 
+interface PortfolioInfoSectionProps {
+  title: string;
+  githubLink?: string;
+  text: string;
+  appleAppStoreLink?: string;
+  tags?: string[];
+}
+
 export default function PortfolioInfoSection({
   title,
   githubLink,
   text,
-  apple,
+  appleAppStoreLink,
   tags,
-}: Props) {
+}: PortfolioInfoSectionProps) {
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -91,15 +99,10 @@ export default function PortfolioInfoSection({
       <StyledProjectTitle>{title}</StyledProjectTitle>
       {tags ? <StyledTags>{tags.join(", ")}</StyledTags> : null}
       <StyledBodyText>{text}</StyledBodyText>
-      <PortfolioButtons githubLink={githubLink} appleAppStoreLink={apple} />
+      <PortfolioButtons
+        githubLink={githubLink}
+        appleAppStoreLink={appleAppStoreLink}
+      />
     </PortfolioInfoSectionContainer>
   );
-}
-
-interface Props {
-  title: string;
-  githubLink?: string;
-  text: string;
-  apple?: string;
-  tags?: string[];
 }

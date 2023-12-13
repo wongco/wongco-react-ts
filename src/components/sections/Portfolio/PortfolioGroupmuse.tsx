@@ -50,7 +50,7 @@ export default function PortfolioGroupmuse({
       <PortfolioInfoSection
         githubLink={githubLink}
         tags={tags}
-        apple={apple}
+        appleAppStoreLink={apple}
         title={title}
         text={text}
       />
@@ -60,7 +60,6 @@ export default function PortfolioGroupmuse({
 
 interface Props {
   title: string;
-  link?: string;
   apple?: string;
   githubLink?: string;
   preview: string;
