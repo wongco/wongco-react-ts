@@ -50,7 +50,7 @@ const StyledDetailsTab = styled.div`
   color: black;
 `;
 
-export default function PortfolioButtons({
+export default function ProjectButtons({
   appleAppStoreLink,
   githubLink,
 }: Props) {
@@ -59,7 +59,7 @@ export default function PortfolioButtons({
       {appleAppStoreLink ? (
         <StyledLink href={appleAppStoreLink}>
           <StyledDetailsTab>
-            <FontAwesomeIcon icon={faApple} size={"1x"} />
+            <FontAwesomeIcon icon={faApple} size="1x" />
             <StyledLinkText>App Store</StyledLinkText>
           </StyledDetailsTab>
         </StyledLink>
@@ -69,7 +69,7 @@ export default function PortfolioButtons({
           <StyledDetailsTab>
             <FontAwesomeIcon
               icon={faGithub}
-              size={"1x"}
+              size="1x"
               style={{ padding: "0" }}
             />
             <StyledLinkText>Github</StyledLinkText>

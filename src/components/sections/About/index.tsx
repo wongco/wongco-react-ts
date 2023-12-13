@@ -119,7 +119,7 @@ export default function About() {
           data-aos-delay="200"
           data-aos-easing="ease-in-sine"
         >
-          <StyledImg src={preview} alt={"headshot"} />
+          <StyledImg src={preview} alt="headshot" />
         </StyledImgContainer>
         <StyledBody>
           {`I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems

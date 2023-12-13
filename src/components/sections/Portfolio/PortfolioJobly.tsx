@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "./PortfolioInfoSection";
+import ProjectInfo from "./ProjectInfo";
 
 const StyledJoblyContainer = styled.div`
   display: flex;
@@ -45,6 +45,16 @@ const StyledImg = styled.img`
   }
 `;
 
+interface Props {
+  title: string;
+  apple?: string;
+  githubLink?: string;
+  preview: string;
+  alt: string;
+  text: string;
+  tags?: string[];
+}
+
 export default function PortfolioJobly({
   preview,
   title,
@@ -59,23 +69,13 @@ export default function PortfolioJobly({
       <StyledImgContainer>
         <StyledImg src={preview} alt={alt} />
       </StyledImgContainer>
-      <PortfolioInfoSection
+      <ProjectInfo
         githubLink={githubLink}
         appleAppStoreLink={apple}
-        title={title}
-        text={text}
+        header={title}
+        body={text}
         tags={tags}
       />
     </StyledJoblyContainer>
   );
-}
-
-interface Props {
-  title: string;
-  apple?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  text: string;
-  tags?: string[];
 }

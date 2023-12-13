@@ -116,7 +116,7 @@ export default function Navbar() {
         <StyledHomeLink href="#home">WongCo</StyledHomeLink>
       </StyledHome>
       <StyledBar onClick={handleClick}>
-        <FontAwesomeIcon icon={faBars} size={"2x"} />
+        <FontAwesomeIcon icon={faBars} size="2x" />
       </StyledBar>
       <StyledRightNav>
         <StyledNavLinks isCollapsed={isCollapsed}>
