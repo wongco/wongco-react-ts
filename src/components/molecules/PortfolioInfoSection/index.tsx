@@ -91,7 +91,7 @@ export default function PortfolioInfoSection({
       <StyledProjectTitle>{title}</StyledProjectTitle>
       {tags ? <StyledTags>{tags.join(", ")}</StyledTags> : null}
       <StyledBodyText>{text}</StyledBodyText>
-      <PortfolioButtons githubLink={githubLink} apple={apple} />
+      <PortfolioButtons githubLink={githubLink} appleAppStoreLink={apple} />
     </PortfolioInfoSectionContainer>
   );
 }

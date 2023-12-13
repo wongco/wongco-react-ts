@@ -19,7 +19,7 @@ const StyledLinkComp = styled.a`
   }
 `;
 
-export interface StyledLinkProps
+export interface TextLinkProps
   extends Pick<
     React.ComponentPropsWithoutRef<"a">,
     "href" | "onClick" | "children"
@@ -27,17 +27,15 @@ export interface StyledLinkProps
   title?: string;
 }
 
-const StyledLink: React.FC<StyledLinkProps> = ({
+export default function TextLink({
   title,
   href,
   onClick,
   children,
-}) => {
+}: TextLinkProps) {
   return (
     <StyledLinkComp href={href} onClick={onClick}>
       {title ?? children}
     </StyledLinkComp>
   );
-};
-
-export default StyledLink;
+}
