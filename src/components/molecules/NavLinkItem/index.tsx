@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import StyledLink, { StyledLinkProps } from "../../atoms/StyledLink";
+import TextLink, { TextLinkProps } from "../../atoms/TextLink";
 
 const StyledLi = styled.li`
   list-style: none;
@@ -12,10 +12,10 @@ const StyledLi = styled.li`
   }
 `;
 
-export default function NavLinkItem({ href, onClick, title }: StyledLinkProps) {
+export default function NavLinkItem({ href, onClick, title }: TextLinkProps) {
   return (
     <StyledLi>
-      <StyledLink href={href} onClick={onClick} title={title} />
+      <TextLink href={href} onClick={onClick} title={title} />
     </StyledLi>
   );
 }

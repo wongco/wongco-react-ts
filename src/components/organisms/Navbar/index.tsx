@@ -9,8 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import styled from "styled-components";
 import NavLinkItem from "../../molecules/NavLinkItem";
-import NavLinks from "../../molecules/NavLinks";
-import FontAwesomeLink from "../../atoms/FontAwesomeLink";
+import IconLink from "../../atoms/IconLink";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -23,6 +22,21 @@ const StyledNav = styled.nav`
 
   @media (max-width: 576px) {
     flex-flow: row wrap;
+  }
+`;
+
+const StyledNavLinks = styled.ol`
+  display: flex;
+  flex-flow: row none;
+  align-items: center;
+
+  /* Media Query for Mobile */
+  @media (max-width: 576px) {
+    flex: 1 1 100%;
+    flex-flow: column wrap;
+    display: ${(props: { isCollapsed: boolean }) =>
+      props.isCollapsed ? "none" : "block"};
+    margin: 0;
   }
 `;
 
@@ -95,7 +109,7 @@ export default function Navbar() {
         <FontAwesomeIcon icon={faBars} size={"2x"} />
       </StyledBar>
       <StyledRightNav>
-        <NavLinks isCollapsed={isCollapsed}>
+        <StyledNavLinks isCollapsed={isCollapsed}>
           <NavLinkItem onClick={handleClick} href="#about" title="About" />
           <NavLinkItem
             onClick={handleClick}
@@ -103,28 +117,28 @@ export default function Navbar() {
             title="Portfolio"
           />
           <StyledContactLinks>
-            <FontAwesomeLink
+            <IconLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"
               hovercolor="orange"
             />
-            <FontAwesomeLink
+            <IconLink
               icon={faAngellist}
               href="https://angel.co/wongco"
               hovercolor="pink"
             />
-            <FontAwesomeLink
+            <IconLink
               icon={faGithub}
               href="https://github.com/wongco"
               hovercolor="purple"
             />
-            <FontAwesomeLink
+            <IconLink
               icon={faLinkedin}
               href="https://www.linkedin.com/in/ginson"
               hovercolor="#0077B5"
             />
           </StyledContactLinks>
-        </NavLinks>
+        </StyledNavLinks>
       </StyledRightNav>
     </StyledNav>
   );
