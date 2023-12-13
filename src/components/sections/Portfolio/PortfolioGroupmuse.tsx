@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProjectInfo from "./ProjectInfo";
+import preview_groupmuse from "../../../pics/groupmuse04.png";
 
 const StyledGroupmuseContainer = styled.div`
   display: flex;
@@ -33,36 +34,22 @@ const StyledImg = styled.img`
   width: 100%;
 `;
 
-interface Props {
-  title: string;
-  appleAppStoreLink?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  text: string;
-  tags: string[];
-}
-
-export default function PortfolioGroupmuse({
-  preview,
-  title,
-  githubLink,
-  alt,
-  text,
-  appleAppStoreLink,
-  tags,
-}: Props) {
+export default function PortfolioGroupmuse() {
   return (
     <StyledGroupmuseContainer>
       <StyledImgContainer>
-        <StyledImg src={preview} alt={alt} />
+        <StyledImg src={preview_groupmuse} alt="groupmuse preview image" />
       </StyledImgContainer>
       <ProjectInfo
-        githubLink={githubLink}
-        tags={tags}
-        appleAppStoreLink={appleAppStoreLink}
-        header={title}
-        body={text}
+        tags={[
+          "React Native",
+          "Render Props",
+          "Compound Components",
+          "Atomic Design",
+        ]}
+        appleAppStoreLink="https://itunes.apple.com/us/app/groupmuse/id942675649"
+        header="Groupmuse"
+        body="Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app. This was achieved using compound components, render props, and atomic design."
       />
     </StyledGroupmuseContainer>
   );

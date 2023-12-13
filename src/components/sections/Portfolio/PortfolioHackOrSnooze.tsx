@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProjectInfo from "./ProjectInfo";
+import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
 
 const StyledHackSnoozeContainer = styled.div`
   display: flex;
@@ -45,36 +46,20 @@ const StyledImg = styled.img`
   }
 `;
 
-interface Props {
-  header: string;
-  apple?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  body: string;
-  tags: string[];
-}
-
-export default function PortfolioHackSnooze({
-  preview,
-  header,
-  githubLink,
-  alt,
-  body,
-  apple,
-  tags,
-}: Props) {
+export default function PortfolioHackSnooze() {
   return (
     <StyledHackSnoozeContainer>
       <StyledImgContainer>
-        <StyledImg src={preview} alt={alt} />
+        <StyledImg
+          src={preview_hackorsnooze}
+          alt="hack or snooze preview image"
+        />
       </StyledImgContainer>
       <ProjectInfo
-        githubLink={githubLink}
-        tags={tags}
-        appleAppStoreLink={apple}
-        header={header}
-        body={body}
+        githubLink="https://github.com/wongco/hack-or-snooze-fe"
+        tags={["jQuery", "Express", "RESTful API", "PostgreSQL", "JWT"]}
+        header="Hack or Snooze"
+        body="Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories."
       />
     </StyledHackSnoozeContainer>
   );

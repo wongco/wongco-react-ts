@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProjectInfo from "./ProjectInfo";
+import preview_jobly from "../../../pics/jobly03.jpg";
 
 const StyledJoblyContainer = styled.div`
   display: flex;
@@ -45,36 +46,24 @@ const StyledImg = styled.img`
   }
 `;
 
-interface Props {
-  title: string;
-  apple?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  text: string;
-  tags?: string[];
-}
-
-export default function PortfolioJobly({
-  preview,
-  title,
-  githubLink,
-  alt,
-  text,
-  apple,
-  tags,
-}: Props) {
+export default function PortfolioJobly() {
   return (
     <StyledJoblyContainer>
       <StyledImgContainer>
-        <StyledImg src={preview} alt={alt} />
+        <StyledImg src={preview_jobly} alt="jobly preview image" />
       </StyledImgContainer>
       <ProjectInfo
-        githubLink={githubLink}
-        appleAppStoreLink={apple}
-        header={title}
-        body={text}
-        tags={tags}
+        githubLink="https://github.com/wongco/react-jobly"
+        header="Jobly"
+        body="Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching."
+        tags={[
+          "React",
+          "Express",
+          "Styled Components",
+          "RESTful API",
+          "PostgreSQL",
+          "JWT",
+        ]}
       />
     </StyledJoblyContainer>
   );
