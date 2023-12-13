@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "../PortfolioInfoSection";
+import ProjectInfo from "./ProjectInfo";
 
 const StyledGroupmuseContainer = styled.div`
   display: flex;
@@ -33,13 +33,23 @@ const StyledImg = styled.img`
   width: 100%;
 `;
 
+interface Props {
+  title: string;
+  appleAppStoreLink?: string;
+  githubLink?: string;
+  preview: string;
+  alt: string;
+  text: string;
+  tags: string[];
+}
+
 export default function PortfolioGroupmuse({
   preview,
   title,
   githubLink,
   alt,
   text,
-  apple,
+  appleAppStoreLink,
   tags,
 }: Props) {
   return (
@@ -47,24 +57,13 @@ export default function PortfolioGroupmuse({
       <StyledImgContainer>
         <StyledImg src={preview} alt={alt} />
       </StyledImgContainer>
-      <PortfolioInfoSection
+      <ProjectInfo
         githubLink={githubLink}
         tags={tags}
-        apple={apple}
-        title={title}
-        text={text}
+        appleAppStoreLink={appleAppStoreLink}
+        header={title}
+        body={text}
       />
     </StyledGroupmuseContainer>
   );
-}
-
-interface Props {
-  title: string;
-  link?: string;
-  apple?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  text: string;
-  tags: string[];
 }

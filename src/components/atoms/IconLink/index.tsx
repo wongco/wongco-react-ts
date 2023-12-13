@@ -21,7 +21,7 @@ type IconLinkProps = {
 export default function IconLink({ hovercolor, icon, href }: IconLinkProps) {
   return (
     <a href={href}>
-      <StyledFontAwesomeIcon icon={icon} size={"2x"} hovercolor={hovercolor} />
+      <StyledFontAwesomeIcon icon={icon} size="2x" hovercolor={hovercolor} />
     </a>
   );
 }

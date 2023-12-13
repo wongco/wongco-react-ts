@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <StyledFooter>
       <StyledCopyrightContainer>
-        <IconLink href={"#top"} icon={faArrowAltCircleUp} hovercolor={"blue"} />
+        <IconLink href="#top" icon={faArrowAltCircleUp} hovercolor="blue" />
         <StyledCopyrightNote>
           Designed and built by Ginson Wong © 2023
         </StyledCopyrightNote>

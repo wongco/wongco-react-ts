@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "../PortfolioInfoSection";
+import ProjectInfo from "./ProjectInfo";
 
-const StyledJoblyContainer = styled.div`
+const StyledHackSnoozeContainer = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -45,37 +45,37 @@ const StyledImg = styled.img`
   }
 `;
 
-export default function PortfolioJobly({
-  preview,
-  title,
-  githubLink,
-  alt,
-  text,
-  apple,
-  tags,
-}: Props) {
-  return (
-    <StyledJoblyContainer>
-      <StyledImgContainer>
-        <StyledImg src={preview} alt={alt} />
-      </StyledImgContainer>
-      <PortfolioInfoSection
-        githubLink={githubLink}
-        apple={apple}
-        title={title}
-        text={text}
-        tags={tags}
-      />
-    </StyledJoblyContainer>
-  );
-}
-
 interface Props {
-  title: string;
+  header: string;
   apple?: string;
   githubLink?: string;
   preview: string;
   alt: string;
-  text: string;
-  tags?: string[];
+  body: string;
+  tags: string[];
+}
+
+export default function PortfolioHackSnooze({
+  preview,
+  header,
+  githubLink,
+  alt,
+  body,
+  apple,
+  tags,
+}: Props) {
+  return (
+    <StyledHackSnoozeContainer>
+      <StyledImgContainer>
+        <StyledImg src={preview} alt={alt} />
+      </StyledImgContainer>
+      <ProjectInfo
+        githubLink={githubLink}
+        tags={tags}
+        appleAppStoreLink={apple}
+        header={header}
+        body={body}
+      />
+    </StyledHackSnoozeContainer>
+  );
 }

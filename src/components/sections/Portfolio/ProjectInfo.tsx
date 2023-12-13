@@ -1,10 +1,9 @@
 import AOS from "aos";
 import { useEffect } from "react";
 import styled from "styled-components";
-import PortfolioButtons from "../PortfolioButtons";
+import ProjectButtons from "./ProjectButtons";
 
-/** Project Verbiage Section */
-const PortfolioInfoSectionContainer = styled.div`
+const ProjectInfoContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -69,13 +68,21 @@ const StyledBodyText = styled.div`
   }
 `;
 
-export default function PortfolioInfoSection({
-  title,
+interface ProjectInfoProps {
+  header: string;
+  githubLink?: string;
+  body: string;
+  appleAppStoreLink?: string;
+  tags?: string[];
+}
+
+export default function ProjectInfo({
+  header,
   githubLink,
-  text,
-  apple,
+  body,
+  appleAppStoreLink,
   tags,
-}: Props) {
+}: ProjectInfoProps) {
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -83,23 +90,18 @@ export default function PortfolioInfoSection({
   }, []);
 
   return (
-    <PortfolioInfoSectionContainer
+    <ProjectInfoContainer
       data-aos="zoom-out"
       data-aos-delay="200"
       data-aos-easing="ease-in-sine"
     >
-      <StyledProjectTitle>{title}</StyledProjectTitle>
+      <StyledProjectTitle>{header}</StyledProjectTitle>
       {tags ? <StyledTags>{tags.join(", ")}</StyledTags> : null}
-      <StyledBodyText>{text}</StyledBodyText>
-      <PortfolioButtons githubLink={githubLink} appleAppStoreLink={apple} />
-    </PortfolioInfoSectionContainer>
+      <StyledBodyText>{body}</StyledBodyText>
+      <ProjectButtons
+        githubLink={githubLink}
+        appleAppStoreLink={appleAppStoreLink}
+      />
+    </ProjectInfoContainer>
   );
-}
-
-interface Props {
-  title: string;
-  githubLink?: string;
-  text: string;
-  apple?: string;
-  tags?: string[];
 }

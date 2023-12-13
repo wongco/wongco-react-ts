@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import PortfolioInfoSection from "../PortfolioInfoSection";
+import ProjectInfo from "./ProjectInfo";
 
-const StyledHackSnoozeContainer = styled.div`
+const StyledJoblyContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -45,7 +45,17 @@ const StyledImg = styled.img`
   }
 `;
 
-export default function PortfolioHackSnooze({
+interface Props {
+  title: string;
+  apple?: string;
+  githubLink?: string;
+  preview: string;
+  alt: string;
+  text: string;
+  tags?: string[];
+}
+
+export default function PortfolioJobly({
   preview,
   title,
   githubLink,
@@ -55,28 +65,17 @@ export default function PortfolioHackSnooze({
   tags,
 }: Props) {
   return (
-    <StyledHackSnoozeContainer>
+    <StyledJoblyContainer>
       <StyledImgContainer>
         <StyledImg src={preview} alt={alt} />
       </StyledImgContainer>
-      <PortfolioInfoSection
+      <ProjectInfo
         githubLink={githubLink}
+        appleAppStoreLink={apple}
+        header={title}
+        body={text}
         tags={tags}
-        apple={apple}
-        title={title}
-        text={text}
       />
-    </StyledHackSnoozeContainer>
+    </StyledJoblyContainer>
   );
-}
-
-interface Props {
-  title: string;
-  link?: string;
-  apple?: string;
-  githubLink?: string;
-  preview: string;
-  alt: string;
-  text: string;
-  tags: string[];
 }

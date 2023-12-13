@@ -8,8 +8,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import styled from "styled-components";
-import NavLinkItem from "../../molecules/NavLinkItem";
 import IconLink from "../../atoms/IconLink";
+import TextLink from "../../atoms/TextLink";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -18,7 +18,6 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 2em 2em 18em white;
-  font-family: Helvetica Neue;
 
   @media (max-width: 576px) {
     flex-flow: row wrap;
@@ -37,6 +36,17 @@ const StyledNavLinks = styled.ol`
     display: ${(props: { isCollapsed: boolean }) =>
       props.isCollapsed ? "none" : "block"};
     margin: 0;
+  }
+`;
+
+const StyledLi = styled.li`
+  list-style: none;
+  font-weight: bold;
+
+  @media (max-width: 576px) {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5em 0;
   }
 `;
 
@@ -106,16 +116,20 @@ export default function Navbar() {
         <StyledHomeLink href="#home">WongCo</StyledHomeLink>
       </StyledHome>
       <StyledBar onClick={handleClick}>
-        <FontAwesomeIcon icon={faBars} size={"2x"} />
+        <FontAwesomeIcon icon={faBars} size="2x" />
       </StyledBar>
       <StyledRightNav>
         <StyledNavLinks isCollapsed={isCollapsed}>
-          <NavLinkItem onClick={handleClick} href="#about" title="About" />
-          <NavLinkItem
-            onClick={handleClick}
-            href="#portfolio"
-            title="Portfolio"
-          />
+          <StyledLi>
+            <TextLink href="#about" onClick={handleClick} title="About" />
+          </StyledLi>
+          <StyledLi>
+            <TextLink
+              href="#portfolio"
+              onClick={handleClick}
+              title="Portfolio"
+            />
+          </StyledLi>
           <StyledContactLinks>
             <IconLink
               icon={faEnvelope}
