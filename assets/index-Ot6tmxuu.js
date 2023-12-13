@@ -1120,7 +1120,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-`;function ww(){const[e,t]=At.useState(!0),n=()=>{t(r=>!r)};return A.jsxs(dw,{children:[A.jsx(mw,{children:A.jsx(hw,{href:"#home",children:"WongCo"})}),A.jsx(vw,{onClick:n,children:A.jsx(vn,{icon:ew,size:"2x"})}),A.jsx(gw,{children:A.jsxs(pw,{isCollapsed:e,children:[A.jsx(Wf,{children:A.jsx(Hf,{href:"#about",onClick:n,title:"About"})}),A.jsx(Wf,{children:A.jsx(Hf,{href:"#portfolio",onClick:n,title:"Portfolio"})}),A.jsxs(yw,{children:[A.jsx(Mr,{icon:cw,href:"mailto:ginson.wong+hello@gmail.com",hovercolor:"orange"}),A.jsx(Mr,{icon:lw,href:"https://angel.co/wongco",hovercolor:"pink"}),A.jsx(Mr,{icon:o1,href:"https://github.com/wongco",hovercolor:"purple"}),A.jsx(Mr,{icon:uw,href:"https://www.linkedin.com/in/ginson",hovercolor:"#0077B5"})]})]})})]})}const kw="/assets/groupmuse04-hBUM308N.png",xw="/assets/hackorsnooze03-tAbg4h09.jpg",Sw="/assets/jobly03-NKZaeGw_.jpg",bw=B.div`
+`;function ww(){const[e,t]=At.useState(!0),n=()=>{t(r=>!r)};return A.jsxs(dw,{children:[A.jsx(mw,{children:A.jsx(hw,{href:"#home",children:"WongCo"})}),A.jsx(vw,{onClick:n,children:A.jsx(vn,{icon:ew,size:"2x"})}),A.jsx(gw,{children:A.jsxs(pw,{isCollapsed:e,children:[A.jsx(Wf,{children:A.jsx(Hf,{href:"#about",onClick:n,title:"About"})}),A.jsx(Wf,{children:A.jsx(Hf,{href:"#portfolio",onClick:n,title:"Portfolio"})}),A.jsxs(yw,{children:[A.jsx(Mr,{icon:cw,href:"mailto:ginson.wong+hello@gmail.com",hovercolor:"orange"}),A.jsx(Mr,{icon:lw,href:"https://angel.co/wongco",hovercolor:"pink"}),A.jsx(Mr,{icon:o1,href:"https://github.com/wongco",hovercolor:"purple"}),A.jsx(Mr,{icon:uw,href:"https://www.linkedin.com/in/ginson",hovercolor:"#0077B5"})]})]})})]})}const kw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: "flex-start";
@@ -1159,7 +1159,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   width: 100%;
   height: 100%;
   color: black;
-`;function Cw({appleAppStoreLink:e,githubLink:t}){return A.jsxs(bw,{children:[e?A.jsx(Bf,{href:e,children:A.jsxs(Yf,{children:[A.jsx(vn,{icon:sw,size:"1x"}),A.jsx(Vf,{children:"App Store"})]})}):null,t?A.jsx(Bf,{href:t,children:A.jsxs(Yf,{children:[A.jsx(vn,{icon:o1,size:"1x",style:{padding:"0"}}),A.jsx(Vf,{children:"Github"})]})}):null]})}const Ew=B.div`
+`;function xw({appleAppStoreLink:e,githubLink:t}){return A.jsxs(kw,{children:[e?A.jsx(Bf,{href:e,children:A.jsxs(Yf,{children:[A.jsx(vn,{icon:sw,size:"1x"}),A.jsx(Vf,{children:"App Store"})]})}):null,t?A.jsx(Bf,{href:t,children:A.jsxs(Yf,{children:[A.jsx(vn,{icon:o1,size:"1x",style:{padding:"0"}}),A.jsx(Vf,{children:"Github"})]})}):null]})}const Sw=B.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1176,7 +1176,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 70vw;
     order: 1;
   }
-`,_w=B.div`
+`,bw=B.div`
   font-size: 2.2vw;
   margin: 7px 0;
   padding: 5px 0;
@@ -1188,7 +1188,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     font-size: 7vw;
     font-weight: 500;
   }
-`,Pw=B.div`
+`,Cw=B.div`
   font-weight: 300;
   font-size: 1.2vw;
   margin: 0.3em 0;
@@ -1203,7 +1203,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin: 0.4em 0;
     margin-left: 1em;
   }
-`,Aw=B.div`
+`,Ew=B.div`
   margin-top: 5px;
   margin-bottom: 10px;
   color: #45474c;
@@ -1216,7 +1216,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 767.98px) {
     font-size: 5vw;
   }
-`;function Qu({header:e,githubLink:t,body:n,appleAppStoreLink:r,tags:i}){return At.useEffect(()=>{Em.init({duration:400})},[]),A.jsxs(Ew,{"data-aos":"zoom-out","data-aos-delay":"200","data-aos-easing":"ease-in-sine",children:[A.jsx(_w,{children:e}),i?A.jsx(Pw,{children:i.join(", ")}):null,A.jsx(Aw,{children:n}),A.jsx(Cw,{githubLink:t,appleAppStoreLink:r})]})}const Ow=B.div`
+`;function Qu({header:e,githubLink:t,body:n,appleAppStoreLink:r,tags:i}){return At.useEffect(()=>{Em.init({duration:400})},[]),A.jsxs(Sw,{"data-aos":"zoom-out","data-aos-delay":"200","data-aos-easing":"ease-in-sine",children:[A.jsx(bw,{children:e}),i?A.jsx(Cw,{children:i.join(", ")}):null,A.jsx(Ew,{children:n}),A.jsx(xw,{githubLink:t,appleAppStoreLink:r})]})}const _w="/assets/groupmuse04-hBUM308N.png",Pw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1229,7 +1229,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   @media (max-width: 767.98px) {
     flex-direction: column;
   }
-`,Nw=B.div`
+`,Aw=B.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -1240,9 +1240,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin-top: 0;
     width: 70vw;
   }
-`,Tw=B.img`
+`,Ow=B.img`
   width: 100%;
-`;function zw({preview:e,title:t,githubLink:n,alt:r,text:i,appleAppStoreLink:o,tags:a}){return A.jsxs(Ow,{children:[A.jsx(Nw,{children:A.jsx(Tw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,appleAppStoreLink:o,header:t,body:i})]})}const jw=B.div`
+`;function Nw(){return A.jsxs(Pw,{children:[A.jsx(Aw,{children:A.jsx(Ow,{src:_w,alt:"groupmuse preview image"})}),A.jsx(Qu,{tags:["React Native","Render Props","Compound Components","Atomic Design"],appleAppStoreLink:"https://itunes.apple.com/us/app/groupmuse/id942675649",header:"Groupmuse",body:"Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app. This was achieved using compound components, render props, and atomic design."})]})}const Tw="/assets/hackorsnooze03-tAbg4h09.jpg",zw=B.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1258,7 +1258,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding-top: 0em;
     padding-bottom: 0em;
   }
-`,Iw=B.div`
+`,jw=B.div`
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -1272,7 +1272,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 100%;
     justify-content: center;
   }
-`,Lw=B.img`
+`,Iw=B.img`
   width: 100%;
   box-shadow: 5px 5px 18px black;
 
@@ -1280,7 +1280,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: auto;
     height: 100%;
   }
-`;function Rw({preview:e,header:t,githubLink:n,alt:r,body:i,apple:o,tags:a}){return A.jsxs(jw,{children:[A.jsx(Iw,{children:A.jsx(Lw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,tags:a,appleAppStoreLink:o,header:t,body:i})]})}const Mw=B.div`
+`;function Lw(){return A.jsxs(zw,{children:[A.jsx(jw,{children:A.jsx(Iw,{src:Tw,alt:"hack or snooze preview image"})}),A.jsx(Qu,{githubLink:"https://github.com/wongco/hack-or-snooze-fe",tags:["jQuery","Express","RESTful API","PostgreSQL","JWT"],header:"Hack or Snooze",body:"Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories."})]})}const Rw="/assets/jobly03-NKZaeGw_.jpg",Mw=B.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
@@ -1318,7 +1318,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: auto;
     height: 100%;
   }
-`;function Fw({preview:e,title:t,githubLink:n,alt:r,text:i,apple:o,tags:a}){return A.jsxs(Mw,{children:[A.jsx($w,{children:A.jsx(Dw,{src:e,alt:r})}),A.jsx(Qu,{githubLink:n,appleAppStoreLink:o,header:t,body:i,tags:a})]})}const Uw=B.div`
+`;function Fw(){return A.jsxs(Mw,{children:[A.jsx($w,{children:A.jsx(Dw,{src:Rw,alt:"jobly preview image"})}),A.jsx(Qu,{githubLink:"https://github.com/wongco/react-jobly",header:"Jobly",body:"Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching.",tags:["React","Express","Styled Components","RESTful API","PostgreSQL","JWT"]})]})}const Uw=B.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -1331,6 +1331,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   width: 80vw;
   height: 0.25px;
   margin: 0;
-`;function Hw(){return A.jsxs(Uw,{id:"portfolio",children:[A.jsx(zw,{title:"Groupmuse",tags:["React Native","Render Props","Compound Components","Atomic Design"],text:"Refactoring the templates and dependent components for the authorization workflow enabled our agile team to create a foundation for rebuilding the react native mobile app. This was achieved using compound components, render props, and atomic design.",preview:kw,appleAppStoreLink:"https://itunes.apple.com/us/app/groupmuse/id942675649",alt:"groupmuse preview image"}),A.jsx(gl,{}),A.jsx(Fw,{title:"Jobly",tags:["React","Express","Styled Components","RESTful API","PostgreSQL","JWT"],text:"Built using a React frontend and a RESTful API backend, Jobly is a job listing board and job application tool built with user authentication and job/company searching.",preview:Sw,githubLink:"https://github.com/wongco/react-jobly",alt:"jobly preview image"}),A.jsx(gl,{}),A.jsx(Rw,{header:"Hack or Snooze",tags:["jQuery","Express","RESTful API","PostgreSQL","JWT"],body:"Hack or Snooze is a Full CRUD story board application clone of Hacker News built with a jQuery frontend and an Express.js backend. It features user authentication, user favorites and the ability to add/delete/modify stories.",preview:xw,githubLink:"https://github.com/wongco/hack-or-snooze-fe",alt:"hack or snooze preview image"}),A.jsx(gl,{})]})}const Ww=B.div`
+`;function Hw(){return A.jsxs(Uw,{id:"portfolio",children:[A.jsx(Nw,{}),A.jsx(gl,{}),A.jsx(Fw,{}),A.jsx(gl,{}),A.jsx(Lw,{}),A.jsx(gl,{})]})}const Ww=B.div`
   background: linear-gradient(to bottom, white, #ffb900);
 `;function Bw(){return A.jsxs(Ww,{id:"top",children:[A.jsx(ww,{}),A.jsx(tg,{}),A.jsx(Hw,{}),A.jsx(Uh,{}),A.jsx(aw,{})]})}yl.createRoot(document.getElementById("root")).render(A.jsx(Ln.StrictMode,{children:A.jsx(Bw,{})}));
