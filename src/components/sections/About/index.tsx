@@ -2,47 +2,51 @@ import AOS from "aos";
 import { useEffect } from "react";
 import styled from "styled-components";
 import preview from "../../../pics/profile_pic1c.jpg";
+import * as stylex from "@stylexjs/stylex";
 
-const StyledContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 30px 0;
-
-  @media (max-width: 767.98px) {
-    padding: 0;
-  }
-`;
-
-const StyledBox = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  padding: 0em 1em;
-  margin: 20px 0;
-
-  @media (max-width: 767.98px) {
-    padding: 1em;
-    width: 75%;
-    margin: 0;
-  }
-`;
-
-const AboutHeader = styled.p`
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  color: black;
-  font-size: 3vw;
-  font-weight: 300;
-  line-height: 1.5em;
-
-  @media (max-width: 767.98px) {
-    font-size: 2.1em;
-    line-height: 1.25em;
-  }
-`;
+const styles = stylex.create({
+  containerStyles: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItems: "center",
+    padding: {
+      default: "30px 0",
+      "@media (max-width: 767.98px)": "0",
+    },
+  },
+  boxStyles: {
+    display: "flex",
+    justifyContent: "center",
+    width: {
+      default: "50%",
+      "@media (max-width: 767.98px)": "75%",
+    },
+    padding: {
+      default: "0em 1em",
+      "@media (max-width: 767.98px)": "1em",
+    },
+    margin: {
+      default: "20px 0",
+      "@media (max-width: 767.98px)": "0",
+    },
+  },
+  aboutHeaderStyles: {
+    padding: "0",
+    margin: "0",
+    textAlign: "center",
+    color: "black",
+    fontSize: {
+      default: "3vw",
+      "@media (max-width: 767.98px)": "2.1em",
+    },
+    fontWeight: 300,
+    lineHeight: {
+      default: "1.5em",
+      "@media (max-width: 767.98px)": "1.25em",
+    },
+  },
+});
 
 const StyledAboutContainer = styled.div`
   display: flex;
@@ -107,12 +111,12 @@ export default function About() {
   }, []);
 
   return (
-    <StyledContainer id="about">
-      <StyledBox>
-        <AboutHeader>
+    <section {...stylex.props(styles.containerStyles)} id="about">
+      <div {...stylex.props(styles.boxStyles)}>
+        <p {...stylex.props(styles.aboutHeaderStyles)}>
           Behind every problem is an elegant solution waiting to be created.
-        </AboutHeader>
-      </StyledBox>
+        </p>
+      </div>
       <StyledAboutContainer>
         <StyledImgContainer
           data-aos="fade-right"
@@ -133,6 +137,6 @@ export default function About() {
           links.`}
         </StyledBody>
       </StyledAboutContainer>
-    </StyledContainer>
+    </section>
   );
 }
