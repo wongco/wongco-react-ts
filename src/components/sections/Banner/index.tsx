@@ -1,6 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import bannerImage from "../../../pics/baybridge_banner2.jpg";
 import * as stylex from "@stylexjs/stylex";
+
+const fadeIn = stylex.keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
 
 const styles = stylex.create({
   bannerSectionStyles: {
@@ -45,33 +50,24 @@ const styles = stylex.create({
     textAlign: "center",
     padding: "1em",
   },
+  runnerLineBaseStyles: {
+    opacity: 0,
+    animationName: fadeIn,
+    animationIterationCount: 1,
+    animationTimingFunction: "ease-in",
+    animationFillMode: "forwards",
+    animationDuration: "1s",
+  },
+  runnerLineOneStyles: {
+    animationDelay: "0.5s",
+  },
+  runnerLineTwoStyles: {
+    animationDelay: "1.5s",
+  },
+  runnerLineThreeStyles: {
+    animationDelay: "2.5s",
+  },
 });
-
-const fadeInOpacity = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
-
-const RunnerLine = styled.div`
-  opacity: 0;
-  animation-name: ${fadeInOpacity};
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-`;
-
-const RunnerLineOne = styled(RunnerLine)`
-  animation-delay: 0.5s;
-`;
-
-const RunnerLineTwo = styled(RunnerLine)`
-  animation-delay: 1.5s;
-`;
-
-const RunnerLineThree = styled(RunnerLine)`
-  animation-delay: 2.5s;
-`;
 
 /** primary container for right side image */
 const LogoContainer = styled.div`
@@ -125,14 +121,29 @@ const StyledTitle = styled.div`
   }
 `;
 
+const runnerLineOneStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineOneStyles,
+);
+
+const runnerLineTwoStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineTwoStyles,
+);
+
+const runnerLineThreeStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineThreeStyles,
+);
+
 export default function Banner() {
   return (
     <section {...stylex.props(styles.bannerSectionStyles)}>
       <div {...stylex.props(styles.bannerTextContainerStyles)}>
         <div {...stylex.props(styles.bannerTextSubContainerStyles)}>
-          <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
-          <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
-          <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
+          <div {...runnerLineOneStyles}>Inspired&nbsp;ideas. </div>
+          <div {...runnerLineTwoStyles}>Attention&nbsp;to&nbsp;detail. </div>
+          <div {...runnerLineThreeStyles}>Responsive&nbsp;design. </div>
         </div>
       </div>
       <LogoContainer id="home">
