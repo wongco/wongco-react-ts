@@ -7,7 +7,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import styled from "styled-components";
 import IconLink from "../../atoms/IconLink";
 import TextLink from "../../atoms/TextLink";
 import * as stylex from "@stylexjs/stylex";
@@ -104,35 +103,37 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "100%",
     },
   },
+  barStyles: {
+    display: {
+      default: "none",
+      "@media (max-width: 576px)": "flex",
+    },
+    marginRight: "2em",
+    cursor: {
+      "@media (max-width: 576px)": "pointer",
+    },
+  },
+  rightNavContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingRight: "2em",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+  },
+  contactLinkContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
 });
-
-/** Component for Mobile Only Dropdown Button */
-const StyledBar = styled.div`
-  display: none;
-  margin-right: 2em;
-
-  @media (max-width: 576px) {
-    display: flex;
-    cursor: pointer;
-  }
-`;
-
-const StyledRightNav = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 2em;
-
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-  }
-`;
-
-const StyledContactLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
 
 export default function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -155,10 +156,10 @@ export default function Navbar() {
           WongCo
         </a>
       </p>
-      <StyledBar onClick={handleClick}>
+      <div {...stylex.props(styles.barStyles)} onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} size="2x" />
-      </StyledBar>
-      <StyledRightNav>
+      </div>
+      <div {...stylex.props(styles.rightNavContainerStyles)}>
         <ol {...styledNavLinkStyles}>
           <li {...stylex.props(styles.navLinkItemStyles)}>
             <TextLink href="#about" onClick={handleClick} title="About" />
@@ -170,7 +171,7 @@ export default function Navbar() {
               title="Portfolio"
             />
           </li>
-          <StyledContactLinks>
+          <div {...stylex.props(styles.contactLinkContainerStyles)}>
             <IconLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"
@@ -191,9 +192,9 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/ginson"
               hovercolor="#0077B5"
             />
-          </StyledContactLinks>
+          </div>
         </ol>
-      </StyledRightNav>
+      </div>
     </nav>
   );
 }
