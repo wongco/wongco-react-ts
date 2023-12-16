@@ -73,18 +73,38 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "0.5em 0",
     },
   },
+  homeLinkContainerStyles: {
+    fontSize: "120%",
+    fontWeight: "bold",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    margin: {
+      default: "1em",
+      "@media (max-width: 576px)": "0.75em",
+    },
+  },
+  homeLinkStyles: {
+    textDecoration: "none",
+    color: "black",
+    padding: {
+      default: "0.75em",
+      "@media (max-width: 576px)": "0.1em",
+    },
+    borderRadius: "10%",
+    fontSize: "1.5em",
+    fontWeight: 400,
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+  },
 });
-
-const StyledHome = styled.p`
-  font-size: 120%;
-  font-weight: bold;
-  margin-left: 1em;
-
-  @media (max-width: 576px) {
-    flex: 1;
-    margin: 0.75em;
-  }
-`;
 
 /** Component for Mobile Only Dropdown Button */
 const StyledBar = styled.div`
@@ -94,20 +114,6 @@ const StyledBar = styled.div`
   @media (max-width: 576px) {
     display: flex;
     cursor: pointer;
-  }
-`;
-
-const StyledHomeLink = styled.a`
-  text-decoration: none;
-  color: black;
-  padding: 0.75em;
-  border-radius: 10%;
-  font-size: 1.5em;
-  font-weight: 400;
-
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-    padding: 0.1em;
   }
 `;
 
@@ -144,9 +150,11 @@ export default function Navbar() {
 
   return (
     <nav {...stylex.props(styles.navContainerStyles)}>
-      <StyledHome>
-        <StyledHomeLink href="#home">WongCo</StyledHomeLink>
-      </StyledHome>
+      <p {...stylex.props(styles.homeLinkContainerStyles)}>
+        <a {...stylex.props(styles.homeLinkStyles)} href="#home">
+          WongCo
+        </a>
+      </p>
       <StyledBar onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} size="2x" />
       </StyledBar>
