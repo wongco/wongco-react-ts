@@ -1,57 +1,72 @@
-import styled from "styled-components";
 import ProjectInfo from "./ProjectInfo";
 import preview_jobly from "../../../pics/jobly03.jpg";
+import * as stylex from "@stylexjs/stylex";
 
-const StyledJoblyContainer = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-top: 5em;
-  padding-bottom: 5em;
-
-  @media (max-width: 767.98px) {
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 0em;
-    padding-bottom: 0em;
-  }
-`;
-
-const StyledImgContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-  width: 25vw;
-  margin: 4em;
-
-  @media (max-width: 767.98px) {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    height: 20vh;
-    width: 100%;
-    justify-content: center;
-  }
-`;
-
-const StyledImg = styled.img`
-  width: 100%;
-  box-shadow: 5px 5px 18px black;
-
-  @media (max-width: 767.98px) {
-    width: auto;
-    height: 100%;
-  }
-`;
+const styles = stylex.create({
+  joblyContainerStyles: {
+    display: "flex",
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: {
+      default: "space-evenly",
+      "@media (max-width: 767.98px)": "center",
+    },
+    flexDirection: {
+      default: "row-reverse",
+      "@media (max-width: 767.98px)": "column",
+    },
+    paddingTop: {
+      default: "5em",
+      "@media (max-width: 767.98px)": "0em",
+    },
+    paddingBottom: {
+      default: "5em",
+      "@media (max-width: 767.98px)": "0em",
+    },
+  },
+  imageContainerStyles: {
+    display: "flex",
+    alignItems: "flex-end",
+    height: {
+      default: "100%",
+      "@media (max-width: 767.98px)": "20vh",
+    },
+    width: {
+      default: "25vw",
+      "@media (max-width: 767.98px)": "100%",
+    },
+    justifyContent: {
+      "@media (max-width: 767.98px)": "center",
+    },
+    marginHorizontal: "4em",
+    marginVertical: {
+      default: "4em",
+      "@media (max-width: 767.98px)": "2em",
+    },
+  },
+  imageStyles: {
+    width: {
+      default: "100%",
+      "@media (max-width: 767.98px)": "auto",
+    },
+    height: {
+      "@media (max-width: 767.98px)": "100%",
+    },
+    boxShadow: "5px 5px 18px black",
+  },
+});
 
 export default function PortfolioJobly() {
   return (
-    <StyledJoblyContainer>
-      <StyledImgContainer>
-        <StyledImg src={preview_jobly} alt="jobly preview image" />
-      </StyledImgContainer>
+    <div {...stylex.props(styles.joblyContainerStyles)}>
+      <div {...stylex.props(styles.imageContainerStyles)}>
+        <img
+          {...stylex.props(styles.imageStyles)}
+          src={preview_jobly}
+          alt="jobly preview image"
+        />
+      </div>
       <ProjectInfo
         githubLink="https://github.com/wongco/react-jobly"
         header="Jobly"
@@ -65,6 +80,6 @@ export default function PortfolioJobly() {
           "JWT",
         ]}
       />
-    </StyledJoblyContainer>
+    </div>
   );
 }
