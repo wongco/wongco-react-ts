@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import bannerImage from "../../../pics/baybridge_banner2.jpg";
 import * as stylex from "@stylexjs/stylex";
 
@@ -67,59 +66,52 @@ const styles = stylex.create({
   runnerLineThreeStyles: {
     animationDelay: "2.5s",
   },
+  logoContainerStyles: {
+    position: "relative",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "100%",
+    overflow: {
+      "@media (max-width: 767.98px)": "hidden",
+    },
+  },
+  imageStyles: {
+    height: {
+      default: "100%",
+      "@media (max-width: 767.98px)": " 200px",
+    },
+    width: {
+      default: "100%",
+      "@media (max-width: 767.98px)": "auto",
+    },
+    objectFit: "contain",
+    opacity: 1,
+  },
+  textContainerStyles: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translateX(-50%) translateY(-50%)",
+    textAlign: "center",
+    fontWeight: 400,
+    color: "Cornsilk",
+    textShadow: "0px 0px 18px black",
+    width: "100%",
+  },
+  nameStyles: {
+    fontSize: {
+      default: "4vw",
+      "@media (max-width: 767.98px)": "2em",
+    },
+  },
+  titleStyles: {
+    fontSize: {
+      default: "2vw",
+      "@media (max-width: 767.98px)": "1em",
+    },
+    fontWeight: 600,
+  },
 });
-
-/** primary container for right side image */
-const LogoContainer = styled.div`
-  position: relative;
-  /* background-color: #343a40; */
-  flex: 1 1 100%;
-
-  @media (max-width: 767.98px) {
-    overflow: hidden;
-  }
-`;
-
-const StyledImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  opacity: 1;
-
-  @media (max-width: 767.98px) {
-    height: 200px;
-    width: auto;
-  }
-`;
-
-const StyledTextContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  font-weight: 400;
-  color: Cornsilk;
-  text-shadow: 0px 0px 18px black;
-  width: 100%;
-`;
-
-const StyledName = styled.div`
-  font-size: 4vw;
-  @media (max-width: 767.98px) {
-    font-size: 2em;
-  }
-`;
-
-const StyledTitle = styled.div`
-  font-size: 2vw;
-  font-weight: 600;
-
-  @media (max-width: 767.98px) {
-    font-size: 1em;
-  }
-`;
 
 const runnerLineOneStyles = stylex.props(
   styles.runnerLineBaseStyles,
@@ -136,6 +128,9 @@ const runnerLineThreeStyles = stylex.props(
   styles.runnerLineThreeStyles,
 );
 
+const NAME = "Ginson Wong";
+const OCCUPATION = "Software Engineer";
+
 export default function Banner() {
   return (
     <section {...stylex.props(styles.bannerSectionStyles)}>
@@ -146,13 +141,17 @@ export default function Banner() {
           <div {...runnerLineThreeStyles}>Responsive&nbsp;design. </div>
         </div>
       </div>
-      <LogoContainer id="home">
-        <StyledImg src={bannerImage} alt="banner-picture" />
-        <StyledTextContainer>
-          <StyledName>Ginson Wong</StyledName>
-          <StyledTitle>Software Engineer</StyledTitle>
-        </StyledTextContainer>
-      </LogoContainer>
+      <div {...stylex.props(styles.logoContainerStyles)} id="home">
+        <img
+          {...stylex.props(styles.imageStyles)}
+          src={bannerImage}
+          alt="banner-picture"
+        />
+        <div {...stylex.props(styles.textContainerStyles)}>
+          <div {...stylex.props(styles.nameStyles)}>{NAME}</div>
+          <div {...stylex.props(styles.titleStyles)}>{OCCUPATION}</div>
+        </div>
+      </div>
     </section>
   );
 }
