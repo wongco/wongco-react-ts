@@ -10,45 +10,70 @@ import { useState } from "react";
 import styled from "styled-components";
 import IconLink from "../../atoms/IconLink";
 import TextLink from "../../atoms/TextLink";
+import * as stylex from "@stylexjs/stylex";
 
-const StyledNav = styled.nav`
-  display: flex;
-  width: 100%;
-  flex-flow: row none;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 2em 2em 18em white;
-
-  @media (max-width: 576px) {
-    flex-flow: row wrap;
-  }
-`;
-
-const StyledNavLinks = styled.ol`
-  display: flex;
-  flex-flow: row none;
-  align-items: center;
-
-  /* Media Query for Mobile */
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-    flex-flow: column wrap;
-    display: ${(props: { isCollapsed: boolean }) =>
-      props.isCollapsed ? "none" : "block"};
-    margin: 0;
-  }
-`;
-
-const StyledLi = styled.li`
-  list-style: none;
-  font-weight: bold;
-
-  @media (max-width: 576px) {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0.5em 0;
-  }
-`;
+const styles = stylex.create({
+  navContainerStyles: {
+    display: "flex",
+    width: "100%",
+    flexFlow: "row",
+    flexWrap: {
+      default: "nowrap",
+      "@media (max-width: 576px)": "wrap",
+    },
+    justifyContent: "space-between",
+    alignItems: "center",
+    boxShadow: "2em 2em 18em white",
+  },
+  navLinkBaseStyles: {
+    flexFlow: {
+      default: "row",
+      "@media (max-width: 576px)": "column",
+    },
+    flexWrap: {
+      default: "nowrap",
+      "@media (max-width: 576px)": "wrap",
+    },
+    alignItems: "center",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+    margin: {
+      "@media (max-width: 576px)": "0.5em 0",
+    },
+  },
+  navLinkCollapsedStyles: {
+    display: {
+      default: "flex",
+      "@media (max-width: 576px)": "none",
+    },
+  },
+  navLinkNotCollapsedStyles: {
+    display: {
+      default: "flex",
+      "@media (max-width: 576px)": "block",
+    },
+  },
+  navLinkItemStyles: {
+    listStyle: "none",
+    fontWeight: "bold",
+    display: {
+      "@media (max-width: 576px)": "flex",
+    },
+    justifyContent: {
+      "@media (max-width: 576px)": "flex-end",
+    },
+    margin: {
+      "@media (max-width: 576px)": "0.5em 0",
+    },
+  },
+});
 
 const StyledHome = styled.p`
   font-size: 120%;
@@ -110,8 +135,15 @@ export default function Navbar() {
     setIsCollapsed((prevState) => !prevState);
   };
 
+  const styledNavLinkStyles = stylex.props(
+    styles.navLinkBaseStyles,
+    isCollapsed
+      ? styles.navLinkCollapsedStyles
+      : styles.navLinkNotCollapsedStyles,
+  );
+
   return (
-    <StyledNav>
+    <nav {...stylex.props(styles.navContainerStyles)}>
       <StyledHome>
         <StyledHomeLink href="#home">WongCo</StyledHomeLink>
       </StyledHome>
@@ -119,17 +151,17 @@ export default function Navbar() {
         <FontAwesomeIcon icon={faBars} size="2x" />
       </StyledBar>
       <StyledRightNav>
-        <StyledNavLinks isCollapsed={isCollapsed}>
-          <StyledLi>
+        <ol {...styledNavLinkStyles}>
+          <li {...stylex.props(styles.navLinkItemStyles)}>
             <TextLink href="#about" onClick={handleClick} title="About" />
-          </StyledLi>
-          <StyledLi>
+          </li>
+          <li {...stylex.props(styles.navLinkItemStyles)}>
             <TextLink
               href="#portfolio"
               onClick={handleClick}
               title="Portfolio"
             />
-          </StyledLi>
+          </li>
           <StyledContactLinks>
             <IconLink
               icon={faEnvelope}
@@ -152,8 +184,8 @@ export default function Navbar() {
               hovercolor="#0077B5"
             />
           </StyledContactLinks>
-        </StyledNavLinks>
+        </ol>
       </StyledRightNav>
-    </StyledNav>
+    </nav>
   );
 }
