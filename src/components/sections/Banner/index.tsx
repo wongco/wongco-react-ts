@@ -1,48 +1,51 @@
 import styled, { keyframes } from "styled-components";
-
 import bannerImage from "../../../pics/baybridge_banner2.jpg";
+import * as stylex from "@stylexjs/stylex";
 
-/** parent container for banner section */
-const BannerSection = styled.section`
-  display: flex;
-  flex-direction: row;
-  padding: 2em 5em;
-
-  @media (max-width: 767.98px) {
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    padding: 0em 2em;
-  }
-`;
-
-/** primary container for left side text */
-const BannerTextContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 100%;
-  box-sizing: border-box;
-  /* border: 1px solid black; */
-`;
-
-const BannerTextSubContainer = styled.div`
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 3.5vw;
-  line-height: 1.25em;
-  font-weight: 300;
-  text-align: center;
-  padding: 1em;
-
-  @media (max-width: 767.98px) {
-    font-size: 2.25em;
-  }
-`;
+const styles = stylex.create({
+  bannerSectionStyles: {
+    display: "flex",
+    flexDirection: {
+      default: "row",
+      "@media (max-width: 767.98px)": "column",
+    },
+    padding: {
+      default: "2em 5em",
+      "@media (max-width: 767.98px)": "0em 2em",
+    },
+    justifyContent: {
+      "@media (max-width: 767.98px)": "center",
+    },
+    alignSelf: {
+      "@media (max-width: 767.98px)": "center",
+    },
+  },
+  bannerTextContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "100%",
+    boxSizing: "border-box",
+  },
+  bannerTextSubContainerStyles: {
+    display: "flex",
+    boxSizing: "border-box",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    fontSize: {
+      default: "3.5vw",
+      "@media (max-width: 767.98px)": "2.25em",
+    },
+    lineHeight: "1.25em",
+    fontWeight: 300,
+    textAlign: "center",
+    padding: "1em",
+  },
+});
 
 const fadeInOpacity = keyframes`
   0% { opacity: 0; }
@@ -124,14 +127,14 @@ const StyledTitle = styled.div`
 
 export default function Banner() {
   return (
-    <BannerSection>
-      <BannerTextContainer>
-        <BannerTextSubContainer>
+    <section {...stylex.props(styles.bannerSectionStyles)}>
+      <div {...stylex.props(styles.bannerTextContainerStyles)}>
+        <div {...stylex.props(styles.bannerTextSubContainerStyles)}>
           <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
           <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
           <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
-        </BannerTextSubContainer>
-      </BannerTextContainer>
+        </div>
+      </div>
       <LogoContainer id="home">
         <StyledImg src={bannerImage} alt="banner-picture" />
         <StyledTextContainer>
@@ -139,6 +142,6 @@ export default function Banner() {
           <StyledTitle>Software Engineer</StyledTitle>
         </StyledTextContainer>
       </LogoContainer>
-    </BannerSection>
+    </section>
   );
 }
