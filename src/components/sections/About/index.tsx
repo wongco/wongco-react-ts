@@ -6,12 +6,12 @@ import * as stylex from "@stylexjs/stylex";
 const header =
   "Behind every problem is an elegant solution waiting to be created.";
 
-const bodyPartOne = `I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems\
-Administrator building technology solutions to solve critical business challenges. You can\
-now find me tackling new challenges as a full stack software engineer coding primarily in\
+const bodyPartOne = `I'm a software engineer currently based in San Francisco. Prior to this, I was a Systems \
+Administrator building technology solutions to solve critical business challenges. You can \
+now find me tackling new challenges as a full stack software engineer coding primarily in \
 JavaScript and Python.`;
 
-const bodyPartTwo = `You can also find me shooting photos and eating my way through the San Francisco Bay Area.\
+const bodyPartTwo = `You can also find me shooting photos and eating my way through the San Francisco Bay Area. \
 Interested in connecting with me professionally? Reach out to me on any of my contact links.`;
 
 const styles = stylex.create({
