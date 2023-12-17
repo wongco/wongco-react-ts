@@ -10,7 +10,7 @@ You can visit the live version of this site [here.](https://wongcofood.com)
 - Bootstrapped with Vite (TypeScript)
 - React.js
 - FontAwesome
-- Styled Components
+- StyleX
 - Animate on Scroll
 
 # Credits
