@@ -1,144 +1,157 @@
-import styled, { keyframes } from "styled-components";
-
 import bannerImage from "../../../pics/baybridge_banner2.jpg";
+import * as stylex from "@stylexjs/stylex";
 
-/** parent container for banner section */
-const BannerSection = styled.section`
-  display: flex;
-  flex-direction: row;
-  padding: 2em 5em;
+const fadeIn = stylex.keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
 
-  @media (max-width: 767.98px) {
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    padding: 0em 2em;
-  }
-`;
+const styles = stylex.create({
+  bannerSectionStyles: {
+    display: "flex",
+    flexDirection: {
+      default: "row",
+      "@media (max-width: 767.98px)": "column",
+    },
+    padding: {
+      default: "2em 5em",
+      "@media (max-width: 767.98px)": "0em 2em",
+    },
+    justifyContent: {
+      "@media (max-width: 767.98px)": "center",
+    },
+    alignSelf: {
+      "@media (max-width: 767.98px)": "center",
+    },
+  },
+  bannerTextContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "100%",
+    boxSizing: "border-box",
+  },
+  bannerTextSubContainerStyles: {
+    display: "flex",
+    boxSizing: "border-box",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    fontSize: {
+      default: "3.5vw",
+      "@media (max-width: 767.98px)": "2.25em",
+    },
+    lineHeight: "1.25em",
+    fontWeight: 300,
+    textAlign: "center",
+    padding: "1em",
+  },
+  runnerLineBaseStyles: {
+    opacity: 0,
+    animationName: fadeIn,
+    animationIterationCount: 1,
+    animationTimingFunction: "ease-in",
+    animationFillMode: "forwards",
+    animationDuration: "1s",
+  },
+  runnerLineOneStyles: {
+    animationDelay: "0.5s",
+  },
+  runnerLineTwoStyles: {
+    animationDelay: "1.5s",
+  },
+  runnerLineThreeStyles: {
+    animationDelay: "2.5s",
+  },
+  logoContainerStyles: {
+    position: "relative",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "100%",
+    overflow: {
+      "@media (max-width: 767.98px)": "hidden",
+    },
+  },
+  imageStyles: {
+    height: {
+      default: "100%",
+      "@media (max-width: 767.98px)": " 200px",
+    },
+    width: {
+      default: "100%",
+      "@media (max-width: 767.98px)": "auto",
+    },
+    objectFit: "contain",
+    opacity: 1,
+  },
+  textContainerStyles: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translateX(-50%) translateY(-50%)",
+    textAlign: "center",
+    fontWeight: 400,
+    color: "Cornsilk",
+    textShadow: "0px 0px 18px black",
+    width: "100%",
+  },
+  nameStyles: {
+    fontSize: {
+      default: "4vw",
+      "@media (max-width: 767.98px)": "2em",
+    },
+  },
+  titleStyles: {
+    fontSize: {
+      default: "2vw",
+      "@media (max-width: 767.98px)": "1em",
+    },
+    fontWeight: 600,
+  },
+});
 
-/** primary container for left side text */
-const BannerTextContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 100%;
-  box-sizing: border-box;
-  /* border: 1px solid black; */
-`;
+const runnerLineOneStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineOneStyles,
+);
 
-const BannerTextSubContainer = styled.div`
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 3.5vw;
-  line-height: 1.25em;
-  font-weight: 300;
-  text-align: center;
-  padding: 1em;
+const runnerLineTwoStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineTwoStyles,
+);
 
-  @media (max-width: 767.98px) {
-    font-size: 2.25em;
-  }
-`;
+const runnerLineThreeStyles = stylex.props(
+  styles.runnerLineBaseStyles,
+  styles.runnerLineThreeStyles,
+);
 
-const fadeInOpacity = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
-
-const RunnerLine = styled.div`
-  opacity: 0;
-  animation-name: ${fadeInOpacity};
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-`;
-
-const RunnerLineOne = styled(RunnerLine)`
-  animation-delay: 0.5s;
-`;
-
-const RunnerLineTwo = styled(RunnerLine)`
-  animation-delay: 1.5s;
-`;
-
-const RunnerLineThree = styled(RunnerLine)`
-  animation-delay: 2.5s;
-`;
-
-/** primary container for right side image */
-const LogoContainer = styled.div`
-  position: relative;
-  /* background-color: #343a40; */
-  flex: 1 1 100%;
-
-  @media (max-width: 767.98px) {
-    overflow: hidden;
-  }
-`;
-
-const StyledImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  opacity: 1;
-
-  @media (max-width: 767.98px) {
-    height: 200px;
-    width: auto;
-  }
-`;
-
-const StyledTextContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  font-weight: 400;
-  color: Cornsilk;
-  text-shadow: 0px 0px 18px black;
-  width: 100%;
-`;
-
-const StyledName = styled.div`
-  font-size: 4vw;
-  @media (max-width: 767.98px) {
-    font-size: 2em;
-  }
-`;
-
-const StyledTitle = styled.div`
-  font-size: 2vw;
-  font-weight: 600;
-
-  @media (max-width: 767.98px) {
-    font-size: 1em;
-  }
-`;
+const NAME = "Ginson Wong";
+const OCCUPATION = "Software Engineer";
 
 export default function Banner() {
   return (
-    <BannerSection>
-      <BannerTextContainer>
-        <BannerTextSubContainer>
-          <RunnerLineOne>Inspired&nbsp;ideas. </RunnerLineOne>
-          <RunnerLineTwo>Attention&nbsp;to&nbsp;detail. </RunnerLineTwo>
-          <RunnerLineThree>Responsive&nbsp;design. </RunnerLineThree>
-        </BannerTextSubContainer>
-      </BannerTextContainer>
-      <LogoContainer id="home">
-        <StyledImg src={bannerImage} alt="banner-picture" />
-        <StyledTextContainer>
-          <StyledName>Ginson Wong</StyledName>
-          <StyledTitle>Software Engineer</StyledTitle>
-        </StyledTextContainer>
-      </LogoContainer>
-    </BannerSection>
+    <section {...stylex.props(styles.bannerSectionStyles)}>
+      <div {...stylex.props(styles.bannerTextContainerStyles)}>
+        <div {...stylex.props(styles.bannerTextSubContainerStyles)}>
+          <div {...runnerLineOneStyles}>Inspired&nbsp;ideas. </div>
+          <div {...runnerLineTwoStyles}>Attention&nbsp;to&nbsp;detail. </div>
+          <div {...runnerLineThreeStyles}>Responsive&nbsp;design. </div>
+        </div>
+      </div>
+      <div {...stylex.props(styles.logoContainerStyles)} id="home">
+        <img
+          {...stylex.props(styles.imageStyles)}
+          src={bannerImage}
+          alt="banner-picture"
+        />
+        <div {...stylex.props(styles.textContainerStyles)}>
+          <div {...stylex.props(styles.nameStyles)}>{NAME}</div>
+          <div {...stylex.props(styles.titleStyles)}>{OCCUPATION}</div>
+        </div>
+      </div>
+    </section>
   );
 }

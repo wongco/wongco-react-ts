@@ -1,46 +1,50 @@
-import styled from "styled-components";
 import IconLink from "../../atoms/IconLink";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import * as stylex from "@stylexjs/stylex";
 
-const StyledFooter = styled.footer`
-  padding: 0;
-  margin: 0;
-`;
+const styles = stylex.create({
+  footerStyles: {
+    padding: "0",
+    margin: "0",
+  },
+  copyrightContainerStyles: {
+    display: "flex",
+    color: "black",
+    justifyContent: "center",
+    alignItems: "center",
+    fontWeight: 400,
+    fontSize: "1.25em",
+    margin: "0",
+    padding: "1em 1em",
+  },
+  copyrightNoteStyles: {
+    textAlign: {
+      default: "right",
+      "@media (max-width: 767.98px)": "center",
+    },
+    paddingRight: {
+      default: "2em",
+      "@media (max-width: 767.98px)": "0",
+    },
+    fontSize: {
+      default: "1vw",
+      "@media (max-width: 767.98px)": "0.8em",
+    },
+    width: {
+      "@media (max-width: 767.98px)": "70%",
+    },
+  },
+});
 
-const StyledCopyrightContainer = styled.div`
-  display: flex;
-  /* background-color: #bfbfbf; */
-  color: black;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-  font-size: 1.25em;
-  margin: 0;
-  padding: 1em 1em;
-`;
-
-const StyledCopyrightNote = styled.div`
-  text-align: right;
-  padding-right: 2em;
-  font-size: 1vw;
-
-  @media (max-width: 767.98px) {
-    font-size: 0.8em;
-    text-align: center;
-    padding-right: 0;
-    width: 70%;
-  }
-`;
+const copyRightText = "Designed and built by Ginson Wong © 2023";
 
 export default function Contact() {
   return (
-    <StyledFooter>
-      <StyledCopyrightContainer>
+    <footer {...stylex.props(styles.footerStyles)}>
+      <div {...stylex.props(styles.copyrightContainerStyles)}>
         <IconLink href="#top" icon={faArrowAltCircleUp} hovercolor="blue" />
-        <StyledCopyrightNote>
-          Designed and built by Ginson Wong © 2023
-        </StyledCopyrightNote>
-      </StyledCopyrightContainer>
-    </StyledFooter>
+        <div {...stylex.props(styles.copyrightNoteStyles)}>{copyRightText}</div>
+      </div>
+    </footer>
   );
 }

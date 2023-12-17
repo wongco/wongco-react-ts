@@ -1,86 +1,84 @@
 import { faApple, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled from "styled-components";
+import * as stylex from "@stylexjs/stylex";
 
-/** Links Section */
-const StyledDetailsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: "flex-start";
-  height: 3em;
-  margin-top: 1em;
-  width: 15vw;
-  max-width: 500px;
+const styles = stylex.create({
+  detailsContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: {
+      default: "flex-start",
+      "@media (max-width: 767.98px)": "center",
+    },
+    height: "3em",
+    marginTop: "1em",
+    width: {
+      default: "15vw",
+      "@media (max-width: 767.98px)": "50vw",
+    },
+    maxWidth: "500px",
+  },
+  linkStyles: {
+    textDecoration: "none",
+    width: "7em",
+    height: "100%",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "lightgray",
+    paddingLeft: "0.5em",
+    paddingRight: "0.5em",
+    backgroundColor: {
+      default: "lightgoldenrodyellow",
+      ":hover": "steelblue",
+    },
+    transitionProperty: "background-color",
+    transitionDuration: "0.5s",
+  },
+  linkTextStyles: {
+    marginLeft: "0.5em",
+  },
+  detailsTabStyles: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontWeight: 300,
+    width: "100%",
+    height: "100%",
+    color: "black",
+  },
+});
 
-  @media (max-width: 767.98px) {
-    width: 50vw;
-    justify-content: center;
-  }
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  width: 7em;
-  height: 100%;
-  border: 1px solid lightgray;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  background-color: lightgoldenrodyellow;
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-
-  &:hover {
-    background-color: steelblue;
-    color: white;
-  }
-`;
-
-const StyledLinkText = styled.div`
-  margin-left: 0.5em;
-`;
-
-const StyledDetailsTab = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-  width: 100%;
-  height: 100%;
-  color: black;
-`;
+interface Props {
+  appleAppStoreLink?: string;
+  githubLink?: string;
+}
 
 export default function ProjectButtons({
   appleAppStoreLink,
   githubLink,
 }: Props) {
   return (
-    <StyledDetailsContainer>
+    <div {...stylex.props(styles.detailsContainerStyles)}>
       {appleAppStoreLink ? (
-        <StyledLink href={appleAppStoreLink}>
-          <StyledDetailsTab>
+        <a {...stylex.props(styles.linkStyles)} href={appleAppStoreLink}>
+          <div {...stylex.props(styles.detailsTabStyles)}>
             <FontAwesomeIcon icon={faApple} size="1x" />
-            <StyledLinkText>App Store</StyledLinkText>
-          </StyledDetailsTab>
-        </StyledLink>
+            <div {...stylex.props(styles.linkTextStyles)}>App Store</div>
+          </div>
+        </a>
       ) : null}
       {githubLink ? (
-        <StyledLink href={githubLink}>
-          <StyledDetailsTab>
+        <a {...stylex.props(styles.linkStyles)} href={githubLink}>
+          <div {...stylex.props(styles.detailsTabStyles)}>
             <FontAwesomeIcon
               icon={faGithub}
               size="1x"
               style={{ padding: "0" }}
             />
-            <StyledLinkText>Github</StyledLinkText>
-          </StyledDetailsTab>
-        </StyledLink>
+            <div {...stylex.props(styles.linkTextStyles)}>Github</div>
+          </div>
+        </a>
       ) : null}
-    </StyledDetailsContainer>
+    </div>
   );
-}
-
-interface Props {
-  appleAppStoreLink?: string;
-  githubLink?: string;
 }

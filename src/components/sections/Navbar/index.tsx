@@ -7,101 +7,133 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import styled from "styled-components";
 import IconLink from "../../atoms/IconLink";
 import TextLink from "../../atoms/TextLink";
+import * as stylex from "@stylexjs/stylex";
 
-const StyledNav = styled.nav`
-  display: flex;
-  width: 100%;
-  flex-flow: row none;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 2em 2em 18em white;
-
-  @media (max-width: 576px) {
-    flex-flow: row wrap;
-  }
-`;
-
-const StyledNavLinks = styled.ol`
-  display: flex;
-  flex-flow: row none;
-  align-items: center;
-
-  /* Media Query for Mobile */
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-    flex-flow: column wrap;
-    display: ${(props: { isCollapsed: boolean }) =>
-      props.isCollapsed ? "none" : "block"};
-    margin: 0;
-  }
-`;
-
-const StyledLi = styled.li`
-  list-style: none;
-  font-weight: bold;
-
-  @media (max-width: 576px) {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0.5em 0;
-  }
-`;
-
-const StyledHome = styled.p`
-  font-size: 120%;
-  font-weight: bold;
-  margin-left: 1em;
-
-  @media (max-width: 576px) {
-    flex: 1;
-    margin: 0.75em;
-  }
-`;
-
-/** Component for Mobile Only Dropdown Button */
-const StyledBar = styled.div`
-  display: none;
-  margin-right: 2em;
-
-  @media (max-width: 576px) {
-    display: flex;
-    cursor: pointer;
-  }
-`;
-
-const StyledHomeLink = styled.a`
-  text-decoration: none;
-  color: black;
-  padding: 0.75em;
-  border-radius: 10%;
-  font-size: 1.5em;
-  font-weight: 400;
-
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-    padding: 0.1em;
-  }
-`;
-
-const StyledRightNav = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 2em;
-
-  @media (max-width: 576px) {
-    flex: 1 1 100%;
-  }
-`;
-
-const StyledContactLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
+const styles = stylex.create({
+  navContainerStyles: {
+    display: "flex",
+    width: "100%",
+    flexFlow: "row",
+    flexWrap: {
+      default: "nowrap",
+      "@media (max-width: 576px)": "wrap",
+    },
+    justifyContent: "space-between",
+    alignItems: "center",
+    boxShadow: "2em 2em 18em white",
+  },
+  navLinkBaseStyles: {
+    flexFlow: {
+      default: "row",
+      "@media (max-width: 576px)": "column",
+    },
+    flexWrap: {
+      default: "nowrap",
+      "@media (max-width: 576px)": "wrap",
+    },
+    alignItems: "center",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+    margin: {
+      "@media (max-width: 576px)": "0.5em 0",
+    },
+  },
+  navLinkCollapsedStyles: {
+    display: {
+      default: "flex",
+      "@media (max-width: 576px)": "none",
+    },
+  },
+  navLinkNotCollapsedStyles: {
+    display: {
+      default: "flex",
+      "@media (max-width: 576px)": "block",
+    },
+  },
+  navLinkItemStyles: {
+    listStyle: "none",
+    fontWeight: "bold",
+    display: {
+      "@media (max-width: 576px)": "flex",
+    },
+    justifyContent: {
+      "@media (max-width: 576px)": "flex-end",
+    },
+    margin: {
+      "@media (max-width: 576px)": "0.5em 0",
+    },
+  },
+  homeLinkContainerStyles: {
+    fontSize: "120%",
+    fontWeight: "bold",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    margin: {
+      default: "1em",
+      "@media (max-width: 576px)": "0.75em",
+    },
+  },
+  homeLinkStyles: {
+    textDecoration: "none",
+    color: "black",
+    padding: {
+      default: "0.75em",
+      "@media (max-width: 576px)": "0.1em",
+    },
+    borderRadius: "10%",
+    fontSize: "1.5em",
+    fontWeight: 400,
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+  },
+  barStyles: {
+    display: {
+      default: "none",
+      "@media (max-width: 576px)": "flex",
+    },
+    marginRight: "2em",
+    cursor: {
+      "@media (max-width: 576px)": "pointer",
+    },
+  },
+  rightNavContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingRight: "2em",
+    flexGrow: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexShrink: {
+      "@media (max-width: 576px)": "1",
+    },
+    flexBasis: {
+      "@media (max-width: 576px)": "100%",
+    },
+  },
+  contactLinkContainerStyles: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+});
 
 export default function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -110,27 +142,36 @@ export default function Navbar() {
     setIsCollapsed((prevState) => !prevState);
   };
 
+  const styledNavLinkStyles = stylex.props(
+    styles.navLinkBaseStyles,
+    isCollapsed
+      ? styles.navLinkCollapsedStyles
+      : styles.navLinkNotCollapsedStyles,
+  );
+
   return (
-    <StyledNav>
-      <StyledHome>
-        <StyledHomeLink href="#home">WongCo</StyledHomeLink>
-      </StyledHome>
-      <StyledBar onClick={handleClick}>
+    <nav {...stylex.props(styles.navContainerStyles)}>
+      <p {...stylex.props(styles.homeLinkContainerStyles)}>
+        <a {...stylex.props(styles.homeLinkStyles)} href="#home">
+          WongCo
+        </a>
+      </p>
+      <div {...stylex.props(styles.barStyles)} onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} size="2x" />
-      </StyledBar>
-      <StyledRightNav>
-        <StyledNavLinks isCollapsed={isCollapsed}>
-          <StyledLi>
+      </div>
+      <div {...stylex.props(styles.rightNavContainerStyles)}>
+        <ol {...styledNavLinkStyles}>
+          <li {...stylex.props(styles.navLinkItemStyles)}>
             <TextLink href="#about" onClick={handleClick} title="About" />
-          </StyledLi>
-          <StyledLi>
+          </li>
+          <li {...stylex.props(styles.navLinkItemStyles)}>
             <TextLink
               href="#portfolio"
               onClick={handleClick}
               title="Portfolio"
             />
-          </StyledLi>
-          <StyledContactLinks>
+          </li>
+          <div {...stylex.props(styles.contactLinkContainerStyles)}>
             <IconLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"
@@ -151,9 +192,9 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/ginson"
               hovercolor="#0077B5"
             />
-          </StyledContactLinks>
-        </StyledNavLinks>
-      </StyledRightNav>
-    </StyledNav>
+          </div>
+        </ol>
+      </div>
+    </nav>
   );
 }
