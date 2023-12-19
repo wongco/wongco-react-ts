@@ -7,7 +7,7 @@ const fadeIn = stylex.keyframes({
 });
 
 const styles = stylex.create({
-  bannerSectionStyles: {
+  bannerSection: {
     display: "flex",
     flexDirection: {
       default: "row",
@@ -24,7 +24,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "center",
     },
   },
-  bannerTextContainerStyles: {
+  bannerTextContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -34,7 +34,7 @@ const styles = stylex.create({
     flexBasis: "100%",
     boxSizing: "border-box",
   },
-  bannerTextSubContainerStyles: {
+  bannerTextSubContainer: {
     display: "flex",
     boxSizing: "border-box",
     flexDirection: "column",
@@ -49,7 +49,7 @@ const styles = stylex.create({
     textAlign: "center",
     padding: "1em",
   },
-  runnerLineBaseStyles: {
+  runnerLineBase: {
     opacity: 0,
     animationName: fadeIn,
     animationIterationCount: 1,
@@ -57,16 +57,16 @@ const styles = stylex.create({
     animationFillMode: "forwards",
     animationDuration: "1s",
   },
-  runnerLineOneStyles: {
+  runnerLineOne: {
     animationDelay: "0.5s",
   },
-  runnerLineTwoStyles: {
+  runnerLineTwo: {
     animationDelay: "1.5s",
   },
-  runnerLineThreeStyles: {
+  runnerLineThree: {
     animationDelay: "2.5s",
   },
-  logoContainerStyles: {
+  logoContainer: {
     position: "relative",
     flexGrow: 1,
     flexShrink: 1,
@@ -75,7 +75,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "hidden",
     },
   },
-  imageStyles: {
+  image: {
     height: {
       default: "100%",
       "@media (max-width: 767.98px)": " 200px",
@@ -87,7 +87,7 @@ const styles = stylex.create({
     objectFit: "contain",
     opacity: 1,
   },
-  textContainerStyles: {
+  textContainer: {
     position: "absolute",
     top: "50%",
     left: "50%",
@@ -98,13 +98,13 @@ const styles = stylex.create({
     textShadow: "0px 0px 18px black",
     width: "100%",
   },
-  nameStyles: {
+  name: {
     fontSize: {
       default: "4vw",
       "@media (max-width: 767.98px)": "2em",
     },
   },
-  titleStyles: {
+  title: {
     fontSize: {
       default: "2vw",
       "@media (max-width: 767.98px)": "1em",
@@ -114,18 +114,18 @@ const styles = stylex.create({
 });
 
 const runnerLineOneStyles = stylex.props(
-  styles.runnerLineBaseStyles,
-  styles.runnerLineOneStyles,
+  styles.runnerLineBase,
+  styles.runnerLineOne,
 );
 
 const runnerLineTwoStyles = stylex.props(
-  styles.runnerLineBaseStyles,
-  styles.runnerLineTwoStyles,
+  styles.runnerLineBase,
+  styles.runnerLineTwo,
 );
 
 const runnerLineThreeStyles = stylex.props(
-  styles.runnerLineBaseStyles,
-  styles.runnerLineThreeStyles,
+  styles.runnerLineBase,
+  styles.runnerLineThree,
 );
 
 const NAME = "Ginson Wong";
@@ -133,23 +133,23 @@ const OCCUPATION = "Software Engineer";
 
 export default function Banner() {
   return (
-    <section {...stylex.props(styles.bannerSectionStyles)}>
-      <div {...stylex.props(styles.bannerTextContainerStyles)}>
-        <div {...stylex.props(styles.bannerTextSubContainerStyles)}>
+    <section {...stylex.props(styles.bannerSection)}>
+      <div {...stylex.props(styles.bannerTextContainer)}>
+        <div {...stylex.props(styles.bannerTextSubContainer)}>
           <div {...runnerLineOneStyles}>Inspired&nbsp;ideas. </div>
           <div {...runnerLineTwoStyles}>Attention&nbsp;to&nbsp;detail. </div>
           <div {...runnerLineThreeStyles}>Responsive&nbsp;design. </div>
         </div>
       </div>
-      <div {...stylex.props(styles.logoContainerStyles)} id="home">
+      <div {...stylex.props(styles.logoContainer)} id="home">
         <img
-          {...stylex.props(styles.imageStyles)}
+          {...stylex.props(styles.image)}
           src={bannerImage}
           alt="banner-picture"
         />
-        <div {...stylex.props(styles.textContainerStyles)}>
-          <div {...stylex.props(styles.nameStyles)}>{NAME}</div>
-          <div {...stylex.props(styles.titleStyles)}>{OCCUPATION}</div>
+        <div {...stylex.props(styles.textContainer)}>
+          <div {...stylex.props(styles.name)}>{NAME}</div>
+          <div {...stylex.props(styles.title)}>{OCCUPATION}</div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import ProjectButtons from "./ProjectButtons";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  projectInfoContainerStyles: {
+  projectInfoContainer: {
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
@@ -32,7 +32,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": 1,
     },
   },
-  projectTitleStyles: {
+  projectTitle: {
     marginBottom: "7px",
     marginLeft: 0,
     marginRight: 0,
@@ -56,7 +56,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": 0,
     },
   },
-  tagsStyles: {
+  tags: {
     fontWeight: 300,
     fontStyle: "italic",
     borderLeftWidth: "2px",
@@ -78,7 +78,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "1em",
     },
   },
-  bodyTextStyles: {
+  bodyText: {
     marginTop: "5px",
     marginBottom: "10px",
     color: "#45474c",
@@ -115,16 +115,16 @@ export default function ProjectInfo({
 
   return (
     <div
-      {...stylex.props(styles.projectInfoContainerStyles)}
+      {...stylex.props(styles.projectInfoContainer)}
       data-aos="zoom-out"
       data-aos-delay="200"
       data-aos-easing="ease-in-sine"
     >
-      <div {...stylex.props(styles.projectTitleStyles)}>{header}</div>
+      <div {...stylex.props(styles.projectTitle)}>{header}</div>
       {tags ? (
-        <div {...stylex.props(styles.tagsStyles)}>{tags.join(", ")}</div>
+        <div {...stylex.props(styles.tags)}>{tags.join(", ")}</div>
       ) : null}
-      <div {...stylex.props(styles.bodyTextStyles)}>{body}</div>
+      <div {...stylex.props(styles.bodyText)}>{body}</div>
       <ProjectButtons
         githubLink={githubLink}
         appleAppStoreLink={appleAppStoreLink}

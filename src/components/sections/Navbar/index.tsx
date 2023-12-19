@@ -12,7 +12,7 @@ import TextLink from "../../atoms/TextLink";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  navContainerStyles: {
+  navContainer: {
     display: "flex",
     width: "100%",
     flexFlow: "row",
@@ -24,7 +24,7 @@ const styles = stylex.create({
     alignItems: "center",
     boxShadow: "2em 2em 18em white",
   },
-  navLinkBaseStyles: {
+  navLinkBase: {
     flexFlow: {
       default: "row",
       "@media (max-width: 576px)": "column",
@@ -47,19 +47,19 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "0.5em 0",
     },
   },
-  navLinkCollapsedStyles: {
+  navLinkCollapsed: {
     display: {
       default: "flex",
       "@media (max-width: 576px)": "none",
     },
   },
-  navLinkNotCollapsedStyles: {
+  navLinkNotCollapsed: {
     display: {
       default: "flex",
       "@media (max-width: 576px)": "block",
     },
   },
-  navLinkItemStyles: {
+  navLinkItem: {
     listStyle: "none",
     fontWeight: "bold",
     display: {
@@ -72,7 +72,7 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "0.5em 0",
     },
   },
-  homeLinkContainerStyles: {
+  homeLinkContainer: {
     fontSize: "120%",
     fontWeight: "bold",
     flexGrow: {
@@ -83,7 +83,7 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "0.75em",
     },
   },
-  homeLinkStyles: {
+  homeLink: {
     textDecoration: "none",
     color: "black",
     padding: {
@@ -103,7 +103,7 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "100%",
     },
   },
-  barStyles: {
+  bar: {
     display: {
       default: "none",
       "@media (max-width: 576px)": "flex",
@@ -113,7 +113,7 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "pointer",
     },
   },
-  rightNavContainerStyles: {
+  rightNavContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -128,7 +128,7 @@ const styles = stylex.create({
       "@media (max-width: 576px)": "100%",
     },
   },
-  contactLinkContainerStyles: {
+  contactLinkContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-end",
@@ -143,35 +143,33 @@ export default function Navbar() {
   };
 
   const styledNavLinkStyles = stylex.props(
-    styles.navLinkBaseStyles,
-    isCollapsed
-      ? styles.navLinkCollapsedStyles
-      : styles.navLinkNotCollapsedStyles,
+    styles.navLinkBase,
+    isCollapsed ? styles.navLinkCollapsed : styles.navLinkNotCollapsed,
   );
 
   return (
-    <nav {...stylex.props(styles.navContainerStyles)}>
-      <p {...stylex.props(styles.homeLinkContainerStyles)}>
-        <a {...stylex.props(styles.homeLinkStyles)} href="#home">
+    <nav {...stylex.props(styles.navContainer)}>
+      <p {...stylex.props(styles.homeLinkContainer)}>
+        <a {...stylex.props(styles.homeLink)} href="#home">
           WongCo
         </a>
       </p>
-      <div {...stylex.props(styles.barStyles)} onClick={handleClick}>
+      <div {...stylex.props(styles.bar)} onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} size="2x" />
       </div>
-      <div {...stylex.props(styles.rightNavContainerStyles)}>
+      <div {...stylex.props(styles.rightNavContainer)}>
         <ol {...styledNavLinkStyles}>
-          <li {...stylex.props(styles.navLinkItemStyles)}>
+          <li {...stylex.props(styles.navLinkItem)}>
             <TextLink href="#about" onClick={handleClick} title="About" />
           </li>
-          <li {...stylex.props(styles.navLinkItemStyles)}>
+          <li {...stylex.props(styles.navLinkItem)}>
             <TextLink
               href="#portfolio"
               onClick={handleClick}
               title="Portfolio"
             />
           </li>
-          <div {...stylex.props(styles.contactLinkContainerStyles)}>
+          <div {...stylex.props(styles.contactLinkContainer)}>
             <IconLink
               icon={faEnvelope}
               href="mailto:ginson.wong+hello@gmail.com"

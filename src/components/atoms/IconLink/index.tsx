@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  fontAwesomeStyle: (hoverColor: string) => ({
+  fontAwesome: (hoverColor: string) => ({
     margin: "15px",
     color: {
       default: "Dimgray",
@@ -28,7 +28,7 @@ export default function IconLink({
   return (
     <a href={href}>
       <FontAwesomeIcon
-        {...stylex.props(styles.fontAwesomeStyle(hovercolor))}
+        {...stylex.props(styles.fontAwesome(hovercolor))}
         icon={icon}
         size="2x"
       />

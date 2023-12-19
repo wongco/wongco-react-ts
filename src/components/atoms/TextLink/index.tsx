@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  linkContainerStyle: {
+  linkContainer: {
     textDecoration: "none",
     color: {
       default: "black",
@@ -28,11 +28,7 @@ type TextLinkProps = {
 
 export default function TextLink({ title, href, onClick }: TextLinkProps) {
   return (
-    <a
-      {...stylex.props(styles.linkContainerStyle)}
-      href={href}
-      onClick={onClick}
-    >
+    <a {...stylex.props(styles.linkContainer)} href={href} onClick={onClick}>
       {title}
     </a>
   );

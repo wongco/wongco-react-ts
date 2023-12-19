@@ -7,14 +7,14 @@ import Portfolio from "../sections/Portfolio";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  appStyles: {
+  app: {
     backgroundImage: "linear-gradient(to bottom, white, #ffb900)",
   },
 });
 
 export default function App() {
   return (
-    <div {...stylex.props(styles.appStyles)} id="top">
+    <div {...stylex.props(styles.app)} id="top">
       <Navbar />
       <Banner />
       <Portfolio />

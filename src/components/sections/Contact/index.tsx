@@ -3,11 +3,11 @@ import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  footerStyles: {
+  footer: {
     padding: "0",
     margin: "0",
   },
-  copyrightContainerStyles: {
+  copyrightContainer: {
     display: "flex",
     color: "black",
     justifyContent: "center",
@@ -17,7 +17,7 @@ const styles = stylex.create({
     margin: "0",
     padding: "1em 1em",
   },
-  copyrightNoteStyles: {
+  copyrightNote: {
     textAlign: {
       default: "right",
       "@media (max-width: 767.98px)": "center",
@@ -40,10 +40,10 @@ const copyRightText = "Designed and built by Ginson Wong © 2023";
 
 export default function Contact() {
   return (
-    <footer {...stylex.props(styles.footerStyles)}>
-      <div {...stylex.props(styles.copyrightContainerStyles)}>
+    <footer {...stylex.props(styles.footer)}>
+      <div {...stylex.props(styles.copyrightContainer)}>
         <IconLink href="#top" icon={faArrowAltCircleUp} hovercolor="blue" />
-        <div {...stylex.props(styles.copyrightNoteStyles)}>{copyRightText}</div>
+        <div {...stylex.props(styles.copyrightNote)}>{copyRightText}</div>
       </div>
     </footer>
   );

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  detailsContainerStyles: {
+  detailsContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: {
@@ -18,7 +18,7 @@ const styles = stylex.create({
     },
     maxWidth: "500px",
   },
-  linkStyles: {
+  link: {
     textDecoration: "none",
     width: "7em",
     height: "100%",
@@ -34,10 +34,10 @@ const styles = stylex.create({
     transitionProperty: "background-color",
     transitionDuration: "0.5s",
   },
-  linkTextStyles: {
+  linkText: {
     marginLeft: "0.5em",
   },
-  detailsTabStyles: {
+  detailsTab: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -58,24 +58,24 @@ export default function ProjectButtons({
   githubLink,
 }: Props) {
   return (
-    <div {...stylex.props(styles.detailsContainerStyles)}>
+    <div {...stylex.props(styles.detailsContainer)}>
       {appleAppStoreLink ? (
-        <a {...stylex.props(styles.linkStyles)} href={appleAppStoreLink}>
-          <div {...stylex.props(styles.detailsTabStyles)}>
+        <a {...stylex.props(styles.link)} href={appleAppStoreLink}>
+          <div {...stylex.props(styles.detailsTab)}>
             <FontAwesomeIcon icon={faApple} size="1x" />
-            <div {...stylex.props(styles.linkTextStyles)}>App Store</div>
+            <div {...stylex.props(styles.linkText)}>App Store</div>
           </div>
         </a>
       ) : null}
       {githubLink ? (
-        <a {...stylex.props(styles.linkStyles)} href={githubLink}>
-          <div {...stylex.props(styles.detailsTabStyles)}>
+        <a {...stylex.props(styles.link)} href={githubLink}>
+          <div {...stylex.props(styles.detailsTab)}>
             <FontAwesomeIcon
               icon={faGithub}
               size="1x"
               style={{ padding: "0" }}
             />
-            <div {...stylex.props(styles.linkTextStyles)}>Github</div>
+            <div {...stylex.props(styles.linkText)}>Github</div>
           </div>
         </a>
       ) : null}
