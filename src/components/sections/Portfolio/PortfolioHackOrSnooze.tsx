@@ -3,7 +3,7 @@ import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  hackSnoozeContainerStyles: {
+  hackSnoozeContainer: {
     display: "flex",
     justifyContent: {
       default: "space-evenly",
@@ -25,7 +25,7 @@ const styles = stylex.create({
     width: "100%",
     height: "100%",
   },
-  imageContainerStyles: {
+  imageContainer: {
     display: "flex",
     alignItems: "flex-end",
     height: {
@@ -45,7 +45,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "2em",
     },
   },
-  imageStyles: {
+  image: {
     width: {
       default: "100%",
       "@media (max-width: 767.98px)": "auto",
@@ -59,10 +59,10 @@ const styles = stylex.create({
 
 export default function PortfolioHackSnooze() {
   return (
-    <div {...stylex.props(styles.hackSnoozeContainerStyles)}>
-      <div {...stylex.props(styles.imageContainerStyles)}>
+    <div {...stylex.props(styles.hackSnoozeContainer)}>
+      <div {...stylex.props(styles.imageContainer)}>
         <img
-          {...stylex.props(styles.imageStyles)}
+          {...stylex.props(styles.image)}
           src={preview_hackorsnooze}
           alt="hack or snooze preview image"
         />

@@ -3,7 +3,7 @@ import preview_jobly from "../../../pics/jobly03.jpg";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  joblyContainerStyles: {
+  joblyContainer: {
     display: "flex",
     width: "100%",
     height: "100%",
@@ -25,7 +25,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "0em",
     },
   },
-  imageContainerStyles: {
+  imageContainer: {
     display: "flex",
     alignItems: "flex-end",
     height: {
@@ -45,7 +45,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "2em",
     },
   },
-  imageStyles: {
+  image: {
     width: {
       default: "100%",
       "@media (max-width: 767.98px)": "auto",
@@ -59,10 +59,10 @@ const styles = stylex.create({
 
 export default function PortfolioJobly() {
   return (
-    <div {...stylex.props(styles.joblyContainerStyles)}>
-      <div {...stylex.props(styles.imageContainerStyles)}>
+    <div {...stylex.props(styles.joblyContainer)}>
+      <div {...stylex.props(styles.imageContainer)}>
         <img
-          {...stylex.props(styles.imageStyles)}
+          {...stylex.props(styles.image)}
           src={preview_jobly}
           alt="jobly preview image"
         />

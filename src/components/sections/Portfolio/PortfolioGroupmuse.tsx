@@ -3,7 +3,7 @@ import preview_groupmuse from "../../../pics/groupmuse04.png";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  groupmuseContainerStyles: {
+  groupmuseContainer: {
     display: "flex",
     flexDirection: {
       default: "row",
@@ -18,7 +18,7 @@ const styles = stylex.create({
     borderTopStyle: "solid",
     paddingTop: "3em",
   },
-  imageContainerStyles: {
+  imageContainer: {
     display: "flex",
     alignItems: "flex-end",
     height: "100%",
@@ -31,17 +31,17 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "0",
     },
   },
-  imageStyles: {
+  image: {
     width: "100%",
   },
 });
 
 export default function PortfolioGroupmuse() {
   return (
-    <div {...stylex.props(styles.groupmuseContainerStyles)}>
-      <div {...stylex.props(styles.imageContainerStyles)}>
+    <div {...stylex.props(styles.groupmuseContainer)}>
+      <div {...stylex.props(styles.imageContainer)}>
         <img
-          {...stylex.props(styles.imageStyles)}
+          {...stylex.props(styles.image)}
           src={preview_groupmuse}
           alt="groupmuse preview image"
         />

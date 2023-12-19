@@ -15,7 +15,7 @@ const bodyPartTwo = `You can also find me shooting photos and eating my way thro
 Interested in connecting with me professionally? Reach out to me on any of my contact links.`;
 
 const styles = stylex.create({
-  containerStyles: {
+  container: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
@@ -25,7 +25,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "0",
     },
   },
-  boxStyles: {
+  box: {
     display: "flex",
     justifyContent: "center",
     width: {
@@ -41,7 +41,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "0",
     },
   },
-  aboutHeaderStyles: {
+  aboutHeader: {
     padding: "0",
     margin: "0",
     textAlign: "center",
@@ -56,7 +56,7 @@ const styles = stylex.create({
       "@media (max-width: 767.98px)": "1.25em",
     },
   },
-  aboutBodyContainerStyles: {
+  aboutBodyContainer: {
     display: "flex",
     flexDirection: {
       default: "row",
@@ -65,7 +65,7 @@ const styles = stylex.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  imageContainerStyles: {
+  imageContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -77,7 +77,7 @@ const styles = stylex.create({
     },
     overflow: "hidden",
   },
-  imageStyles: {
+  image: {
     borderRadius: "50%",
     borderWidth: "5px",
     borderStyle: "solid",
@@ -88,7 +88,7 @@ const styles = stylex.create({
     height: "250px",
     boxShadow: "5px 5px 18px gray",
   },
-  bodyStyles: {
+  body: {
     color: "#45474c",
     fontSize: {
       default: "1.75vw",
@@ -118,24 +118,20 @@ export default function About() {
   }, []);
 
   return (
-    <section {...stylex.props(styles.containerStyles)} id="about">
-      <div {...stylex.props(styles.boxStyles)}>
-        <p {...stylex.props(styles.aboutHeaderStyles)}>{header}</p>
+    <section {...stylex.props(styles.container)} id="about">
+      <div {...stylex.props(styles.box)}>
+        <p {...stylex.props(styles.aboutHeader)}>{header}</p>
       </div>
-      <div {...stylex.props(styles.aboutBodyContainerStyles)}>
+      <div {...stylex.props(styles.aboutBodyContainer)}>
         <div
-          {...stylex.props(styles.imageContainerStyles)}
+          {...stylex.props(styles.imageContainer)}
           data-aos="fade-right"
           data-aos-delay="200"
           data-aos-easing="ease-in-sine"
         >
-          <img
-            {...stylex.props(styles.imageStyles)}
-            src={preview}
-            alt="headshot"
-          />
+          <img {...stylex.props(styles.image)} src={preview} alt="headshot" />
         </div>
-        <div {...stylex.props(styles.bodyStyles)}>
+        <div {...stylex.props(styles.body)}>
           {bodyPartOne}
           <br />
           <br />

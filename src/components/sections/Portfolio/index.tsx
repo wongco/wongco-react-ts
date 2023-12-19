@@ -4,7 +4,7 @@ import PortfolioJobly from "./PortfolioJobly";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  portfolioContainerStyles: {
+  portfolioContainer: {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
@@ -13,7 +13,7 @@ const styles = stylex.create({
     height: "100%",
     padding: "20px",
   },
-  dividerStyles: {
+  divider: {
     width: "80vw",
     height: "0.25px",
     margin: "0",
@@ -24,13 +24,13 @@ const styles = stylex.create({
 
 export default function Portfolio() {
   return (
-    <div {...stylex.props(styles.portfolioContainerStyles)} id="portfolio">
+    <div {...stylex.props(styles.portfolioContainer)} id="portfolio">
       <PortfolioGroupmuse />
-      <hr {...stylex.props(styles.dividerStyles)} />
+      <hr {...stylex.props(styles.divider)} />
       <PortfolioJobly />
-      <hr {...stylex.props(styles.dividerStyles)} />
+      <hr {...stylex.props(styles.divider)} />
       <PortfolioHackOrSnooze />
-      <hr {...stylex.props(styles.dividerStyles)} />
+      <hr {...stylex.props(styles.divider)} />
     </div>
   );
 }
