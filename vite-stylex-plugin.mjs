@@ -30,6 +30,7 @@ export default function styleXVitePlugin({
 
   const VIRTUAL_STYLEX_MODULE_ID = "virtual:stylex.css";
   const RESOLVED_STYLEX_MODULE_ID = "\0" + VIRTUAL_STYLEX_MODULE_ID;
+  const DEV_PUBLIC_STYLEX_PATH = "/@stylex.css";
 
   let server;
 
@@ -96,7 +97,7 @@ export default function styleXVitePlugin({
       server.middlewares.use((req, res, next) => {
         // console.log("MIDDLEWARE", req.originalUrl);
         // maybe better way to do this?
-        if (/virtual:stylex\.css/.test(req.originalUrl)) {
+        if (req.originalUrl === DEV_PUBLIC_STYLEX_PATH) {
           res.setHeader("Content-Type", "text/css");
           const stylexBundle = compileStyleX();
           console.log("SERVE Stylex bundle");
@@ -190,9 +191,7 @@ export default function styleXVitePlugin({
 
       let { code, map, metadata } = result;
 
-      if (isProd) {
-        code = 'import "virtual:stylex.css";\n' + code;
-      }
+      // Do not import CSS via JS to avoid MIME errors; served via HTML link in dev
 
       if (
         isCompileMode &&
@@ -207,7 +206,20 @@ export default function styleXVitePlugin({
     },
 
     transformIndexHtml(html, ctx) {
-      if (!isProd || !outputFileName) {
+      if (!isProd) {
+        return [
+          {
+            tag: "link",
+            attrs: {
+              rel: "stylesheet",
+              href: DEV_PUBLIC_STYLEX_PATH,
+            },
+            injectTo: "head",
+          },
+        ];
+      }
+
+      if (!outputFileName) {
         return html;
       }
 
@@ -226,14 +238,6 @@ export default function styleXVitePlugin({
           attrs: {
             rel: "stylesheet",
             href: publicPath,
-          },
-          injectTo: "head",
-        },
-        {
-          tag: "link",
-          attrs: {
-            rel: "stylesheet",
-            href: "virtual:stylex.css",
           },
           injectTo: "head",
         },
