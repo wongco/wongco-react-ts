@@ -1,0 +1,15 @@
+// Auto-generated from @stylexjs/eslint-plugin stylex-valid-styles.js
+// Regenerate with: node scripts/build-stylex-grit.mjs
+
+`stylex.create({ $namespace: { $pseudo: { $key: $value } } })` where {
+    $pseudo <: r"^[:@]",
+    not $key <: r"^[:@]",
+    not $key <: r"^(?:alignItems|alignSelf|animationDelay|animationDuration|animationFillMode|animationIterationCount|animationName|animationTimingFunction|backgroundColor|backgroundImage|borderColor|borderLeftColor)$",
+    not $key <: r"^(?:borderLeftStyle|borderLeftWidth|borderRadius|borderStyle|borderTopColor|borderTopStyle|borderTopWidth|borderWidth|boxShadow|boxSizing|color|cursor|display|flexBasis|flexDirection|flexFlow|flexGrow)$",
+    not $key <: r"^(?:flexShrink|flexWrap|fontSize|fontStyle|fontWeight|height|justifyContent|left|lineHeight|listStyle|margin|marginBottom|marginHorizontal|marginLeft|marginRight|marginTop|marginVertical|maxWidth)$",
+    not $key <: r"^(?:objectFit|opacity|order|overflow|padding|paddingBottom|paddingLeft|paddingRight|paddingTop|position|textAlign|textDecoration|textShadow|top|transform|transitionDuration|transitionProperty|width)$",
+    register_diagnostic(
+      span = $key,
+      message = "This is not a key that is allowed by stylex"
+    )
+  }

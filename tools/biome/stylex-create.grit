@@ -1,0 +1,10 @@
+// Auto-generated from @stylexjs/eslint-plugin stylex-valid-styles.js
+// Regenerate with: node scripts/build-stylex-grit.mjs
+
+`stylex.create($arg)` where {
+    not $arg <: `{ $props }`,
+    register_diagnostic(
+      span = $arg,
+      message = "stylex.create expects a single object literal argument"
+    )
+  }
