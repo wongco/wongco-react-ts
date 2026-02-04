@@ -1,0 +1,36 @@
+{
+  "files": {
+    "includes": ["**", "!!**/dist"],
+    "ignoreUnknown": true
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noRedundantAlt": "off",
+        "noStaticElementInteractions": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useConst": "off",
+        "useImportType": "off",
+        "useNodejsImportProtocol": "off",
+        "useTemplate": "off"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "noDuplicateFontNames": "off"
+      }
+    }
+  },
+  "plugins": [
+    "./tools/biome/stylex-create.grit",
+    "./tools/biome/stylex-invalid-key.grit",
+    "./tools/biome/stylex-invalid-key-nested.grit"
+  ]
+}

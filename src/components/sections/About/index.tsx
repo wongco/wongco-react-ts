@@ -1,7 +1,7 @@
+import * as stylex from "@stylexjs/stylex";
 import AOS from "aos";
 import { useEffect } from "react";
 import preview from "../../../pics/profile_pic1c.jpg";
-import * as stylex from "@stylexjs/stylex";
 
 const header =
   "Behind every problem is an elegant solution waiting to be created.";

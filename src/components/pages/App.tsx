@@ -1,10 +1,10 @@
 import "aos/dist/aos.css";
+import * as stylex from "@stylexjs/stylex";
 import About from "../sections/About";
 import Banner from "../sections/Banner";
 import Contact from "../sections/Contact";
 import Navbar from "../sections/Navbar";
 import Portfolio from "../sections/Portfolio";
-import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
   app: {

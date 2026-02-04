@@ -1,5 +1,5 @@
-import bannerImage from "../../../pics/baybridge_banner2.jpg";
 import * as stylex from "@stylexjs/stylex";
+import bannerImage from "../../../pics/baybridge_banner2.jpg";
 
 const fadeIn = stylex.keyframes({
   from: { opacity: 0 },

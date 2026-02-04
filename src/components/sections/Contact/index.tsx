@@ -1,6 +1,6 @@
-import IconLink from "../../atoms/IconLink";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import * as stylex from "@stylexjs/stylex";
+import IconLink from "../../atoms/IconLink";
 
 const styles = stylex.create({
   footer: {

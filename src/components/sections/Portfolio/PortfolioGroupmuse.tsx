@@ -1,6 +1,6 @@
-import ProjectInfo from "./ProjectInfo";
-import preview_groupmuse from "../../../pics/groupmuse04.png";
 import * as stylex from "@stylexjs/stylex";
+import preview_groupmuse from "../../../pics/groupmuse04.png";
+import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
   groupmuseContainer: {
