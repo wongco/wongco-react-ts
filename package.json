@@ -21,11 +21,11 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,css,md}": [
-      "biome lint",
+      "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
       "prettier --write --ignore-unknown"
     ],
     "**/*.json": [
-      "biome lint",
+      "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
       "prettier --write --ignore-unknown"
     ]
   },
