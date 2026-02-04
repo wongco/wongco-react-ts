@@ -1,6 +1,6 @@
-import ProjectInfo from "./ProjectInfo";
-import preview_jobly from "../../../pics/jobly03.jpg";
 import * as stylex from "@stylexjs/stylex";
+import preview_jobly from "../../../pics/jobly03.jpg";
+import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
   joblyContainer: {

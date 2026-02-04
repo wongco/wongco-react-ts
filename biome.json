@@ -27,9 +27,6 @@
       }
     }
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "plugins": [
     "./tools/biome/stylex-create.grit",
     "./tools/biome/stylex-invalid-key.grit",

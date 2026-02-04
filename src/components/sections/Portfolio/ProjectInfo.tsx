@@ -1,7 +1,7 @@
+import * as stylex from "@stylexjs/stylex";
 import AOS from "aos";
 import { useEffect } from "react";
 import ProjectButtons from "./ProjectButtons";
-import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
   projectInfoContainer: {

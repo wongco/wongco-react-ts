@@ -1,7 +1,7 @@
 import babel from "@babel/core";
 import stylexBabelPlugin from "@stylexjs/babel-plugin";
-import path from "path";
 import crypto from "crypto";
+import path from "path";
 
 /*
 	Using this as a reference due to lack of published Vite Plugin for StyleX (as of 2023-12-16)

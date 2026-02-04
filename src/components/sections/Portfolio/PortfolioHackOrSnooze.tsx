@@ -1,6 +1,6 @@
-import ProjectInfo from "./ProjectInfo";
-import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
 import * as stylex from "@stylexjs/stylex";
+import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
+import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
   hackSnoozeContainer: {
