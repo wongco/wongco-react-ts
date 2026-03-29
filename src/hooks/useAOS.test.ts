@@ -20,25 +20,25 @@ describe("useAOS", () => {
   });
 
   it("initializes AOS on first mount", async () => {
-    const { useAOS } = await import("./useAOS");
-    renderHook(() => useAOS());
+    const mod = await import("./useAOS");
+    renderHook(() => mod.useAOS());
 
     expect(AOS.init).toHaveBeenCalledTimes(1);
     expect(AOS.init).toHaveBeenCalledWith({ duration: 400 });
   });
 
-  it("does not reinitialize AOS on subsequent renders", async () => {
-    const { useAOS } = await import("./useAOS");
-    renderHook(() => useAOS());
+  it("does not reinitialize AOS when re-rendered", async () => {
+    const mod = await import("./useAOS");
+    const { rerender } = renderHook(() => mod.useAOS());
 
-    renderHook(() => useAOS());
+    rerender();
 
     expect(AOS.init).toHaveBeenCalledTimes(1);
   });
 
   it("adds resize listener for AOS refresh", async () => {
-    const { useAOS } = await import("./useAOS");
-    const { unmount } = renderHook(() => useAOS());
+    const mod = await import("./useAOS");
+    const { unmount } = renderHook(() => mod.useAOS());
 
     expect(window.addEventListener).toHaveBeenCalledWith(
       "resize",
@@ -53,9 +53,16 @@ describe("useAOS", () => {
   });
 
   it("uses custom options when provided", async () => {
-    const { useAOS } = await import("./useAOS");
-    renderHook(() => useAOS({ duration: 600 }));
+    const mod = await import("./useAOS");
+    renderHook(() => mod.useAOS({ duration: 600 }));
 
     expect(AOS.init).toHaveBeenCalledWith({ duration: 600 });
+  });
+
+  it("uses default options when no args provided", async () => {
+    const mod = await import("./useAOS");
+    renderHook(() => mod.useAOS());
+
+    expect(AOS.init).toHaveBeenCalledWith({ duration: 400 });
   });
 });
