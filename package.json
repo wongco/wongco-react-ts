@@ -17,7 +17,10 @@
     "stylex:grit": "node scripts/build-stylex-grit.mjs",
     "preview": "vite preview",
     "prepare": "husky install",
-    "lint:stylex": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint:stylex": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,css,md}": [
@@ -45,18 +48,23 @@
     "@biomejs/biome": "^2.3.11",
     "@stylexjs/babel-plugin": "^0.3.0",
     "@stylexjs/eslint-plugin": "^0.3.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/aos": "^3.0.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/parser": "^7.1.0",
     "@vitejs/plugin-react": "^5.1.0",
+    "@vitest/coverage-v8": "^4.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^8.57.0",
     "husky": "^8.0.3",
+    "jsdom": "^29.0.1",
     "lint-staged": "^15.1.0",
     "prettier": "3.1.0",
     "sharp": "^0.32.0",
     "typescript": "^5.3.3",
-    "vite": "^6.4.1"
+    "vite": "^6.4.1",
+    "vitest": "^4.1.2"
   }
 }
