@@ -1,17 +1,27 @@
 import AOS from "aos";
 import * as React from "react";
 
-// Module-level state for tracking initialization (client-side only)
-const initialized = new WeakSet<object>();
+// Module-level flag for tracking initialization (client-side only)
+let initialized = false;
 
-export const useAOS = (options: AOS.AosOptions = { duration: 400 }) => {
-  const instanceRef = React.useRef<object>({});
+export const useAOS = (options: AOS.AosOptions = {}): void => {
+  const isMounted = React.useRef(true);
   const debounceTimer = React.useRef<number | null>(null);
 
+  // Merge with defaults
+  const mergedOptions = React.useMemo(
+    () => ({
+      duration: 400,
+      debounceDelay: 200,
+      ...options,
+    }),
+    [options],
+  );
+
   React.useEffect(() => {
-    if (!initialized.has(instanceRef.current)) {
-      AOS.init(options);
-      initialized.add(instanceRef.current);
+    if (!initialized) {
+      AOS.init(mergedOptions);
+      initialized = true;
     }
 
     const handleResize = () => {
@@ -19,17 +29,20 @@ export const useAOS = (options: AOS.AosOptions = { duration: 400 }) => {
         clearTimeout(debounceTimer.current);
       }
       debounceTimer.current = window.setTimeout(() => {
-        AOS.refresh();
-      }, 200);
+        if (isMounted.current) {
+          AOS.refresh();
+        }
+      }, mergedOptions.debounceDelay);
     };
 
     window.addEventListener("resize", handleResize);
 
     return () => {
+      isMounted.current = false;
       window.removeEventListener("resize", handleResize);
       if (debounceTimer.current) {
         clearTimeout(debounceTimer.current);
       }
     };
-  }, [options]);
+  }, [mergedOptions]);
 };

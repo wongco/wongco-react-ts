@@ -1,11 +1,15 @@
 import { renderHook } from "@testing-library/react";
-import AOS from "aos";
 import { afterEach, beforeEach, vi } from "vitest";
+
+const initMock = vi.fn();
+const refreshMock = vi.fn();
+const addEventListenerMock = vi.fn();
+const removeEventListenerMock = vi.fn();
 
 vi.mock("aos", () => ({
   default: {
-    init: vi.fn(),
-    refresh: vi.fn(),
+    init: initMock,
+    refresh: refreshMock,
   },
 }));
 
@@ -13,6 +17,15 @@ describe("useAOS", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.resetModules();
+    // Mock window event listeners
+    Object.defineProperty(global.window, "addEventListener", {
+      writable: true,
+      value: addEventListenerMock,
+    });
+    Object.defineProperty(global.window, "removeEventListener", {
+      writable: true,
+      value: removeEventListenerMock,
+    });
   });
 
   afterEach(() => {
@@ -23,8 +36,11 @@ describe("useAOS", () => {
     const mod = await import("./useAOS");
     renderHook(() => mod.useAOS());
 
-    expect(AOS.init).toHaveBeenCalledTimes(1);
-    expect(AOS.init).toHaveBeenCalledWith({ duration: 400 });
+    expect(initMock).toHaveBeenCalledTimes(1);
+    expect(initMock).toHaveBeenCalledWith({
+      duration: 400,
+      debounceDelay: 200,
+    });
   });
 
   it("does not reinitialize AOS when re-rendered", async () => {
@@ -33,20 +49,25 @@ describe("useAOS", () => {
 
     rerender();
 
-    expect(AOS.init).toHaveBeenCalledTimes(1);
+    expect(initMock).toHaveBeenCalledTimes(1);
   });
 
   it("adds resize listener for AOS refresh", async () => {
     const mod = await import("./useAOS");
-    const { unmount } = renderHook(() => mod.useAOS());
+    renderHook(() => mod.useAOS());
 
-    expect(window.addEventListener).toHaveBeenCalledWith(
+    expect(addEventListenerMock).toHaveBeenCalledWith(
       "resize",
       expect.any(Function),
     );
+  });
+
+  it("cleans up resize listener on unmount", async () => {
+    const mod = await import("./useAOS");
+    const { unmount } = renderHook(() => mod.useAOS());
 
     unmount();
-    expect(window.removeEventListener).toHaveBeenCalledWith(
+    expect(removeEventListenerMock).toHaveBeenCalledWith(
       "resize",
       expect.any(Function),
     );
@@ -56,13 +77,19 @@ describe("useAOS", () => {
     const mod = await import("./useAOS");
     renderHook(() => mod.useAOS({ duration: 600 }));
 
-    expect(AOS.init).toHaveBeenCalledWith({ duration: 600 });
+    expect(initMock).toHaveBeenCalledWith({
+      duration: 600,
+      debounceDelay: 200,
+    });
   });
 
-  it("uses default options when no args provided", async () => {
+  it("uses default debounceDelay when not provided", async () => {
     const mod = await import("./useAOS");
-    renderHook(() => mod.useAOS());
+    renderHook(() => mod.useAOS({ duration: 600 }));
 
-    expect(AOS.init).toHaveBeenCalledWith({ duration: 400 });
+    expect(initMock).toHaveBeenCalledWith({
+      duration: 600,
+      debounceDelay: 200,
+    });
   });
 });
