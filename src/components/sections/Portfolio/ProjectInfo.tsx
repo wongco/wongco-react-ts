@@ -1,6 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import AOS from "aos";
-import { useEffect } from "react";
+import { useAOS } from "../../../hooks/useAOS";
 import ProjectButtons from "./ProjectButtons";
 
 const styles = stylex.create({
@@ -107,11 +106,7 @@ export default function ProjectInfo({
   appleAppStoreLink,
   tags,
 }: ProjectInfoProps) {
-  useEffect(() => {
-    AOS.init({
-      duration: 400,
-    });
-  }, []);
+  useAOS();
 
   return (
     <div

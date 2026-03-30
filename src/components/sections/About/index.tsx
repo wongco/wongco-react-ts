@@ -1,6 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import AOS from "aos";
-import { useEffect } from "react";
+import { useAOS } from "../../../hooks/useAOS";
 import preview from "../../../pics/profile_pic1c.jpg";
 
 const header =
@@ -111,11 +110,7 @@ const styles = stylex.create({
 });
 
 export default function About() {
-  useEffect(() => {
-    AOS.init({
-      duration: 400,
-    });
-  }, []);
+  useAOS();
 
   return (
     <section {...stylex.props(styles.container)} id="about">
