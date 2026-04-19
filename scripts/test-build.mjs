@@ -66,16 +66,24 @@ function verifyPage() {
 }
 
 // --- Main ---
+console.log("Checking TypeScript...");
+try {
+  execSync("npm exec tsc", { stdio: "inherit" });
+} catch (err) {
+  console.error("TypeScript check failed:", err.message);
+  process.exit(1);
+}
+
 console.log("Building production bundle...");
 try {
-  execSync("npx vite build", { stdio: "inherit" });
+  execSync("npm exec vite build", { stdio: "inherit" });
 } catch (err) {
   console.error("Build failed:", err.message);
   process.exit(1);
 }
 
 console.log(`Starting preview server on port ${PORT}...`);
-const preview = spawn("npx", ["vite", "preview", `--port=${PORT}`], {
+const preview = spawn("npm", ["exec", "vite", "preview", `--port=${PORT}`], {
   stdio: "pipe",
 });
 
