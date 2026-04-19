@@ -1,0 +1,17 @@
+name: Node Packages Installations
+inputs:
+  command:
+    required: true
+    description: "Full shell command to run after npm ci (e.g. 'npm run test:run && npm run test:coverage')"
+runs:
+  using: composite
+  steps:
+    # actions/setup-node@v6.3.0
+    - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+      with:
+        node-version: "24.15.0"
+        cache: npm
+    - run: npm ci
+      shell: bash
+    - run: ${{ inputs.command }}
+      shell: bash
