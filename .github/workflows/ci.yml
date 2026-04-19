@@ -35,6 +35,7 @@ jobs:
           path: coverage
 
   build-test:
+    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
