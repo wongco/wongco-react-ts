@@ -1,4 +1,3 @@
-import "aos/dist/aos.css";
 import * as stylex from "@stylexjs/stylex";
 import About from "../sections/About";
 import Banner from "../sections/Banner";
