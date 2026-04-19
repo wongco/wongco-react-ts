@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: ["opened", "reopened", "synchronize"]
   workflow_dispatch:
@@ -12,6 +12,9 @@ concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,18 +22,26 @@ jobs:
       # actions/checkout@v5.0.1
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
 
-      # actions/setup-node@v6.3.0
-      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+      # ./.github/actions/node-setup
+      - uses: ./.github/actions/node-setup
         with:
-          node-version: "24.15.0"
-          cache: "npm"
-
-      - run: npm ci
-      - run: npm run test:run
-      - run: npm run test:coverage
+          command: npm run test:run && npm run test:coverage
 
       # actions/upload-artifact@v6.0.0
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: success()
         with:
           name: coverage-report
           path: coverage
+
+  build-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      # actions/checkout@v5.0.1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+
+      # ./.github/actions/node-setup
+      - uses: ./.github/actions/node-setup
+        with:
+          command: npm run test:build
