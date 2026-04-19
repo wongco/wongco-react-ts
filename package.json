@@ -20,7 +20,8 @@
     "lint:stylex": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:build": "node scripts/test-build.mjs"
   },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,css,md}": [
