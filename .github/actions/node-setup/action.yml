@@ -1,4 +1,4 @@
-name: Node Packages Installations
+name: node-install-and-run
 inputs:
   command:
     required: true
