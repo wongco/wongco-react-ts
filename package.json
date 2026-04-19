@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "engines": {
-    "node": ">=24.4.1"
+    "node": ">=24.15.0"
   },
   "scripts": {
     "audit": "npm audit --omit=dev",
@@ -41,6 +41,7 @@
     "@stylexjs/stylex": "^0.3.0",
     "aos": "^2.3.4",
     "react": "^19.0.0",
+    "react-compiler-runtime": "^1.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
