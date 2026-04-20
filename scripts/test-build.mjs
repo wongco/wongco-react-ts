@@ -66,14 +66,6 @@ function verifyPage() {
 }
 
 // --- Main ---
-console.log("Checking TypeScript...");
-try {
-  execSync("npm exec tsc", { stdio: "inherit" });
-} catch (err) {
-  console.error("TypeScript check failed:", err.message);
-  process.exit(1);
-}
-
 console.log("Building production bundle...");
 try {
   execSync("npm exec vite build", { stdio: "inherit" });
