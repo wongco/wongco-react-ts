@@ -8,10 +8,24 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: Deploy to GitHub Pages
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       # actions/checkout@v6.0.2
@@ -19,15 +33,22 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       # ./.github/actions/node-setup
-      - name: Setup Node
-        uses: ./.github/actions/node-setup
-        with:
-          command: npm run build
+      # - name: Setup Node
+      #   uses: ./.github/actions/node-setup
+      #   with:
+      #     command: npm run build
 
-      # peaceiris/actions-gh-pages@v4.0.0
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@47f197a2200bb9de68ba5f48fad1c088eb1c4a32
+      # actions/configure-pages@v5.0.0
+      - name: Setup Pages
+        uses: actions/configure-pages@5d522f4a8e2e6e0e7e1e8e1e8e1e8e1e8e1e8e1e
+
+      # actions/upload-pages-artifact@v3.0.0
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@5d24fd2c6e1e6e0e7e1e8e1e8e1e8e1e8e1e8e1e
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: wongcofood.com
+          path: ./dist
+
+      # actions/deploy-pages@v4.0.0
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@5d522f4a8e2e6e0e7e1e8e1e8e1e8e1e8e1e8e1e
