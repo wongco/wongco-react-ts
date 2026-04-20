@@ -16,17 +16,26 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  tsc-check:
     runs-on: ubuntu-latest
     steps:
       # actions/checkout@v5.0.1
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+      # ./.github/actions/node-setup
+      - uses: ./.github/actions/node-setup
+        with:
+          command: tsc --noEmit
 
+  test:
+    needs: tsc-check
+    runs-on: ubuntu-latest
+    steps:
+      # actions/checkout@v5.0.1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
           command: npm run test:run && npm run test:coverage
-
       # actions/upload-artifact@v6.0.0
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         if: success()
@@ -35,13 +44,12 @@ jobs:
           path: coverage
 
   build-test:
-    needs: test
+    needs: tsc-check
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       # actions/checkout@v5.0.1
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
-
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:

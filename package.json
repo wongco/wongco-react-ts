@@ -10,7 +10,7 @@
     "audit": "npm audit --omit=dev",
     "dev": "vite",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "images:convert": "node ./scripts/convert-images.js",
     "lint": "biome lint .",
     "lint:fix": "biome check . --write",
