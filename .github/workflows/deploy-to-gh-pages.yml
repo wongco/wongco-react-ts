@@ -33,10 +33,10 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       # ./.github/actions/node-setup
-      # - name: Setup Node
-      #   uses: ./.github/actions/node-setup
-      #   with:
-      #     command: npm run build
+      - name: Setup Node
+        uses: ./.github/actions/node-setup
+        with:
+          command: npm run build
 
       # actions/configure-pages@v6.0.0
       - name: Setup Pages
