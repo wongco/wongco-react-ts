@@ -19,8 +19,8 @@ jobs:
   tsc-check:
     runs-on: ubuntu-latest
     steps:
-      # actions/checkout@v5.0.1
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+      # actions/checkout@v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
@@ -30,14 +30,14 @@ jobs:
     needs: tsc-check
     runs-on: ubuntu-latest
     steps:
-      # actions/checkout@v5.0.1
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+      # actions/checkout@v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
           command: npm run test:run && npm run test:coverage
-      # actions/upload-artifact@v6.0.0
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+      # actions/upload-artifact@v7.0.1
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: success()
         with:
           name: coverage-report
@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      # actions/checkout@v5.0.1
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+      # actions/checkout@v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
