@@ -1,5 +1,5 @@
-import react from '@vitejs/plugin-react';
 import stylexBabelPlugin from '@stylexjs/babel-plugin';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -27,9 +27,6 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-    },
-    deps: {
-      inline: ['@stylexjs/stylex'],
     },
   },
 });
