@@ -1,8 +1,10 @@
+import stylex from '@stylexjs/unplugin';
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import styleX from "./vite-stylex-plugin.mjs";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), styleX()],
+  plugins: [
+    stylex.vite({
+      useCSSLayers: true,
+    }), react()],
 });
