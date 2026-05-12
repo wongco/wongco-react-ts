@@ -16,7 +16,7 @@
     "lint:fix": "biome check . --write",
     "stylex:grit": "node scripts/build-stylex-grit.mjs",
     "preview": "vite preview",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint:stylex": "eslint .",
     "test": "vitest",
     "test:run": "vitest run",
