@@ -81,7 +81,7 @@ try {
 }
 
 console.log(`Starting preview server on port ${PORT}...`);
-const preview = spawn("pnpm", ["exec", "vite", "preview", `--port=${PORT}`], {
+const preview = spawn("pnpm", ["exec", "vp", "preview", `--port=${PORT}`], {
   stdio: "pipe",
 });
 
