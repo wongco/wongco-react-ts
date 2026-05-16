@@ -6,7 +6,7 @@
   "engines": {
     "node": ">=24.15.0"
   },
-  "packageManager": "pnpm@11.1.1",
+  "packageManager": "pnpm@11.1.2",
   "scripts": {
     "audit": "pnpm audit --omit=dev",
     "dev": "vite",
