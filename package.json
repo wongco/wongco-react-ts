@@ -6,8 +6,9 @@
   "engines": {
     "node": ">=24.15.0"
   },
+  "packageManager": "pnpm@11.1.1",
   "scripts": {
-    "audit": "npm audit --omit=dev",
+    "audit": "pnpm audit --omit=dev",
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
