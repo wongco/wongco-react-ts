@@ -23,7 +23,7 @@ function waitForServer() {
             setTimeout(check, POLL_INTERVAL);
           }
         })
-        .on("error", (err) => {
+        .on("error", () => {
           if (Date.now() - start > STARTUP_TIMEOUT) {
             reject(new Error(`Preview server did not start within ${STARTUP_TIMEOUT}ms`));
           } else {

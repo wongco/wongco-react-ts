@@ -1,6 +1,6 @@
 {
   "files": {
-    "includes": ["**", "!!**/dist"],
+    "includes": ["**", "!!**/dist", "!!**/coverage"],
     "ignoreUnknown": true
   },
   "formatter": {
