@@ -68,7 +68,11 @@ const styles = stylex.create({
       default: "1.2vw",
       "@media (max-width: 767.98px)": "4vw",
     },
-    marginVertical: {
+    marginTop: {
+      default: "0.3em",
+      "@media (max-width: 767.98px)": "0.4em",
+    },
+    marginBottom: {
       default: "0.3em",
       "@media (max-width: 767.98px)": "0.4em",
     },

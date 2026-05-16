@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { afterEach, beforeEach, vi } from "vitest";
+import { afterEach, beforeEach, vi } from "vite-plus/test";
 
 const initMock = vi.fn();
 const refreshMock = vi.fn();

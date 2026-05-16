@@ -25,7 +25,11 @@ function waitForServer() {
         })
         .on("error", () => {
           if (Date.now() - start > STARTUP_TIMEOUT) {
-            reject(new Error(`Preview server did not start within ${STARTUP_TIMEOUT}ms`));
+            reject(
+              new Error(
+                `Preview server did not start within ${STARTUP_TIMEOUT}ms`,
+              ),
+            );
           } else {
             setTimeout(check, POLL_INTERVAL);
           }
@@ -38,44 +42,46 @@ function waitForServer() {
 
 function verifyPage() {
   return new Promise((resolve, reject) => {
-    http.get(BASE_URL, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`Expected HTTP 200, got ${res.statusCode}`));
-        return;
-      }
-
-      let body = "";
-      res.on("data", (chunk) => {
-        body += chunk;
-      });
-      res.on("end", () => {
-        if (!body.includes(`<title>${TITLE}</title>`)) {
-          reject(
-            new Error(
-              `Page title mismatch. Expected "<title>${TITLE}</title>", got: "${body.match(/<title>.*?<\/title>/)?.[0] || "(none)"}"`,
-            ),
-          );
+    http
+      .get(BASE_URL, (res) => {
+        if (res.statusCode !== 200) {
+          reject(new Error(`Expected HTTP 200, got ${res.statusCode}`));
           return;
         }
-        resolve();
+
+        let body = "";
+        res.on("data", (chunk) => {
+          body += chunk;
+        });
+        res.on("end", () => {
+          if (!body.includes(`<title>${TITLE}</title>`)) {
+            reject(
+              new Error(
+                `Page title mismatch. Expected "<title>${TITLE}</title>", got: "${body.match(/<title>.*?<\/title>/)?.[0] || "(none)"}"`,
+              ),
+            );
+            return;
+          }
+          resolve();
+        });
+      })
+      .on("error", (err) => {
+        reject(new Error(`Failed to fetch page: ${err.message}`));
       });
-    }).on("error", (err) => {
-      reject(new Error(`Failed to fetch page: ${err.message}`));
-    });
   });
 }
 
 // --- Main ---
 console.log("Building production bundle...");
 try {
-  execSync("pnpm exec vite build", { stdio: "inherit" });
+  execSync("pnpm exec vp build", { stdio: "inherit" });
 } catch (err) {
   console.error("Build failed:", err.message);
   process.exit(1);
 }
 
 console.log(`Starting preview server on port ${PORT}...`);
-const preview = spawn("pnpm", ["exec", "vite", "preview", `--port=${PORT}`], {
+const preview = spawn("pnpm", ["exec", "vp", "preview", `--port=${PORT}`], {
   stdio: "pipe",
 });
 
@@ -95,7 +101,9 @@ try {
   console.log("Verifying page content...");
   await verifyPage();
 
-  console.log(`OK — ${BASE_URL} returned HTTP 200 with <title>${TITLE}</title>`);
+  console.log(
+    `OK — ${BASE_URL} returned HTTP 200 with <title>${TITLE}</title>`,
+  );
   process.exit(0);
 } catch (err) {
   console.error(`Build verification failed: ${err.message}`);
