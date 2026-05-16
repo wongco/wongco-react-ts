@@ -1,9 +1,9 @@
 allowBuilds:
-  '@fortawesome/fontawesome-common-types': true
-  '@fortawesome/fontawesome-svg-core': true
-  '@fortawesome/free-brands-svg-icons': true
-  '@fortawesome/free-regular-svg-icons': true
-  '@fortawesome/free-solid-svg-icons': true
+  "@fortawesome/fontawesome-common-types": true
+  "@fortawesome/fontawesome-svg-core": true
+  "@fortawesome/free-brands-svg-icons": true
+  "@fortawesome/free-regular-svg-icons": true
+  "@fortawesome/free-solid-svg-icons": true
   esbuild: true
   sharp: true
 minimumReleaseAge: 10080
@@ -12,21 +12,21 @@ catalog:
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: latest
 overrides:
-  vite: 'catalog:'
-  vitest: 'catalog:'
+  vite: "catalog:"
+  vitest: "catalog:"
 peerDependencyRules:
   allowAny:
     - vite
     - vitest
   allowedVersions:
-    vite: '*'
-    vitest: '*'
+    vite: "*"
+    vitest: "*"
 minimumReleaseAgeExclude:
   - vite-plus
-  - '@voidzero-dev/*'
+  - "@voidzero-dev/*"
   - oxlint
-  - '@oxlint/*'
+  - "@oxlint/*"
   - oxlint-tsgolint
-  - '@oxlint-tsgolint/*'
+  - "@oxlint-tsgolint/*"
   - oxfmt
-  - '@oxfmt/*'
+  - "@oxfmt/*"

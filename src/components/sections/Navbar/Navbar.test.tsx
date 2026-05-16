@@ -39,8 +39,8 @@ describe("Navbar", () => {
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const emailLink = Array.from(links).find(
-      (l) => l.getAttribute("href")?.startsWith("mailto:"),
+    const emailLink = Array.from(links).find((l) =>
+      l.getAttribute("href")?.startsWith("mailto:"),
     );
     expect(emailLink).toHaveAttribute(
       "href",
@@ -54,8 +54,8 @@ describe("Navbar", () => {
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const githubLink = Array.from(links).find(
-      (l) => l.getAttribute("href")?.includes("github.com"),
+    const githubLink = Array.from(links).find((l) =>
+      l.getAttribute("href")?.includes("github.com"),
     );
     expect(githubLink).toHaveAttribute("href", "https://github.com/wongco");
   });
@@ -66,8 +66,8 @@ describe("Navbar", () => {
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const linkedinLink = Array.from(links).find(
-      (l) => l.getAttribute("href")?.includes("linkedin.com"),
+    const linkedinLink = Array.from(links).find((l) =>
+      l.getAttribute("href")?.includes("linkedin.com"),
     );
     expect(linkedinLink).toHaveAttribute(
       "href",

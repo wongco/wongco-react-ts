@@ -26,7 +26,7 @@ jobs:
         with:
           command: pnpm run lint
 
-  tsc-check:
+  tsc:
     runs-on: ubuntu-latest
     steps:
       # actions/checkout@v6.0.2
@@ -34,10 +34,10 @@ jobs:
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
-          command: pnpm run tsc:check
+          command: pnpm run tsc
 
   test:
-    needs: tsc-check
+    needs: tsc
     runs-on: ubuntu-latest
     steps:
       # actions/checkout@v6.0.2
@@ -54,7 +54,7 @@ jobs:
           path: coverage
 
   build-test:
-    needs: tsc-check
+    needs: tsc
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:

@@ -16,7 +16,7 @@
     "lint": "vp lint .",
     "preview": "vp preview",
     "prepare": "vp config",
-    "tsc:check": "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "test": "vp test",
     "test:run": "vp test run",
     "test:coverage": "vp test run --coverage",
