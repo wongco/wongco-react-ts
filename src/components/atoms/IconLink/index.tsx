@@ -26,15 +26,13 @@ export default function IconLink({
   icon,
   href,
 }: IconLinkProps) {
-  const hoverColorStyles = stylex.props(styles.fontAwesome(hovercolor)) as Record<string, CSSProperties & CSSVariables>;
-  
+  const hoverColorStyles = stylex.props(
+    styles.fontAwesome(hovercolor),
+  ) as Record<string, CSSProperties & CSSVariables>;
+
   return (
     <a href={href}>
-      <FontAwesomeIcon
-        {...hoverColorStyles}
-        icon={icon}
-        size="2x"
-      />
+      <FontAwesomeIcon {...hoverColorStyles} icon={icon} size="2x" />
     </a>
   );
 }
