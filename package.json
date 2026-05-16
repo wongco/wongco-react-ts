@@ -9,31 +9,18 @@
   "packageManager": "pnpm@11.1.2",
   "scripts": {
     "audit": "pnpm audit",
-    "dev": "vite",
-    "start": "vite",
-    "build": "vite build",
+    "dev": "vp dev",
+    "start": "vp dev",
+    "build": "vp build",
     "images:convert": "node ./scripts/convert-images.js",
-    "lint": "biome lint .",
-    "lint:fix": "biome check . --write",
-    "stylex:grit": "node scripts/build-stylex-grit.mjs",
-    "preview": "vite preview",
-    "prepare": "husky",
-    "lint:stylex": "eslint .",
+    "lint": "vp lint .",
+    "preview": "vp preview",
+    "prepare": "vp config",
     "tsc:check": "tsc --noEmit",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
+    "test": "vp test",
+    "test:run": "vp test run",
+    "test:coverage": "vp test run --coverage",
     "test:build": "node scripts/test-build.mjs"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx,css,md}": [
-      "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
-      "prettier --write --ignore-unknown"
-    ],
-    "**/*.json": [
-      "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
-      "prettier --write --ignore-unknown"
-    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "7.2.0",
@@ -49,7 +36,6 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.14",
     "@stylexjs/babel-plugin": "0.18.2",
     "@stylexjs/eslint-plugin": "0.18.2",
     "@testing-library/jest-dom": "6.9.1",
@@ -58,18 +44,14 @@
     "@types/node": "25.6.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@typescript-eslint/parser": "8.59.2",
     "@vitejs/plugin-react": "5.2.0",
     "@vitest/coverage-v8": "4.1.5",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "10.3.0",
-    "husky": "9.1.7",
     "jsdom": "29.1.1",
-    "lint-staged": "17.0.3",
-    "prettier": "3.8.3",
     "sharp": "0.34.5",
     "typescript": "6.0.3",
-    "vite": "7.3.3",
-    "vitest": "4.1.5"
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vite-plus": "catalog:"
   }
 }

@@ -39,8 +39,13 @@ const styles = stylex.create({
     justifyContent: {
       "@media (max-width: 767.98px)": "center",
     },
-    marginHorizontal: "4em",
-    marginVertical: {
+    marginLeft: "4em",
+    marginRight: "4em",
+    marginTop: {
+      default: "4em",
+      "@media (max-width: 767.98px)": "2em",
+    },
+    marginBottom: {
       default: "4em",
       "@media (max-width: 767.98px)": "2em",
     },
