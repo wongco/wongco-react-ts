@@ -68,14 +68,14 @@ function verifyPage() {
 // --- Main ---
 console.log("Building production bundle...");
 try {
-  execSync("npm exec vite build", { stdio: "inherit" });
+  execSync("pnpm exec vite build", { stdio: "inherit" });
 } catch (err) {
   console.error("Build failed:", err.message);
   process.exit(1);
 }
 
 console.log(`Starting preview server on port ${PORT}...`);
-const preview = spawn("npm", ["exec", "vite", "preview", `--port=${PORT}`], {
+const preview = spawn("pnpm", ["exec", "vite", "preview", `--port=${PORT}`], {
   stdio: "pipe",
 });
 
