@@ -19,6 +19,7 @@
     "preview": "vite preview",
     "prepare": "husky",
     "lint:stylex": "eslint .",
+    "tsc:check": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",

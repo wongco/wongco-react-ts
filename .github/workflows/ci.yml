@@ -34,7 +34,7 @@ jobs:
       # ./.github/actions/node-setup
       - uses: ./.github/actions/node-setup
         with:
-          command: tsc --noEmit
+          command: pnpm run tsc:check
 
   test:
     needs: tsc-check
