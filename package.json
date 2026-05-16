@@ -36,7 +36,7 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@rolldown/plugin-babel": "^0.2.3",
+    "@rolldown/plugin-babel": "0.2.3",
     "@stylexjs/babel-plugin": "0.18.2",
     "@stylexjs/eslint-plugin": "0.18.2",
     "@testing-library/jest-dom": "6.9.1",
