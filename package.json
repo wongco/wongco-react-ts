@@ -8,7 +8,7 @@
   },
   "packageManager": "pnpm@11.1.2",
   "scripts": {
-    "audit": "pnpm audit --omit=dev",
+    "audit": "pnpm audit",
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
