@@ -36,6 +36,7 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
+    "@rolldown/plugin-babel": "0.2.3",
     "@stylexjs/babel-plugin": "0.18.2",
     "@stylexjs/eslint-plugin": "0.18.2",
     "@testing-library/jest-dom": "6.9.1",
@@ -44,14 +45,14 @@
     "@types/node": "25.6.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "5.2.0",
+    "@vitejs/plugin-react": "6.0.1",
     "@vitest/coverage-v8": "4.1.5",
     "babel-plugin-react-compiler": "1.0.0",
     "jsdom": "29.1.1",
     "sharp": "0.34.5",
     "typescript": "6.0.3",
     "vite": "catalog:",
-    "vitest": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   }
 }
