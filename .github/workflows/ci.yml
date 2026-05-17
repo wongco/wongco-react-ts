@@ -37,7 +37,7 @@ jobs:
       - run: vp check
 
       # test and coverage
-      - run: pnpm run test:run && pnpm run test:coverage
+      - run: vp test run --coverage
 
       # e2e build test
-      - run: pnpm run test:build
+      - run: vp run test:build
