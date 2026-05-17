@@ -1,9 +1,22 @@
 import stylex from "@stylexjs/unplugin";
-import react from "@vitejs/plugin-react";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import { defineConfig } from "vite-plus";
 
 const isTestMode = !!process.env.VITEST;
+
+const styleXBabelTestPlugin = [
+  "@stylexjs/babel-plugin",
+  {
+    dev: true,
+    unstable_moduleResolution: {
+      type: "commonJS",
+      rootDir: process.cwd(),
+    },
+    importSources: ["@stylexjs/stylex"],
+    runtimeInjection: true,
+  },
+];
 
 export default defineConfig({
   // vite-plus hooks
@@ -36,24 +49,11 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    isTestMode
-      ? babel({
-          plugins: [
-            [
-              "@stylexjs/babel-plugin",
-              {
-                dev: true,
-                unstable_moduleResolution: {
-                  type: "commonJS",
-                  rootDir: process.cwd(),
-                },
-                importSources: ["@stylexjs/stylex"],
-                runtimeInjection: true,
-              },
-            ],
-          ],
-        })
-      : stylex.vite({ useCSSLayers: true }),
+    babel({
+      presets: [reactCompilerPreset()],
+      plugins: isTestMode ? [styleXBabelTestPlugin] : [],
+    }),
+    isTestMode ? undefined : stylex.vite({ useCSSLayers: true }),
   ],
   test: {
     globals: true,
