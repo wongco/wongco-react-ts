@@ -33,46 +33,34 @@ describe("Navbar", () => {
     expect(links).toHaveLength(4);
   });
 
-  it("renders email icon link with correct href", () => {
+  it("renders email link with correct href", () => {
     const { container } = render(<Navbar />);
 
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const emailLink = Array.from(links).find((l) =>
-      l.getAttribute("href")?.startsWith("mailto:"),
-    );
-    expect(emailLink).toHaveAttribute(
-      "href",
-      "mailto:ginson.wong+hello@gmail.com",
-    );
+    const hrefLinks = Array.from(links).map((l) => l.getAttribute("href"));
+    expect(hrefLinks).toContain("mailto:ginson.wong+hello@gmail.com");
   });
 
-  it("renders GitHub icon link with correct href", () => {
+  it("renders GitHub link with correct href", () => {
     const { container } = render(<Navbar />);
 
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const githubLink = Array.from(links).find((l) =>
-      l.getAttribute("href")?.includes("github.com"),
-    );
-    expect(githubLink).toHaveAttribute("href", "https://github.com/wongco");
+    const hrefLinks = Array.from(links).map((l) => l.getAttribute("href"));
+    expect(hrefLinks).toContain("https://github.com/wongco");
   });
 
-  it("renders LinkedIn icon link with correct href", () => {
+  it("renders LinkedIn link with correct href", () => {
     const { container } = render(<Navbar />);
 
     const links = container.querySelectorAll(
       '[class*="contactLinkContainer"] a',
     );
-    const linkedinLink = Array.from(links).find((l) =>
-      l.getAttribute("href")?.includes("linkedin.com"),
-    );
-    expect(linkedinLink).toHaveAttribute(
-      "href",
-      "https://www.linkedin.com/in/ginson",
-    );
+    const hrefLinks = Array.from(links).map((l) => l.getAttribute("href"));
+    expect(hrefLinks).toContain("https://www.linkedin.com/in/ginson");
   });
 
   it("toggles collapse state when hamburger is clicked", () => {
