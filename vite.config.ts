@@ -8,8 +8,7 @@ const isTestMode = !!process.env.VITEST;
 export default defineConfig({
   // vite-plus hooks
   staged: {
-    "src/**/*.{js,ts,tsx,css,md}": ["vp fmt"],
-    "**/*.json": ["vp fmt"],
+    "*.{js,ts,tsx,css,md,json}": "vp check --fix",
   },
   lint: {
     plugins: ["oxc", "typescript", "unicorn", "react"],
@@ -33,6 +32,7 @@ export default defineConfig({
     printWidth: 80,
     sortPackageJson: false,
     ignorePatterns: [],
+    singleQuote: false,
   },
   plugins: [
     react(),
