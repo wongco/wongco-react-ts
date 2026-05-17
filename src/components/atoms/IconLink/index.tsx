@@ -1,7 +1,8 @@
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { CSSVariables, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import type { CSSVariables } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 
 const styles = stylex.create({
   fontAwesome: (hoverColor: string) => ({
