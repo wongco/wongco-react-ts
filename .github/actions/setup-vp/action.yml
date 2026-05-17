@@ -13,7 +13,7 @@ runs:
       # voidzero-dev/setup-vp@v1.10.0
       uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
       with:
-        node-version: "24.15.0"
+        node-version-file: "package.json"
         cache: true
 
     - name: Run Command

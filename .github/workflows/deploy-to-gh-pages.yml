@@ -28,27 +28,27 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # actions/checkout@v6.0.2
       - name: Git Checkout
+        # actions/checkout@v6.0.2
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      # ./.github/actions/node-setup
-      - name: Setup Node
-        uses: ./.github/actions/node-setup
+      - name: Vite+ Build
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
         with:
-          command: pnpm run build
+          command: vp build
 
-      # actions/configure-pages@v6.0.0
       - name: Setup Pages
+        # actions/configure-pages@v6.0.0
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
 
-      # actions/upload-pages-artifact@v5.0.0
       - name: Upload Pages Artifact
+        # actions/upload-pages-artifact@v5.0.0
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./dist
 
-      # actions/deploy-pages@v5.0.0
       - name: Deploy to GitHub Pages
         id: deployment
+        # actions/deploy-pages@v5.0.0
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128

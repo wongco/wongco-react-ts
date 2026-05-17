@@ -1,6 +1,6 @@
+import babel from "@rolldown/plugin-babel";
 import stylex from "@stylexjs/unplugin";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
-import babel from "@rolldown/plugin-babel";
 import { defineConfig } from "vite-plus";
 
 const isTestMode = !!process.env.VITEST;
@@ -43,7 +43,8 @@ export default defineConfig({
   },
   fmt: {
     printWidth: 80,
-    sortPackageJson: false,
+    sortPackageJson: true,
+    sortImports: true,
     ignorePatterns: [],
     singleQuote: false,
   },

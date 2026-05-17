@@ -1,21 +1,19 @@
 {
   "name": "wongcofood-react-ts",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=24.15.0"
-  },
-  "packageManager": "pnpm@11.1.2",
   "scripts": {
     "audit": "pnpm audit",
-    "dev": "vp dev",
-    "start": "vp dev",
     "build": "vp build",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "dev": "vp dev",
     "images:convert": "node ./scripts/convert-images.js",
     "lint": "vp lint .",
     "preview": "vp preview",
     "prepare": "vp config",
+    "start": "vp dev",
     "tsc": "tsc --noEmit",
     "test": "vp test",
     "test:run": "vp test run",
@@ -54,5 +52,12 @@
     "vite": "catalog:",
     "vite-plus": "catalog:",
     "vitest": "catalog:"
-  }
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.15.0"
+    }
+  },
+  "packageManager": "pnpm@11.1.2"
 }
