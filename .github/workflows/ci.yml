@@ -20,34 +20,33 @@ jobs:
     name: Format, Lint, and Type Check
     runs-on: ubuntu-latest
     steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Git Checkout
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      # voidzero-dev/setup-vp@v1.10.0
-      - uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
+      - name: Vite+ Format, Lint, and Type Check
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
         with:
-          node-version: "24.15.0"
-          cache: true
-
-      - run: vp check
+          command: vp check
 
   test:
     name: Test and Coverage
     runs-on: ubuntu-latest
     steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Git Checkout
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      # voidzero-dev/setup-vp@v1.10.0
-      - uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
+      - name: Vite+ Test and Generate Coverage
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
         with:
-          node-version: "24.15.0"
-          cache: true
+          command: vp test run --coverage
 
-      - run: vp test run --coverage
-
-      # actions/upload-artifact@v7.0.1
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - name: Upload Coverage Report
+        # actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: success()
         with:
           name: coverage-report
@@ -58,13 +57,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Git Checkout
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      # voidzero-dev/setup-vp@v1.10.0
-      - uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
+      - name: Vite+ E2E Build Test
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
         with:
-          node-version: "24.15.0"
-          cache: true
-
-      - run: vp run test:build
+          command: vp run test:build

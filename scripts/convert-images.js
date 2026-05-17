@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs/promises";
 import path from "path";
+
 import sharp from "sharp";
 
 const WEBP_CONVERSION_QUALITY = 80;

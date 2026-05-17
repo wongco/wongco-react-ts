@@ -1,4 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
+
 import { useAOS } from "../../../hooks/useAOS";
 import preview from "../../../pics/profile_pic1c.jpg";
 

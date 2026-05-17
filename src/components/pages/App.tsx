@@ -1,4 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
+
 import About from "../sections/About";
 import Banner from "../sections/Banner";
 import Contact from "../sections/Contact";

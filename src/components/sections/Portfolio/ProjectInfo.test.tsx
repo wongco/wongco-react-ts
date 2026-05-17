@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { vi } from "vite-plus/test";
+
 import ProjectInfo from "./ProjectInfo";
 
 vi.mock("../../../hooks/useAOS", () => ({

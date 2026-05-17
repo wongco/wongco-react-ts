@@ -1,4 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
+
 import preview_jobly from "../../../pics/jobly03.jpg";
 import ProjectInfo from "./ProjectInfo";
 

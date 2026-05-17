@@ -1,5 +1,6 @@
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { render, screen } from "@testing-library/react";
+
 import IconLink from "./index";
 
 describe("IconLink", () => {
