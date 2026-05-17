@@ -24,9 +24,9 @@ jobs:
         # actions/checkout@v6.0.2
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      # ./.github/actions/vp-setup
-      - name: Setup Vite+ (Node, Package Manager, and Cache)
-        uses: ./.github/actions/vp-setup
+      - name: Vite+ Format, Lint, and Type Check
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
         with:
           command: vp check
 
@@ -38,15 +38,11 @@ jobs:
         # actions/checkout@v6.0.2
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Setup Vite+ (Node, Package Manager, and Cache)
-        # voidzero-dev/setup-vp@v1.10.0
-        uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
-        with:
-          node-version: "24.15.0"
-          cache: true
-
       - name: Vite+ Test and Generate Coverage
-        run: vp test run --coverage
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
+        with:
+          command: vp test run --coverage
 
       - name: Upload Coverage Report
         # actions/upload-artifact@v7.0.1
@@ -65,12 +61,8 @@ jobs:
         # actions/checkout@v6.0.2
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Setup Vite+ (Node, Package Manager, and Cache)
-        # voidzero-dev/setup-vp@v1.10.0
-        uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
-        with:
-          node-version: "24.15.0"
-          cache: true
-
       - name: Vite+ E2E Build Test
-        run: vp run test:build
+        # voidzero-dev/setup-vp
+        uses: ./.github/actions/setup-vp
+        with:
+          command: vp run test:build
