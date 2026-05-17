@@ -16,51 +16,28 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      # ./.github/actions/node-setup
-      - uses: ./.github/actions/node-setup
-        with:
-          command: pnpm run lint
-
-  tsc:
-    runs-on: ubuntu-latest
-    steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      # ./.github/actions/node-setup
-      - uses: ./.github/actions/node-setup
-        with:
-          command: pnpm run tsc
-
-  test:
-    needs: tsc
-    runs-on: ubuntu-latest
-    steps:
-      # actions/checkout@v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      # ./.github/actions/node-setup
-      - uses: ./.github/actions/node-setup
-        with:
-          command: pnpm run test:run && pnpm run test:coverage
-      # actions/upload-artifact@v7.0.1
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        if: success()
-        with:
-          name: coverage-report
-          path: coverage
-
-  build-test:
-    needs: tsc
+  build:
+    name: Build and Test
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       # actions/checkout@v6.0.2
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      # ./.github/actions/node-setup
-      - uses: ./.github/actions/node-setup
+
+      # voidzero-dev/setup-vp@v1.10.0
+      - uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
         with:
-          command: pnpm run test:build
+          node-version: "24.15.0"
+          cache: true
+
+      # generate dist
+      - run: vp build
+
+      # format, lint, tsc
+      - run: vp check
+
+      # test and coverage
+      - run: pnpm run test:run && pnpm run test:coverage
+
+      # e2e build test
+      - run: pnpm run test:build
