@@ -6,11 +6,12 @@
   "scripts": {
     "audit": "vp pm audit",
     "dev": "vp dev",
-    "build": "tsc -b && vp build",
+    "build": "tsc && vp build",
     "images:convert": "node ./scripts/convert-images.js",
-    "lint": "vp lint .",
+    "lint": "vp check",
     "preview": "vp preview",
     "prepare": "vp config",
+    "test": "vp test",
     "test:coverage": "vp test run --coverage",
     "test:build": "node scripts/test-build.mjs"
   },
