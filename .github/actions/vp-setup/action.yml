@@ -1,0 +1,21 @@
+description: "GitHub Action to install Vite+"
+name: Install Vite+
+
+inputs:
+  command:
+    required: true
+    description: "Full shell command to run after Vite+ installation"
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Vite+ (Node, Package Manager, and Cache)
+      # voidzero-dev/setup-vp@v1.10.0
+      uses: voidzero-dev/setup-vp@ca1c46663915d6c1042ae23bd39ab85718bfb0fa
+      with:
+        node-version: "24.15.0"
+        cache: true
+
+    - name: Run Command
+      run: ${{ inputs.command }}
+      shell: bash
