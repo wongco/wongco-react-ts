@@ -5,18 +5,13 @@ const styles = stylex.create({
     textDecoration: "none",
     color: {
       default: "black",
-      ":hover": "white",
     },
     padding: {
       default: "0.75em",
       "@media (max-width: 576px)": "0.1em",
     },
-    borderRadius: "10%",
     fontSize: "1.5em",
     fontWeight: 200,
-    backgroundColor: {
-      ":hover": "rgba(0, 0, 0, 0.5)",
-    },
   },
 });
 
