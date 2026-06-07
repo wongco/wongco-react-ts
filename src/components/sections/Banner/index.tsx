@@ -1,6 +1,8 @@
 import * as stylex from "@stylexjs/stylex";
 
 import bannerImage from "../../../pics/baybridge_banner2.jpg";
+import bannerImageWebp from "../../../pics/baybridge_banner2.webp";
+import { OptimizedImage } from "../../atoms/OptimizedImage";
 
 const fadeIn = stylex.keyframes({
   from: { opacity: 0 },
@@ -143,10 +145,12 @@ export default function Banner() {
         </div>
       </div>
       <div {...stylex.props(styles.logoContainer)} id="home">
-        <img
+        <OptimizedImage
           {...stylex.props(styles.image)}
           src={bannerImage}
-          alt="banner-picture"
+          srcWebp={bannerImageWebp}
+          alt="Bay Bridge banner image"
+          lazy={false}
         />
         <div {...stylex.props(styles.textContainer)}>
           <div {...stylex.props(styles.name)}>{NAME}</div>
