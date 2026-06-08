@@ -1,8 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 
 import preview_jobly from "../../../pics/jobly03.jpg";
-import preview_joblyWebp from "../../../pics/jobly03.webp";
-import { OptimizedImage } from "../../atoms/OptimizedImage";
 import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
@@ -69,11 +67,10 @@ export default function PortfolioJobly() {
   return (
     <div {...stylex.props(styles.joblyContainer)}>
       <div {...stylex.props(styles.imageContainer)}>
-        <OptimizedImage
+        <img
           {...stylex.props(styles.image)}
           src={preview_jobly}
-          srcWebp={preview_joblyWebp}
-          alt="Jobly application preview"
+          alt="jobly preview image"
         />
       </div>
       <ProjectInfo

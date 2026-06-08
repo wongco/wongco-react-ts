@@ -1,8 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 
 import preview_hackorsnooze from "../../../pics/hackorsnooze03.jpg";
-import preview_hackorsnoozeWebp from "../../../pics/hackorsnooze03.webp";
-import { OptimizedImage } from "../../atoms/OptimizedImage";
 import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
@@ -69,11 +67,10 @@ export default function PortfolioHackSnooze() {
   return (
     <div {...stylex.props(styles.hackSnoozeContainer)}>
       <div {...stylex.props(styles.imageContainer)}>
-        <OptimizedImage
+        <img
           {...stylex.props(styles.image)}
           src={preview_hackorsnooze}
-          srcWebp={preview_hackorsnoozeWebp}
-          alt="Hack or Snooze application preview"
+          alt="hack or snooze preview image"
         />
       </div>
       <ProjectInfo
