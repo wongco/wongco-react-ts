@@ -1,8 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 
 import preview_groupmuse from "../../../pics/groupmuse04.png";
-import preview_groupmuseWebp from "../../../pics/groupmuse04.webp";
-import { OptimizedImage } from "../../atoms/OptimizedImage";
 import ProjectInfo from "./ProjectInfo";
 
 const styles = stylex.create({
@@ -43,11 +41,10 @@ export default function PortfolioGroupmuse() {
   return (
     <div {...stylex.props(styles.groupmuseContainer)}>
       <div {...stylex.props(styles.imageContainer)}>
-        <OptimizedImage
+        <img
           {...stylex.props(styles.image)}
           src={preview_groupmuse}
-          srcWebp={preview_groupmuseWebp}
-          alt="Groupmuse application preview"
+          alt="groupmuse preview image"
         />
       </div>
       <ProjectInfo
