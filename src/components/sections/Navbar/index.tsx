@@ -6,10 +6,20 @@ import {
 import { faEnvelope, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import { useFocusTrap } from "../../../hooks/useFocusTrap";
+import { useFocusVisible } from "../../../hooks/useFocusVisible";
+import { useKeyboardNavigation } from "../../../hooks/useKeyboardNavigation";
 import IconLink from "../../atoms/IconLink";
 import TextLink from "../../atoms/TextLink";
+
+const focusStyles = stylex.create({
+  focusVisible: {
+    outline: "2px solid #0066CC",
+    outlineOffset: "2px",
+  },
+});
 
 const styles = stylex.create({
   navContainer: {
@@ -137,12 +147,33 @@ const styles = stylex.create({
 
 export default function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const navItemsRef = useRef<(HTMLLIElement | null)[]>([]);
+  const [activeNavItemIndex, setActiveNavItemIndex] = useState(-1);
+  const menuContainerRef = useRef<HTMLDivElement | null>(null);
+
+  // Focus-visible tracking for hamburger button
+  const hamburgerButtonRef = useRef<HTMLButtonElement | null>(null);
+  const hamburgerVisible = useFocusVisible(hamburgerButtonRef);
 
   const handleClick = () => {
     setIsCollapsed((prevState) => !prevState);
   };
 
   const menuIcon = isCollapsed ? faBars : faTimes;
+
+  const { handleKeyDown: handleNavKeyDown } = useKeyboardNavigation({
+    items: navItemsRef.current.filter(Boolean) as HTMLElement[],
+    activeIndex: activeNavItemIndex,
+    onChange: setActiveNavItemIndex,
+    onEscape: handleClick,
+  });
+
+  // Focus trap activates/deactivates automatically via useEffect based on isActive prop
+  useFocusTrap(menuContainerRef, {
+    isActive: !isCollapsed,
+    onEscape: handleClick,
+    returnFocusOnEscape: true,
+  });
 
   const styledNavLinkStyles = stylex.props(
     styles.navLinkBase,
@@ -157,8 +188,12 @@ export default function Navbar() {
         </a>
       </p>
       <button
+        ref={hamburgerButtonRef}
         type="button"
-        {...stylex.props(styles.bar)}
+        {...stylex.props(
+          styles.bar,
+          hamburgerVisible && focusStyles.focusVisible,
+        )}
         onClick={handleClick}
         aria-label={
           isCollapsed ? "Open navigation menu" : "Close navigation menu"
@@ -168,40 +203,74 @@ export default function Navbar() {
         <FontAwesomeIcon icon={menuIcon} size="2x" />
       </button>
       <div {...stylex.props(styles.rightNavContainer)}>
-        <ol aria-hidden={isCollapsed} {...styledNavLinkStyles}>
-          <li {...stylex.props(styles.navLinkItem)}>
-            <TextLink href="#about" onClick={handleClick} title="About" />
-          </li>
-          <li {...stylex.props(styles.navLinkItem)}>
-            <TextLink
-              href="#portfolio"
-              onClick={handleClick}
-              title="Portfolio"
-            />
-          </li>
-          <div {...stylex.props(styles.contactLinkContainer)}>
-            <IconLink
-              icon={faEnvelope}
-              href="mailto:ginson.wong+hello@gmail.com"
-              hovercolor="orange"
-            />
-            <IconLink
-              icon={faAngellist}
-              href="https://angel.co/wongco"
-              hovercolor="pink"
-            />
-            <IconLink
-              icon={faGithub}
-              href="https://github.com/wongco"
-              hovercolor="purple"
-            />
-            <IconLink
-              icon={faLinkedin}
-              href="https://www.linkedin.com/in/ginson"
-              hovercolor="#0077B5"
-            />
-          </div>
-        </ol>
+        <div ref={menuContainerRef}>
+          <ol
+            aria-hidden={isCollapsed}
+            {...styledNavLinkStyles}
+            onKeyDown={
+              handleNavKeyDown as unknown as React.KeyboardEventHandler<HTMLOListElement>
+            }
+            ref={(el) => {
+              if (el) {
+                const items = el.querySelectorAll("li");
+                navItemsRef.current = Array.from(items) as HTMLLIElement[];
+              }
+            }}
+          >
+            <li
+              ref={(el) => {
+                navItemsRef.current[0] = el;
+              }}
+              onFocus={() => setActiveNavItemIndex(0)}
+              onBlur={() => setActiveNavItemIndex(-1)}
+              {...stylex.props(
+                styles.navLinkItem,
+                activeNavItemIndex === 0 && focusStyles.focusVisible,
+              )}
+            >
+              <TextLink href="#about" onClick={handleClick} title="About" />
+            </li>
+            <li
+              ref={(el) => {
+                navItemsRef.current[1] = el;
+              }}
+              onFocus={() => setActiveNavItemIndex(1)}
+              onBlur={() => setActiveNavItemIndex(-1)}
+              {...stylex.props(
+                styles.navLinkItem,
+                activeNavItemIndex === 1 && focusStyles.focusVisible,
+              )}
+            >
+              <TextLink
+                href="#portfolio"
+                onClick={handleClick}
+                title="Portfolio"
+              />
+            </li>
+            <div {...stylex.props(styles.contactLinkContainer)}>
+              <IconLink
+                icon={faEnvelope}
+                href="mailto:ginson.wong+hello@gmail.com"
+                hovercolor="orange"
+              />
+              <IconLink
+                icon={faAngellist}
+                href="https://angel.co/wongco"
+                hovercolor="pink"
+              />
+              <IconLink
+                icon={faGithub}
+                href="https://github.com/wongco"
+                hovercolor="purple"
+              />
+              <IconLink
+                icon={faLinkedin}
+                href="https://www.linkedin.com/in/ginson"
+                hovercolor="#0077B5"
+              />
+            </div>
+          </ol>
+        </div>
       </div>
     </nav>
   );

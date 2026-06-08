@@ -363,3 +363,5 @@ template {
 [hidden] {
   display: none;
 }
+
+/* Accessibility: Skip navigation link - styles applied inline via stylex */

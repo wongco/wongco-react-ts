@@ -73,7 +73,8 @@ export default function PortfolioJobly() {
           {...stylex.props(styles.image)}
           src={preview_jobly}
           srcWebp={preview_joblyWebp}
-          alt="Jobly application preview"
+          alt="Jobly application interface displaying job listings and search functionality"
+          lazy
         />
       </div>
       <ProjectInfo

@@ -131,7 +131,8 @@ export default function About() {
             {...stylex.props(styles.image)}
             src={preview}
             srcWebp={previewWebp}
-            alt="headshot"
+            alt="Professional headshot of Ginson Wong"
+            lazy
           />
         </div>
         <div {...stylex.props(styles.body)}>

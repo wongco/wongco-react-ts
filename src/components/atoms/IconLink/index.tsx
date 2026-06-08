@@ -2,7 +2,8 @@ import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import type { CSSVariables } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
-import type { CSSProperties } from "react";
+import { forwardRef } from "react";
+import type { CSSProperties, ForwardedRef } from "react";
 
 const styles = stylex.create({
   fontAwesome: (hoverColor: string) => ({
@@ -22,18 +23,21 @@ type IconLinkProps = {
   href: string;
 };
 
-export default function IconLink({
-  hovercolor = "black",
-  icon,
-  href,
-}: IconLinkProps) {
-  const hoverColorStyles = stylex.props(
-    styles.fontAwesome(hovercolor),
-  ) as Record<string, CSSProperties & CSSVariables>;
+const IconLink = forwardRef(
+  (
+    { hovercolor = "black", icon, href }: IconLinkProps,
+    ref: ForwardedRef<HTMLAnchorElement>,
+  ) => {
+    const hoverColorStyles = stylex.props(
+      styles.fontAwesome(hovercolor),
+    ) as Record<string, CSSProperties & CSSVariables>;
 
-  return (
-    <a href={href}>
-      <FontAwesomeIcon {...hoverColorStyles} icon={icon} size="2x" />
-    </a>
-  );
-}
+    return (
+      <a ref={ref} href={href}>
+        <FontAwesomeIcon {...hoverColorStyles} icon={icon} size="2x" />
+      </a>
+    );
+  },
+);
+
+export default IconLink;

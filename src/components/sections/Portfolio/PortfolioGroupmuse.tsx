@@ -47,7 +47,8 @@ export default function PortfolioGroupmuse() {
           {...stylex.props(styles.image)}
           src={preview_groupmuse}
           srcWebp={preview_groupmuseWebp}
-          alt="Groupmuse application preview"
+          alt="Groupmuse mobile app screenshot showing template organization"
+          lazy
         />
       </div>
       <ProjectInfo

@@ -1,7 +1,16 @@
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import * as stylex from "@stylexjs/stylex";
+import { useRef } from "react";
 
+import { useFocusVisible } from "../../../hooks/useFocusVisible";
 import IconLink from "../../atoms/IconLink";
+
+const focusStyles = stylex.create({
+  focusVisible: {
+    outline: "2px solid #0066CC",
+    outlineOffset: "2px",
+  },
+});
 
 const styles = stylex.create({
   footer: {
@@ -40,10 +49,20 @@ const styles = stylex.create({
 const copyRightText = "Designed and built by Ginson Wong © 2023";
 
 export default function Contact() {
+  const scrollButtonRef = useRef<HTMLAnchorElement | null>(null);
+  const scrollButtonVisible = useFocusVisible(scrollButtonRef);
+
   return (
     <footer {...stylex.props(styles.footer)}>
       <div {...stylex.props(styles.copyrightContainer)}>
-        <IconLink href="#top" icon={faArrowAltCircleUp} hovercolor="blue" />
+        <IconLink
+          ref={scrollButtonRef}
+          href="#top"
+          icon={faArrowAltCircleUp}
+          hovercolor="blue"
+          aria-label="Scroll to top"
+          {...stylex.props(scrollButtonVisible && focusStyles.focusVisible)}
+        />
         <div {...stylex.props(styles.copyrightNote)}>{copyRightText}</div>
       </div>
     </footer>

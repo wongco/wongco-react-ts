@@ -73,7 +73,8 @@ export default function PortfolioHackSnooze() {
           {...stylex.props(styles.image)}
           src={preview_hackorsnooze}
           srcWebp={preview_hackorsnoozeWebp}
-          alt="Hack or Snooze application preview"
+          alt="Hack or Snooze application showing story board with user submissions"
+          lazy
         />
       </div>
       <ProjectInfo
