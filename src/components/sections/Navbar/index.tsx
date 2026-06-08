@@ -3,8 +3,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as stylex from "@stylexjs/stylex";
 import { useState } from "react";
@@ -143,23 +142,33 @@ export default function Navbar() {
     setIsCollapsed((prevState) => !prevState);
   };
 
+  const menuIcon = isCollapsed ? faBars : faTimes;
+
   const styledNavLinkStyles = stylex.props(
     styles.navLinkBase,
     isCollapsed ? styles.navLinkCollapsed : styles.navLinkNotCollapsed,
   );
 
   return (
-    <nav {...stylex.props(styles.navContainer)}>
+    <nav aria-label="Main navigation" {...stylex.props(styles.navContainer)}>
       <p {...stylex.props(styles.homeLinkContainer)}>
         <a {...stylex.props(styles.homeLink)} href="#home">
           WongCo
         </a>
       </p>
-      <div {...stylex.props(styles.bar)} onClick={handleClick}>
-        <FontAwesomeIcon icon={faBars} size="2x" />
-      </div>
+      <button
+        type="button"
+        {...stylex.props(styles.bar)}
+        onClick={handleClick}
+        aria-label={
+          isCollapsed ? "Open navigation menu" : "Close navigation menu"
+        }
+        aria-expanded={isCollapsed}
+      >
+        <FontAwesomeIcon icon={menuIcon} size="2x" />
+      </button>
       <div {...stylex.props(styles.rightNavContainer)}>
-        <ol {...styledNavLinkStyles}>
+        <ol aria-hidden={isCollapsed} {...styledNavLinkStyles}>
           <li {...stylex.props(styles.navLinkItem)}>
             <TextLink href="#about" onClick={handleClick} title="About" />
           </li>
