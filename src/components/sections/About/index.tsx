@@ -2,6 +2,8 @@ import * as stylex from "@stylexjs/stylex";
 
 import { useAOS } from "../../../hooks/useAOS";
 import preview from "../../../pics/profile_pic1c.jpg";
+import previewWebp from "../../../pics/profile_pic1c.webp";
+import { OptimizedImage } from "../../atoms/OptimizedImage";
 
 const header =
   "Behind every problem is an elegant solution waiting to be created.";
@@ -125,7 +127,12 @@ export default function About() {
           data-aos-delay="200"
           data-aos-easing="ease-in-sine"
         >
-          <img {...stylex.props(styles.image)} src={preview} alt="headshot" />
+          <OptimizedImage
+            {...stylex.props(styles.image)}
+            src={preview}
+            srcWebp={previewWebp}
+            alt="headshot"
+          />
         </div>
         <div {...stylex.props(styles.body)}>
           {bodyPartOne}
